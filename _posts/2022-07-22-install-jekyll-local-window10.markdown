@@ -21,6 +21,7 @@ I will try to summarize the processes and to support the one point solution to a
 ## Step 1: Install Ruby 
 I installed Ruby+Devkit 3.1.2-1 (x64) which you can [Download Ruby 3.1.2-1 (x64)](https://rubyinstaller.org/downloads/). Then after you will see the window. 
 ![Ruby_installer](../../../../../assets/images/jekyll/ruby_installer.png)
+[Photo Credit](https://stackify.com/install-ruby-on-windows-everything-you-need-to-get-going/)
 
 {% highlight Terminal %} 
 Install MSYS2 and MINGW development toolchain succeeded
@@ -61,7 +62,7 @@ $ jekyll -v
 
 My version is jekyll 4.2.2. 
 
-# Problem 1: SSL certificate error 
+### Problem 1: SSL certificate error 
 This was the first problem I encountered when I tried to install the jekyll. At this point the versions matter alot for the solution. So if you have encountered this problem. Please make sure that you have the exact versions installed. 
 because the solution can be varying for different versions.
  When you will try to search the solution for this problem for me was the first answer in this [stackoverflow question](https://stackoverflow.com/questions/65437894/ruby-on-rails-problem-of-verifiying-the-ssl-certificate-while-installing-bundl). 
@@ -71,7 +72,7 @@ because the solution can be varying for different versions.
  2. [Add Certificate](https://stackoverflow.com/questions/26261848/cant-install-jekyll-on-windows-certificate-verify-failed)
  
 but only changing the source worked for me. 
-# Solution
+### Solution
 {%highlight Terminal %}
 $ gem sources -r https://rubygems.org/
 $ gem sources -a http://rubygems.org/
@@ -109,11 +110,11 @@ Now run the command in the terminal to build the website and execute locally.
 {%highlight Terminal%}
  $ bundle exec jekyll serve
 {%endhighlight%}
-# Problem 1: Webricks 
+### Problem 1: Webricks 
  {%highlight Terminal%}
  `require': cannot load such file -- webrick (LoadError)
  {%endhighlight%}
-# Solution:
+### Solution:
 {%highlight Terminal%}
 $ bundle add webrick
 {%endhighlight%}
@@ -131,7 +132,7 @@ $ source "http://rubygems.org"
 
 then add webrick.
 
-# Helpful Links:
+## Helpful Links:
 This [post](http://jekyll-windows.juthilo.com/2-jekyll-gem/) is a good starting point to begin the journey. 
 This [blog](https://www.section.io/engineering-education/build-a-jekyll-site/) provide a one point to start creating the website posts and to customize the site.
 
