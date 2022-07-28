@@ -20,7 +20,7 @@ Included but not limited to Namal Institute and Kinnaird College.
 
 # Education
 
-I have completed my education from reknowned Universities of Pakistan. I completed my Bachelors in computer Engineering from University of Engineering and Technology and 
+I have completed my education from Pakistan.
 
 [comment]:![Kitten](kitten.jpg#thumbnail)
 
