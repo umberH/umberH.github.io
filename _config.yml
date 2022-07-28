@@ -71,7 +71,3 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 #ignore_theme_config: true
-=======
-theme: jekyll-theme-minimal
-title: Ambreen's Homepage 
-desciription: I will update my projects in this site. 
