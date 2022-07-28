@@ -6,7 +6,7 @@ permalink: /about/
 
 # About Me
 
-Thank you for visiting me. My name is Ambreen. Pronounce as Ambreen. 
+Thank you for visiting me. My name is Ambreen. Pronounce as Umbreen. 
 I was born in Pakistan, a naturally rich soil of South Asia. You can spot it on a world map and you will find interesting facts about the land. 
 
 I am currently residing in Sydney, Australia with my family. 
