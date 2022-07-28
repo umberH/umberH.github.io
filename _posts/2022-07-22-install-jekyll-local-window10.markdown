@@ -21,6 +21,7 @@ I will try to summarize the processes and to support the one point solution to a
 ## Step 1: Install Ruby 
 I installed Ruby+Devkit 3.1.2-1 (x64) which you can [Download Ruby 3.1.2-1 (x64)](https://rubyinstaller.org/downloads/). Then after you will see the window. 
 ![Ruby_installer](../../../../../assets/images/jekyll/ruby_installer.png)
+[Photo Credit](https://stackify.com/install-ruby-on-windows-everything-you-need-to-get-going/)
 
 {% highlight Terminal %} 
 Install MSYS2 and MINGW development toolchain succeeded
