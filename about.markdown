@@ -19,8 +19,8 @@ Currently I am working as a Data Scientist in Sydney. Previously I have been to 
 Included but not limited to Namal Institute and Kinnaird College. 
 
 # Education
-
-I have completed my education from Pakistan.
+Currently I am working as a PhD Student at Macquarie University. 
+I have completed my previous education from Pakistan.
 
 [comment]:![Kitten](kitten.jpg#thumbnail)
 
