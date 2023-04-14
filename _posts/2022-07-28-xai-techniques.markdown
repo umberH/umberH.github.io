@@ -7,6 +7,19 @@ categories: XAI Techniques
 
 In this post I am providing summary of XAI based techniques 
 
-|Column|Column|
-|:-__-:|:-___-:|
-|Work 1|work2|
+<table>
+  <thead>
+    <tr>
+      <th>Named Entity</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for entity in page.named_entities %}
+      <tr>
+        <td>{{ entity.entity }}</td>
+        <td>{{ entity.type }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
