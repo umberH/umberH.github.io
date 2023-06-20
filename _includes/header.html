@@ -1,12 +1,6 @@
 <header class="site-header">
 
-  <div class="wrapper">
-	  <div class="static-text"> I am a </div>
-  <ul class="dynamic-text">
-    <li><span>Smart</li>
-    <li><span>Active</li>
-    <li><span>Learner</li>
-  </ul>
+
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
