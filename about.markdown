@@ -17,7 +17,7 @@ I was born and raised in **Pakistan**, a naturally rich soil of South Asia. You 
 I am currently residing in Sydney, Australia with my family. 
 
 # Working Experience
-Currently, enjoying my ride as a Data Scientist in Sydney. Previously I have been to academia and have served multiple Institutes. I have taught several courses in the Undergraduate curriculum. 
+Currently, enjoying my ride as a Data Scientist. Previously I have served in academia at served Institutes. I have taught several courses in the Undergraduate and post graduate curriculum. 
 
 # Education
 My Master's dissertion was about **Evidence-Based XAI Technique**
