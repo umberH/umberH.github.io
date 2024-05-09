@@ -14,7 +14,7 @@ Welcome to my Jekyll site on Github Pages!
           		<span class="subheading">Hey! I am</span>
 		  				<h1>Ambreen Hanif</h1>
 			  				<h2>I'm a 
-								  <span class="txt-rotate" data-period="500" data-rotate="[ &quot;Mathematician.&quot;, &quot;Data Scientist.&quot;, &quot;AI Researcher.&quot;, &quot;Startup founder.&quot;, &quot;Eager learner.&quot; ]"><span class="wrap">Mathematic</span></span>
+								  <span class="txt-rotate" data-period="500" data-rotate="[ "Computer Engineer.","Data Scientist.", "AI Researcher.", "Eager Learner." ]">
 								</h2>
 							</div>
             </div>
