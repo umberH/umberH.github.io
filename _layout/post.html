@@ -24,9 +24,16 @@ layout: default
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
+    <a href="https://twitter.com/share?url={{ site.url }}{{ page.url }}&amp;text={{ page.title | cgi_escape }}"
+    title="Share on Twitter" class="button">
+       <span class="count count-twitter">0</span>
+          <i class="icon icon-twitter notranslate" aria-hidden="true"></i>
+ </a>
     Share on {% include share-buttons.html %}
     {% include reading-time.html %}
     {{ content }}
+    Share on {% include share-buttons.html %}
+    {% include reading-time.html %}
   </div>
 
   {%- if site.disqus.shortname -%}
