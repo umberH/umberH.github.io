@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "XAi techniques In Literature till 2022"
+title:  "XAI Tools and Techniques discussed in the Literature till 2023"
 date:   2022-07-28 09:48:37 +1000
 categories: XAI Techniques
 ---
