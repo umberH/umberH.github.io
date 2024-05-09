@@ -52,3 +52,4 @@ As the XAI techniques are generally divided into post- and ante-hoc approaches, 
     </tr>
     </thead>
     {% endif %}
+    {% endfor %}
