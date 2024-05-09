@@ -12,8 +12,8 @@ layout: base
         {{ page.date | date: date_format }}
 		
       </time>
-      share on {% include share-buttons.html %}
-      reading-time{% include reading-time.html %}
+      {% include share-buttons.html %}
+      {% include reading-time.html %}
       {%- if page.author -%}
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
       {%- endif -%}
