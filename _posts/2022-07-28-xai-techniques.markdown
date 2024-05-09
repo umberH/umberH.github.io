@@ -29,3 +29,12 @@ As the XAI techniques are generally divided into post- and ante-hoc approaches, 
     {% endfor %}
   </tbody>
 </table>
+<ul>
+{% for member in site.data.xai %}
+  <li>
+    {{xai.technique}}
+      {{ xai.year}}
+    </a>
+  </li>
+{% endfor %}
+</ul>
