@@ -22,8 +22,8 @@ title: Ambreen Hanif
 
 
 description: >- # this means to ignore newlines until "baseurl:"
-Welcome to My Ideation Space and my Learning Journey, a personal blog where I document my adventures in the world of technology. As I explore new tools, languages, and frameworks, I share my learning, experiences, tutorials to help fellows on a similar learning journey. Join me as we demystify technology, one post at a time!"
-P.S. Not a smooth ride but this is worth the struggle. 
+ Welcome to My Ideation Space and my Learning Journey, a personal blog where I document my adventures in the world of technology. As I explore new tools, languages, and frameworks, I share my learning, experiences, and tutorials to help fellows on a similar learning journey. Join me as we demystify technology, one post at a time!
+ P.S. Not a smooth ride but this is worth the struggle. 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
