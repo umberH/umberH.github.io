@@ -50,6 +50,11 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 
+reading_time:
+  second_plural: "sec"    # default: seconds
+  minute_singular: "min"  # default: minute
+  minute_plural: "min"    # default: minutes
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
