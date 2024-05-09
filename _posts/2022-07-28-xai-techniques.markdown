@@ -52,3 +52,7 @@ As the XAI techniques are generally divided into post- and ante-hoc approaches, 
     </tr>
     </thead>
     {% endif %}
+  {% tablerow pair in row %}
+      {{ pair[1] }}
+    {% endtablerow %}
+    {% endfor %}
