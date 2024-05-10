@@ -15,8 +15,25 @@ Welcome to my Jekyll site on Github Pages!
 		  				<h1>Ambreen Hanif</h1>
 			  				<h2>I'm a 
 								  <span class="txt-rotate" data-period="500" data-rotate="[ "Computer Engineer.","Data Scientist.", "AI Researcher.", "Eager Learner." ]">
+
 								</h2>
 							</div>
             </div>
           </div>
         </div>
+	<div id="rotateText">Loading...</div>
+		<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var phrases = [ "Computer Engineer.","Data Scientist.", "AI Researcher.", "Eager Learner." ];
+  var index = 0;
+  var rotateText = document.getElementById('rotateText');
+
+  function rotate() {
+    rotateText.innerHTML = phrases[index];
+    index = (index + 1) % phrases.length; // Loop back to the first phrase
+    setTimeout(rotate, 2000); // Change every 2 seconds
+  }
+
+  rotate(); // Start rotating text
+});
+</script>
