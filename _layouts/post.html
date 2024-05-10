@@ -14,20 +14,35 @@ layout: base
       </time>
       {% include share-buttons.html %}
       {% include reading-time.html %}
+      {% include page-author.html %}
       {%- if page.author -%}
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
       {%- endif -%}
 	  {% include post-readingtime.erb %}
 	  </p>
   </header>
+  
+  <!-- <div class="page-sidebar">
+        {% include page-author.html %}
+        {% include page-categories.html %}
+        {% include page-tags.html %}
+      </div> -->
 
   <div class="post-content e-content" itemprop="articleBody">
-    {{ content| reading_time }}
+    {{ content}}
   </div>
+  
+		{% if page.share %}
+          {% include share-buttons.html %}
+        {% endif %}
 
-  {%- if site.disqus.shortname -%}
-    {%- include disqus_comments.html -%}
-  {%- endif -%}
+        {% if site.disqus.shortname %}
+          {% include disqus-comments.html %}
+        {% endif %}
+
+        {% include page-pagination.html %}
+
+  
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>

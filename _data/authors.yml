@@ -1,0 +1,11 @@
+# Authors
+
+Ambreen Hanif:
+  name: Ambreen Hanif
+  picture: /images/bio-photo-2.jpg
+  X: "@umbreenh"
+  links:
+    - title: X
+      url: https://X.com/umbreenh
+      icon: fab fa-twitter-square
+
