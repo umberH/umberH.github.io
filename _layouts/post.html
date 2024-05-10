@@ -31,7 +31,22 @@ layout: base
   <div class="post-content e-content" itemprop="articleBody">
     {{ content}}
   </div>
+
+  <a href="{{ page.previous.url }}">
+    <div>Previous Post</div>
+  </a>
   
+  <a href="{{ page.next.url }}">
+    <div>Newer Post</div>
+  </a>
+
+  <!-- {% if page.next_in_category != nil %}
+	<a href="{{page.next_in_category.url}}" class="next-link">Older Post</a>
+{% endif %}
+{% if page.previous_in_category != nil %}
+	<a href="{{page.previous_in_category.url}}" class="previous-link">Newer Post</a>
+{% endif %}
+   -->
 		{% if page.share %}
           {% include share-buttons.html %}
         {% endif %}
