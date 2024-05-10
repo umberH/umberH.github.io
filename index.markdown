@@ -2,11 +2,13 @@
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
-layout: home
+layout: rotating
 title: Home Page
 ---
 
-Welcome to my Jekyll site on Github Pages!
+Welcome to my Jekyll site on Github Pages! 
+
+<!-- 
 <div class="container">
         <div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center" style="height: 911px;">
           	<div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-center fadeInUp ftco-animated">
@@ -35,4 +37,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
   rotate(); // Start rotating text
 });
-</script>
+</script> -->
