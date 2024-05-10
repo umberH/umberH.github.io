@@ -13,12 +13,12 @@ layout: base
 		
       </time>
       {% include share-buttons.html %}
-      {% include reading-time.html %}
+      <!-- {% include reading-time.html %} -->
       {% include page-author.html %}
       {%- if page.author -%}
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
       {%- endif -%}
-	  {% include post-readingtime.erb %}
+	  <!-- {% include post-readingtime.erb %} -->
 	  </p>
   </header>
   
@@ -31,14 +31,6 @@ layout: base
   <div class="post-content e-content" itemprop="articleBody">
     {{ content}}
   </div>
-
-  <a href="{{ page.previous.url }}">
-    <div>Previous Post</div>
-  </a>
-  
-  <a href="{{ page.next.url }}">
-    <div>Newer Post</div>
-  </a>
 
   <!-- {% if page.next_in_category != nil %}
 	<a href="{{page.next_in_category.url}}" class="next-link">Older Post</a>
