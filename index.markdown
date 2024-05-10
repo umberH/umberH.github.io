@@ -9,20 +9,19 @@ title: Home Page
 Welcome to my Jekyll site on Github Pages!
 <div class="container">
         <div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center" style="height: 911px;">
-          <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-center fadeInUp ftco-animated">
-          	<div class="text text-center">
-          		<span class="subheading">Hey! I am</span>
+          	<div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-center fadeInUp ftco-animated">
+          		<div class="text text-center">
+          			<span class="subheading">Hey! I am</span>
 		  				<h1>Ambreen Hanif</h1>
 			  				<h2>I'm a 
 								  <span class="txt-rotate" data-period="500" data-rotate="[ "Computer Engineer.","Data Scientist.", "AI Researcher.", "Eager Learner." ]">
-
-								</h2>
-							</div>
-            </div>
-          </div>
-        </div>
-	<div id="rotateText">Loading...</div>
-		<script>
+							</h2>
+				</div>
+        	</div>
+    	</div>
+</div>
+<div id="rotateText">Loading...</div>
+<script>
 document.addEventListener('DOMContentLoaded', function() {
   var phrases = [ "Computer Engineer.","Data Scientist.", "AI Researcher.", "Eager Learner." ];
   var index = 0;
