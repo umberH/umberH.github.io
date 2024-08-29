@@ -43,19 +43,27 @@ Hello! I'm **{{ page.author }}**, a seasoned professional with extensive experie
 
 I have a strong background in various roles that span multiple disciplines:
 
-{% for job in page.professional_experience %}
-### {{ job.title }} at {{ job.company }}
-*{{ job.duration }}*  
-{{ job.description }}
+<ul>
+  {% for experience in site.data.experience %}
+    <li>
+      <i class="{{ experience.icon }}"></i>
+      <strong>{{ experience.title }}</strong> at {{ experience.company }}, {{ experience.location }} ({{ experience.duration }})
+      <br>
+      <i>{{ experience.description }}</i>
+    </li>
+  {% endfor %}
+</ul>
 
-{% endfor %}
+## My Educational background
 
-## My educational background includes:
-
-{% for edu in page.education %}
-- **{{ edu.degree }}**, {{ edu.institution }} ({{ edu.year }})
-{% endfor %}
-
+<ul>
+  {% for education in site.data.education %}
+    <li>
+      <i class="{{ education.icon }}"></i>
+      <strong>{{ education.degree }}</strong>, {{ education.institution }} ({{ education.year }}) - {{ education.location }}
+    </li>
+  {% endfor %}
+</ul>
 ## Projects
 
 Here are some of my recent projects:
