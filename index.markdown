@@ -13,20 +13,20 @@ skills:
   - Project Management
 professional_experience:
   - title: Data Scientist
-    company: XYZ Corporation
-    duration: 2018 - Present
-    Description: I worked on developing machine learning models and data pipelines to drive business insights and operational efficiency.
-  - title: Software Engineer
-    company: ABC Tech
-    duration: 2015 - 2018
-    description: Developed web applications and APIs using modern frameworks and contributed to improving system architecture and code quality.
+    company: Prospa
+    duration: 2020 - present
+    Description: I worked on developing insights and explanations, machine learning models, and data pipelines to drive business insights and operational efficiency. I have developed dashboards to monitor the data and model drift patterns. 
+  - title: Machine Learning Engineer
+    company: Cognitivo 
+    duration: 2019 - 2020
+    description: Developed Image processing-based ML solution for road sign tracking and improving the model performance. 
 education:
   - degree: Ph.D. in Computer Science
-    institution: University of Example
-    year: 2015
-  - degree: B.Sc. in Computer Science
-    institution: University of Example
-    year: 2010
+    institution: Macquarie University
+    year: 2024
+  - degree: Masters of Research
+    institution: Macquarie University
+    year: 2021
 ---
 
 # Welcome to My Personal Website
