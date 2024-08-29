@@ -73,8 +73,7 @@ main {
   margin-left: auto;
   margin-right: auto; /* Center the main content */
   background-color: #fff; /* White background for main content */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  border-radius: 8px; /* Rounded corners */
+  
 }
 
 /* Sections */
