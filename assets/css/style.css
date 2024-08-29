@@ -28,8 +28,8 @@ a:hover {
 
 /* Header styling */
 header {
-  background-color: #fff; /* Dark background for header */
-  color: #007acc; /* White text for contrast */
+  background-color: #fff; /* white background for header */
+  color: #007acc; /* blue text for contrast */
   text-align: center;
   padding: 20px 0;
   position: fixed; /* Make header sticky */
