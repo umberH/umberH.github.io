@@ -23,7 +23,7 @@ author: Ambreen Hanif
 
 # About Me
 <div id="about">
-  {% include section/about.md %}
+  {% include section/about.markdown %}
 </div>
 
 ## My Educational Background
