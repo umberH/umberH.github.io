@@ -11,20 +11,25 @@
 </head>
 <body>
   <header class="sticky-header">
-    <h1>{{ site.title }}</h1>
-    <nav>
-      <ul>
-<!--         <li><a href="{{ '/' | relative_url }}">Home</a></li> -->
-      <li><a href="#home" class="nav-link">Home</a></li>
-      <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#resume" class="nav-link">Resume</a></li>
-      <li><a href="#projects" class="nav-link">Projects</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-      </ul>
-    </nav>
+  <div class="header-container">
+     <div class="header-left">
+        <h1><a href="{{ '/' | relative_url }}">Your Name</a></h1>
+      </div>
+      <div class="header-right">
+      
+        <nav>
+          <ul>
+    <!--         <li><a href="{{ '/' | relative_url }}">Home</a></li> -->
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#resume" class="nav-link">Resume</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      </div>
+  </div>  
+     
   </header>
 
   <main>
