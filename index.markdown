@@ -22,19 +22,19 @@ author: Ambreen Hanif
 </div>
 
 <div id="about">
-  {% include sections/about.md %}
+  {% include section/about.md %}
 </div>
 
-<div id="services">
-  {% include sections/services.md %}
+<div id="education">
+  {% include sections/education.md %}
 </div>
 
-<div id="features">
-  {% include sections/features.md %}
+<div id="experience">
+  {% include sections/experience.md %}
 </div>
 
-<div id="contact">
-  {% include sections/contact.md %}
+<div id="project">
+  {% include sections/project.md %}
 </div>
 
 # About me 
