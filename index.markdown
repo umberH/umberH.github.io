@@ -41,7 +41,6 @@ author: Ambreen Hanif
 </div> 
 
 ## Projects
-Here are some of my recent projects:
 
 <div id="project">
   {% capture project_content %}
@@ -52,11 +51,6 @@ Here are some of my recent projects:
 </div>
 
 
-
-
-- **[Project 1](#)**: Brief description of Project 1.
-- **[Project 2](#)**: Brief description of Project 2.
-- **[Project 3](#)**: Brief description of Project 3.
 
 ## My Approach
 
