@@ -1,4 +1,4 @@
-## My Educational background
+## My Educational Background
 
 <ul>
   {% for education in site.data.education %}
