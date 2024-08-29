@@ -38,32 +38,48 @@ header {
   z-index: 1000; /* Ensure header stays above content */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa; /* Light gray background */
+  padding: 15px 30px;
+  border-bottom: 1px solid #ddd; /* Light border for header */
+}
 
-header h1 {
+.header-left h1 {
   margin: 0;
-  font-size: 2rem; /* Larger font size for the site title */
+  font-size: 24px;
 }
 
-nav {
-  margin-top: 10px; /* Space between site title and navigation */
+.header-left a {
+  text-decoration: none;
+  color: #333; /* Dark text color */
 }
 
-nav ul {
-  list-style: none; /* Remove default list styling */
+.header-right nav ul {
+  list-style: none;
+  margin: 0;
   padding: 0;
-  margin: 0;
-  display: inline-block; /* Align navigation items horizontally */
+  display: flex;
+  gap: 20px; /* Space between navigation items */
 }
 
-nav ul li {
-  display: inline; /* Align list items horizontally */
-  margin-right: 20px; /* Space between navigation items */
+.header-right nav ul li {
+  display: inline;
 }
 
-nav ul li a {
-  color: #fff; /* White text for navigation links */
-  font-weight: bold;
+.header-right nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
 }
+
+.header-right nav ul li a:hover {
+  color: #007bff; /* Blue text color on hover */
+}
+
+
 
 /* Main content styling */
 main {
