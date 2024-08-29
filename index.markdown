@@ -11,7 +11,7 @@ author: Ambreen Hanif
 <!-- Rotating Text Container -->
 <div class="rotating-text">
   <span id="dynamic-text">Hey! I am a </span>
-  <span id="rotating-words"></span>
+<!--   <span id="rotating-words"></span> -->
   <div class="typing-container">
   <span id="typed-text"></span>
   <span class="cursor">&nbsp;</span>
