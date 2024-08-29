@@ -117,7 +117,26 @@ footer p {
   }
 }
 
+/* Custom styling for icon bullets */
+ul {
+  list-style: none; /* Remove default bullet points */
+  padding: 0; /* Remove padding from the list */
+}
 
+ul li {
+  margin-bottom: 10px; /* Add space between list items */
+}
+
+ul li i {
+  color: #007acc; /* Customize icon color */
+  margin-right: 10px; /* Space between icon and text */
+}
+
+/* Optional: Style the headings with icons */
+h2 i {
+  color: #007acc; /* Customize heading icon color */
+  margin-right: 10px; /* Space between icon and heading text */
+}
 
 .sticky-header {
   position: fixed; /* Make the header fixed */
