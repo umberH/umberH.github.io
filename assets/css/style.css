@@ -28,7 +28,7 @@ a:hover {
 
 /* Header styling */
 header {
-  background-color: #fff; /* white background for header */
+  background-color: #ffffff; /* white background for header */
   color: #007acc; /* blue text for contrast */
   text-align: center;
   padding: 20px 0;
@@ -42,7 +42,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f8f9fa; /* Light gray background */
+ 
   padding: 15px 30px;
   border-bottom: 1px solid #ddd; /* Light border for header */
 }
@@ -54,7 +54,7 @@ header {
 
 .header-left a {
   text-decoration: none;
-  color: #333; /* Dark text color */
+  color: #007acc; /* Dark text color */
 }
 
 .header-right nav ul {
@@ -71,7 +71,7 @@ header {
 
 .header-right nav ul li a {
   text-decoration: none;
-  color: #333;
+  color: #007acc;
   font-size: 18px;
 }
 
