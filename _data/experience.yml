@@ -1,8 +1,11 @@
- - title: Data Scientist
-    company: Prospa
-    duration: 2020 - present
-    description: I worked on developing insights and explanations, machine learning models, and data pipelines to drive business insights and operational efficiency. I have developed dashboards to monitor the data and model drift patterns. 
-  - title: Machine Learning Engineer
-    company: Cognitivo 
-    duration: 2019 - 2020
-    description: Developed Image processing-based ML solution for road sign tracking and improving the model performance.
+- title: Data Scientist
+  company: Prospa
+  duration: 2020 - present
+  description: I worked on developing insights and explanations, machine learning models, and data pipelines to drive business insights and operational efficiency. I have developed dashboards to monitor the data and model drift patterns. 
+  icon: fas fa-briefcase
+    
+- title: Machine Learning Engineer
+  company: Cognitivo 
+  duration: 2019 - 2020
+  description: Developed Image processing-based ML solution for road sign tracking and improving the model performance.
+  icon: fas fa-briefcase
