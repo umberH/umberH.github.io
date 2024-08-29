@@ -14,7 +14,7 @@ body {
   margin: 0 auto; /* Center the container */
   padding: 40px 20px; /* Increase padding for more space around content */
   background-color: #ffffff; /* Ensure content area has a white background */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+  
   border-radius: 8px; /* Optional: Add rounded corners for a modern look */
 }
 a {
@@ -28,8 +28,8 @@ a:hover {
 
 /* Header styling */
 header {
-  background-color: #333; /* Dark background for header */
-  color: #fff; /* White text for contrast */
+  background-color: #fff; /* Dark background for header */
+  color: #007acc; /* White text for contrast */
   text-align: center;
   padding: 20px 0;
   position: fixed; /* Make header sticky */
