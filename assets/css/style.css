@@ -108,8 +108,8 @@ section h2 {
 footer {
   text-align: center;
   padding: 10px 0;
-  background-color: #333; /* Dark background for footer */
-  color: #fff; /* White text for contrast */
+  background-color: #fffff; /* Dark background for footer */
+  color: #007acc; /* White text for contrast */
   position: fixed; /* Make footer sticky */
   bottom: 0;
   width: 100%;
