@@ -1,6 +1,11 @@
  - degree: Ph.D. in Computer Science
     institution: Macquarie University
     year: 2024
+    location: Sydney, Australia
+    icon: fas fa-graduation-cap
+    
   - degree: Masters of Research
     institution: Macquarie University
     year: 2021
+    location: Sydney, Australia
+    icon: fas fa-graduation-cap
