@@ -1,9 +1,4 @@
-<!-- resume.md -->
----
-layout: default
-title: Resume
-permalink: /resume/
----
+
 
     ## Professional Experience
     
