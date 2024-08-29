@@ -292,3 +292,28 @@ h3 {
     visibility: hidden;
   }
 }
+
+/* Impact Section Styling */
+.impact-section {
+  position: relative; /* Relative positioning to position the diamond */
+  background-color: #f0f3ff; /* Light blue background for the section */
+  padding: 40px; /* Padding around the content */
+  height: 200px; /* Adjust the height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Hide the overflow to clip the diamond shape */
+}
+
+/* Diamond Shape Styling */
+.diamond-shape {
+  position: absolute; /* Absolute positioning to place the diamond */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  width: 100px; /* Adjust the width as needed */
+  height: 100px; /* Adjust the height as needed */
+  background-color: #eef2ff; /* Light color for the diamond shape */
+  transform: rotate(45deg) translate(-50%, -50%); /* Rotate and center the diamond shape */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+  z-index: 1; /* Ensure the diamond shape is above the background but below content */
+  opacity: 0.3; /* Adjust the transparency as needed */
