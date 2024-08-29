@@ -1,16 +1,119 @@
+/* General styling */
+body {
+  font-family: 'Arial', sans-serif; /* Use a clean, professional font */
+  line-height: 1.6; /* Improved readability */
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4; /* Light gray background for subtlety */
+  color: #333; /* Dark gray text color for contrast */
+}
+
+a {
+  color: #007acc; /* Blue color for links */
+  text-decoration: none; /* Remove underlines from links */
+}
+
+a:hover {
+  text-decoration: underline; /* Underline links on hover for accessibility */
+}
+
+/* Header styling */
+header {
+  background-color: #333; /* Dark background for header */
+  color: #fff; /* White text for contrast */
+  text-align: center;
+  padding: 20px 0;
+  position: fixed; /* Make header sticky */
+  width: 100%;
+  top: 0;
+  z-index: 1000; /* Ensure header stays above content */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem; /* Larger font size for the site title */
+}
+
+nav {
+  margin-top: 10px; /* Space between site title and navigation */
+}
+
+nav ul {
+  list-style: none; /* Remove default list styling */
+  padding: 0;
+  margin: 0;
+  display: inline-block; /* Align navigation items horizontally */
+}
+
+nav ul li {
+  display: inline; /* Align list items horizontally */
+  margin-right: 20px; /* Space between navigation items */
+}
+
+nav ul li a {
+  color: #fff; /* White text for navigation links */
+  font-weight: bold;
+}
+
+/* Main content styling */
+main {
+  margin-top: 80px; /* Prevent content from hiding behind the sticky header */
+  padding: 20px;
+  max-width: 800px; /* Constrain max width for readability */
+  margin-left: auto;
+  margin-right: auto; /* Center the main content */
+  background-color: #fff; /* White background for main content */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 8px; /* Rounded corners */
+}
+
+/* Sections */
+section {
+  margin-bottom: 20px; /* Space between sections */
+}
+
+section h2 {
+  color: #333;
+  border-bottom: 2px solid #007acc; /* Blue underline for section headers */
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* Footer styling */
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #333; /* Dark background for footer */
+  color: #fff; /* White text for contrast */
+  position: fixed; /* Make footer sticky */
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav ul li {
+    display: block; /* Stack navigation items on smaller screens */
+    margin: 10px 0; /* Space between stacked navigation items */
+  }
+
+  main {
+    padding: 10px; /* Reduce padding on smaller screens */
+    margin-top: 100px; /* Adjust margin to account for header height */
+  }
+}
+
 #rotateText {
     font-size: 24px;
     color: #333;
     font-weight: bold;
   }
 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #333;
-  background-color: #f5f5f5;
-}
 
 .sticky-header {
   position: fixed; /* Make the header fixed */
@@ -23,29 +126,4 @@ body {
   text-align: center;
   padding: 10px 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for visual separation */
-}
-
-header h1, footer p {
-  margin: 0;
-}
-
-main {
-  padding: 70px 20px; /* Add padding to avoid content hiding under the header */
-}
-
-section {
-  margin-bottom: 20px;
-}
-
-h2 {
-  color: #333;
-}
-
-a {
-  color: #007acc;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
 }
