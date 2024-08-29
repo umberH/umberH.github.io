@@ -34,7 +34,7 @@ author: Ambreen Hanif
 </div>
 
 <div id="project">
-  {% include section/project.md %}
+  {% include section/projects.md %}
 </div>
 
 # About me 
