@@ -167,3 +167,102 @@ h2 i {
   display: inline-block; /* To allow smooth transitions */
   transition: opacity 0.5s ease-in-out; /* Smooth transition for the fade effect */
 }
+
+
+/* General styles */
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+h3 {
+  font-size: 1.2em;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+/* Circular Progress Bar Styles */
+.circular-skill-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.circular-skill {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: conic-gradient(#007bff calc(var(--percentage) * 1%), #e6e6e6 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-circle {
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.circle-content {
+  position: absolute;
+  text-align: center;
+}
+
+.percent {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* Horizontal Progress Bar Styles */
+.horizontal-skill {
+  width: 80%;
+}
+
+.skill-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.skill-bar span {
+  width: 200px;
+  font-weight: bold;
+}
+
+.bar {
+  flex: 1;
+  height: 10px;
+  background-color: #e6e6e6;
+  border-radius: 5px;
+  margin: 0 10px;
+  position: relative;
+}
+
+.progress {
+  height: 100%;
+  background-color: #007bff;
+  border-radius: 5px;
+}
+
+.percentage {
+  width: 40px;
+  text-align: right;
+}
