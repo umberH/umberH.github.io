@@ -79,7 +79,39 @@ header {
   color: #007bff; /* Blue text color on hover */
 }
 
+.resume-container {
+      display: flex;
+    }
 
+    .toc {
+      width: 25%;
+      position: sticky;
+      top: 20px;
+      padding-right: 20px;
+    }
+
+    .resume-content {
+      width: 75%;
+    }
+
+    .toc ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .toc li {
+      margin-bottom: 10px;
+    }
+
+    .toc a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .toc a.active {
+      font-weight: bold;
+      color: #007bff;
+    }
 
 /* Main content styling */
 main {
