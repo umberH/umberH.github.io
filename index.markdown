@@ -5,12 +5,6 @@
 layout: default
 title: Home Page
 author: Ambreen Hanif
-skills:
-  - Machine Learning
-  - Natural Language Processing
-  - Data Analysis
-  - Software Development
-  - Project Management
 professional_experience:
   - title: Data Scientist
     company: Prospa
@@ -39,9 +33,11 @@ education:
 
 Hello! I'm **{{ page.author }}**, a seasoned professional with extensive experience in technology and data-driven fields. I specialize in a range of technical and analytical skills, including:
 
-{% for skill in page.skills %}
-- {{ skill }}
-{% endfor %}
+<ul>
+  {% for skill in site.data.skills %}
+    <li><i class="{{ skill.icon }}"></i> {{ skill.name }}</li>
+  {% endfor %}
+</ul>
 
 ## Professional Experience
 
