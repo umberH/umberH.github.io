@@ -8,6 +8,15 @@ body {
   color: #333; /* Dark gray text color for contrast */
 }
 
+/* Container for the content to increase overall margins */
+.container {
+  max-width: 1200px; /* Max width of content container */
+  margin: 0 auto; /* Center the container */
+  padding: 40px 20px; /* Increase padding for more space around content */
+  background-color: #ffffff; /* Ensure content area has a white background */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+  border-radius: 8px; /* Optional: Add rounded corners for a modern look */
+}
 a {
   color: #007acc; /* Blue color for links */
   text-decoration: none; /* Remove underlines from links */
