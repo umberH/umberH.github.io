@@ -26,15 +26,15 @@ author: Ambreen Hanif
 </div>
 
 <div id="education">
-  {% include sections/education.md %}
+  {% include section/education.md %}
 </div>
 
 <div id="experience">
-  {% include sections/experience.md %}
+  {% include section/experience.md %}
 </div>
 
 <div id="project">
-  {% include sections/project.md %}
+  {% include section/project.md %}
 </div>
 
 # About me 
