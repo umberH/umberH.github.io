@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const rotatingWords = ["Data Scientist", "Gen AI Researcher", "Student"];
+  const rotatingWords = ["Data Scientist", "AI Researcher", "Student"];
   let index = 0; // Initialize starting index
 
   function rotateText() {
