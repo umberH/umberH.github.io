@@ -72,4 +72,5 @@ Thank you for visiting my website!
 
 
 <!-- Link the JavaScript file -->
-<script src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/rotateText.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/circularProgress.js' | relative_url }}"></script>
