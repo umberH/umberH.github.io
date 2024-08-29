@@ -21,7 +21,21 @@ author: Ambreen Hanif
 </div>
 </div>
 
+<div id="about">
+  {% include sections/about.md %}
+</div>
 
+<div id="services">
+  {% include sections/services.md %}
+</div>
+
+<div id="features">
+  {% include sections/features.md %}
+</div>
+
+<div id="contact">
+  {% include sections/contact.md %}
+</div>
 
 # About me 
 
