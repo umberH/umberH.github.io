@@ -45,7 +45,7 @@ Here are some of my recent projects:
 
 <div id="project">
   {% capture project_content %}
-  {% include section/project.markdown %}
+  {% include section/projects.markdown %}
   {% endcapture %}
   {{ project_content | markdownify }}
   
