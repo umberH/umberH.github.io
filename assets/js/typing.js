@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const typedTextElement = document.getElementById("typed-text");
   const cursorElement = document.querySelector(".cursor");
 
-  const textArray = ["mathematician", "data scientist", "researcher"]; // Texts to type
+  const textArray = ["Data Scientist", "AI Researcher","Learner"]; // Texts to type
   const typingDelay = 100; // Delay between typing each character
   const erasingDelay = 50; // Delay between erasing each character
   const newTextDelay = 2000; // Delay between switching to a new text
