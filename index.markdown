@@ -7,6 +7,11 @@ title: Home Page
 author: Ambreen Hanif
 ---
 
+<div class="typing-container">
+  <span id="typed-text"></span>
+  <span class="cursor">&nbsp;</span>
+</div>
+
 <!-- Rotating Text Container -->
 <div class="rotating-text">
   <span id="dynamic-text">Hi, I am a </span>
@@ -73,3 +78,4 @@ Thank you for visiting my website!
 <!-- Link the JavaScript file -->
 <script src="{{ '/assets/js/rotateText.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/circularProgress.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/typing.js' | relative_url }}"></script>
