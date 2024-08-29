@@ -5,22 +5,6 @@
 layout: default
 title: Home Page
 author: Ambreen Hanif
-professional_experience:
-  - title: Data Scientist
-    company: Prospa
-    duration: 2020 - present
-    Description: I worked on developing insights and explanations, machine learning models, and data pipelines to drive business insights and operational efficiency. I have developed dashboards to monitor the data and model drift patterns. 
-  - title: Machine Learning Engineer
-    company: Cognitivo 
-    duration: 2019 - 2020
-    description: Developed Image processing-based ML solution for road sign tracking and improving the model performance. 
-education:
-  - degree: Ph.D. in Computer Science
-    institution: Macquarie University
-    year: 2024
-  - degree: Masters of Research
-    institution: Macquarie University
-    year: 2021
 ---
 
 <!-- Rotating Text Container -->
