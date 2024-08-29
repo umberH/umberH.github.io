@@ -8,6 +8,7 @@ author: Ambreen Hanif
 ---
 
 <div class="typing-container">
+  <span id="dynamic-text">Hi, I am a </span>
   <span id="typed-text"></span>
   <span class="cursor">&nbsp;</span>
 </div>
@@ -16,6 +17,10 @@ author: Ambreen Hanif
 <div class="rotating-text">
   <span id="dynamic-text">Hi, I am a </span>
   <span id="rotating-words"></span>
+  <div class="typing-container">
+  <span id="typed-text"></span>
+  <span class="cursor">&nbsp;</span>
+</div>
 </div>
 
 
