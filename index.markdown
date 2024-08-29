@@ -21,60 +21,31 @@ author: Ambreen Hanif
 </div>
 </div>
 
+# About Me
 <div id="about">
   {% include section/about.md %}
 </div>
+
+## My Educational Background
 
 <div id="education">
   {% include section/education.md %}
 </div>
 
+## Professional Experience
+
 <div id="experience">
   {% include section/experience.md %}
 </div>
 
+## Projects
+Here are some of my recent projects:
 <div id="project">
   {% include section/projects.md %}
 </div>
 
-# About me 
 
-I'm **{{ page.author }}**, a seasoned professional with extensive experience in technology and data-driven fields. I specialize in a range of technical and analytical skills, including:
 
-<ul>
-  {% for skill in site.data.skills %}
-    <li><i class="{{ skill.icon }}"></i> {{ skill.name }}</li>
-  {% endfor %}
-</ul>
-
-## Professional Experience
-
-I have a strong background in various roles that span multiple disciplines:
-
-<ul>
-  {% for experience in site.data.experience %}
-    <li>
-      <i class="{{ experience.icon }}"></i>
-      <strong>{{ experience.title }}</strong> at {{ experience.company }}, {{ experience.location }} ({{ experience.duration }})
-      <br>
-      <i>{{ experience.description }}</i>
-    </li>
-  {% endfor %}
-</ul>
-
-## My Educational background
-
-<ul>
-  {% for education in site.data.education %}
-    <li>
-      <i class="{{ education.icon }}"></i>
-      <strong>{{ education.degree }}</strong>, {{ education.institution }} ({{ education.year }}) - {{ education.location }}
-    </li>
-  {% endfor %}
-</ul>
-## Projects
-
-Here are some of my recent projects:
 
 - **[Project 1](#)**: Brief description of Project 1.
 - **[Project 2](#)**: Brief description of Project 2.
