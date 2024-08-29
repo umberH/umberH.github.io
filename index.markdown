@@ -30,22 +30,25 @@ author: Ambreen Hanif
 
 </div>
 
-## My Educational Background
 
-<div id="education">
-  {% include section/education.md %}
-</div>
+## Resume
+<div id ="resume">
+{% capture resume_content %}
+  {% include section/resume.markdown %}
+  {% endcapture %}
+  {{ resume_content | markdownify }}
 
-## Professional Experience
-
-<div id="experience">
-  {% include section/experience.markdown %}
-</div>
+</div> 
 
 ## Projects
 Here are some of my recent projects:
+
 <div id="project">
-  {% include section/projects.md %}
+  {% capture project_content %}
+  {% include section/project.markdown %}
+  {% endcapture %}
+  {{ project_content | markdownify }}
+  
 </div>
 
 
