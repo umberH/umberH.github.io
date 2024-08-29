@@ -35,7 +35,7 @@ author: Ambreen Hanif
 ## Professional Experience
 
 <div id="experience">
-  {% include section/experience.markdwon %}
+  {% include section/experience.markdown %}
 </div>
 
 ## Projects
