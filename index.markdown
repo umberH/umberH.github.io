@@ -7,8 +7,10 @@ title: Home Page
 author: Ambreen Hanif
 ---
 
-
-<!-- Rotating Text Container -->
+<div class="impact-section">
+  <div class="diamond-shape"></div>
+  <!-- Additional content for the impact section -->
+  <!-- Rotating Text Container -->
 <div class="rotating-text">
   <span id="dynamic-text">Hey! I am a </span>
 <!--   <span id="rotating-words"></span> -->
@@ -17,6 +19,9 @@ author: Ambreen Hanif
   <span class="cursor">&nbsp;</span>
 </div>
 </div>
+</div>
+
+
 
 # About me 
 
