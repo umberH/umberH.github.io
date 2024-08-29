@@ -108,11 +108,6 @@ footer p {
   }
 }
 
-#rotateText {
-    font-size: 24px;
-    color: #333;
-    font-weight: bold;
-  }
 
 
 .sticky-header {
@@ -126,4 +121,22 @@ footer p {
   text-align: center;
   padding: 10px 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for visual separation */
+}
+
+/* Rotating Text Styling */
+.rotating-text {
+  font-size: 2em; /* Font size of the rotating text */
+  font-weight: bold;
+  color: #007acc; /* Customize color to your preference */
+  display: flex; /* Flexbox for aligning elements */
+  align-items: center;
+}
+
+#dynamic-text {
+  margin-right: 5px; /* Spacing between static and rotating text */
+}
+
+#rotating-words {
+  display: inline-block; /* To allow smooth transitions */
+  transition: opacity 0.5s ease-in-out; /* Smooth transition for the fade effect */
 }
