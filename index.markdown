@@ -23,7 +23,11 @@ author: Ambreen Hanif
 
 # About Me
 <div id="about">
+  {% capture about_content %}
   {% include section/about.markdown %}
+  {% endcapture %}
+  {{ about_content | markdownify }}
+
 </div>
 
 ## My Educational Background
