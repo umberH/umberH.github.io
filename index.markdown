@@ -7,15 +7,10 @@ title: Home Page
 author: Ambreen Hanif
 ---
 
-<div class="typing-container">
-  <span id="dynamic-text">Hi, I am a </span>
-  <span id="typed-text"></span>
-  <span class="cursor">&nbsp;</span>
-</div>
 
 <!-- Rotating Text Container -->
 <div class="rotating-text">
-  <span id="dynamic-text">Hi, I am a </span>
+  <span id="dynamic-text">Hey! I am a </span>
   <span id="rotating-words"></span>
   <div class="typing-container">
   <span id="typed-text"></span>
@@ -23,8 +18,9 @@ author: Ambreen Hanif
 </div>
 </div>
 
+# About me 
 
-Hello! I'm **{{ page.author }}**, a seasoned professional with extensive experience in technology and data-driven fields. I specialize in a range of technical and analytical skills, including:
+I'm **{{ page.author }}**, a seasoned professional with extensive experience in technology and data-driven fields. I specialize in a range of technical and analytical skills, including:
 
 <ul>
   {% for skill in site.data.skills %}
