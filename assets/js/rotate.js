@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var phrases = ["First phrase", "Second phrase", "Third phrase"];
+    var phrases = ["Data Scientist", "AI Researcher", "Computer Scientist"];
     var index = 0;
     var rotateText = document.getElementById('rotateText');
  
