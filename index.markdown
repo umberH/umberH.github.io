@@ -2,11 +2,82 @@
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
-layout: rotating
+layout: default
 title: Home Page
+author: Ambreen Hanif
+skills:
+  - Machine Learning
+  - Natural Language Processing
+  - Data Analysis
+  - Software Development
+  - Project Management
+professional_experience:
+  - title: Data Scientist
+    company: XYZ Corporation
+    duration: 2018 - Present
+    Description: I worked on developing machine learning models and data pipelines to drive business insights and operational efficiency.
+  - title: Software Engineer
+    company: ABC Tech
+    duration: 2015 - 2018
+    description: Developed web applications and APIs using modern frameworks and contributed to improving system architecture and code quality.
+education:
+  - degree: Ph.D. in Computer Science
+    institution: University of Example
+    year: 2015
+  - degree: B.Sc. in Computer Science
+    institution: University of Example
+    year: 2010
 ---
 
-Welcome to my Jekyll site on Github Pages! 
+# Welcome to My Personal Website
+
+Hello! I'm **{{ page.author }}**, a seasoned professional with extensive experience in technology and data-driven fields. I specialize in a range of technical and analytical skills, including:
+
+{% for skill in page.skills %}
+- {{ skill }}
+{% endfor %}
+
+## Professional Experience
+
+I have a strong background in various roles that span multiple disciplines:
+
+{% for job in page.professional_experience %}
+### {{ job.title }} at {{ job.company }}
+*{{ job.duration }}*  
+{{ job.description }}
+
+{% endfor %}
+
+## My educational background includes:
+
+{% for edu in page.education %}
+- **{{ edu.degree }}**, {{ edu.institution }} ({{ edu.year }})
+{% endfor %}
+
+## Projects
+
+Here are some of my recent projects:
+
+- **[Project 1](#)**: Brief description of Project 1.
+- **[Project 2](#)**: Brief description of Project 2.
+- **[Project 3](#)**: Brief description of Project 3.
+
+## My Approach
+
+I believe in the power of innovation and data to solve complex problems. I continually seek to expand my knowledge and stay up-to-date with technological advancements.
+
+Feel free to connect with me to discuss potential collaborations or explore shared interests!
+
+## Contact
+
+Feel free to contact me via email at [mylastname(dot)firstname@gmail(dot)com] or follow me on [GitHub](https://github.com/umberh).
+
+---
+
+Thank you for visiting my website!
+
+
+
 
 <!-- 
 <div class="container">
