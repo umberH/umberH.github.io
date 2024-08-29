@@ -269,7 +269,7 @@ h3 {
 
 /* Typing text container */
 .typing-container {
-  font-size: 2em; /* Adjust font size as needed */
+
   font-weight: bold;
   color: #007acc; /* Text color */
   display: flex;
@@ -322,14 +322,12 @@ h3 {
   background-color: #f4f4f4;
 }
 
-#education {
+#resume {
   background-color: #fff;
 }
 
-#experience {
-  background-color: #f4f4f4;
-}
+
 
 #project{
-  background-color: #fff;
+  background-color: #f4f4f;
 }
