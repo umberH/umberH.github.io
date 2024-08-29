@@ -317,3 +317,19 @@ h3 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
   z-index: 1; /* Ensure the diamond shape is above the background but below content */
   opacity: 0.3; /* Adjust the transparency as needed */
+
+#about {
+  background-color: #f4f4f4;
+}
+
+#education {
+  background-color: #fff;
+}
+
+#experience {
+  background-color: #f4f4f4;
+}
+
+#project{
+  background-color: #fff;
+}
