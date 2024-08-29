@@ -71,6 +71,5 @@ Feel free to contact me via email at [mylastname(dot)firstname@gmail(dot)com] or
 Thank you for visiting my website!
 
 
-
 <!-- Link the JavaScript file -->
 <script src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
