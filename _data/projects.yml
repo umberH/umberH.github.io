@@ -1,0 +1,13 @@
+# _data/projects.yml
+
+- title: Project Title 1
+  description: A brief description of Project 1. This project involves creating a web application using React and Node.js.
+  image: /assets/images/project1.jpg
+
+- title: Project Title 2
+  description: A brief description of Project 2. This project focuses on machine learning and data analysis using Python.
+  image: /assets/images/project2.jpg
+
+- title: Project Title 3
+  description: A brief description of Project 3. This project is about building an interactive data visualization dashboard.
+  image: /assets/images/project3.jpg
