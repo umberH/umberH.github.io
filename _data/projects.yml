@@ -1,21 +1,25 @@
 # _data/projects.yml
 
-- title: Project Title 1
+- title: AUTOML
   description: A brief description of Project 1. This project involves creating a web application using React and Node.js.
   image: /assets/images/project1.jpg
 
-- title: Project Title 2
+- title:XAI
+  description: A brief description of Project 1. This project involves creating a web application using React and Node.js.
+  image: /assets/images/project1.jpg
+
+- title: Stock Market Forecasting
   description: A brief description of Project 2. This project focuses on machine learning and data analysis using Python.
   image: /assets/images/project2.jpg
 
-- title: Project Title 3
+- title: Personality Detection from Text
   description: A brief description of Project 3. This project is about building an interactive data visualization dashboard.
   image: /assets/images/project3.jpg
 
-- title: Project Title 4
+- title: ALAP
   description: A brief description of Project 4. This project is about building an interactive data visualization dashboard.
   image: /assets/images/project4.jpg
 
-- title: Project Title 5
+- title: Ultrasound Training Simulator
   description: A brief description of Project 5. This project is about building an interactive data visualization dashboard.
   image: /assets/images/project5.jpg
