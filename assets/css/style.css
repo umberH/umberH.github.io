@@ -428,3 +428,53 @@ h3 {
 #project{
   background-color: #f4f4f;
 }
+
+/* Contact Page Styles */
+.contact-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.contact-card {
+  width: 200px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  text-align: center;
+  overflow: hidden;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+}
+
+.contact-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: 20px;
+}
+
+.contact-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-content h3 {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.card-content p {
+  font-size: 14px;
+  color: #666;
+}
