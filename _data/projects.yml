@@ -11,3 +11,11 @@
 - title: Project Title 3
   description: A brief description of Project 3. This project is about building an interactive data visualization dashboard.
   image: /assets/images/project3.jpg
+
+- title: Project Title 4
+  description: A brief description of Project 4. This project is about building an interactive data visualization dashboard.
+  image: /assets/images/project4.jpg
+
+- title: Project Title 5
+  description: A brief description of Project 5. This project is about building an interactive data visualization dashboard.
+  image: /assets/images/project5.jpg
