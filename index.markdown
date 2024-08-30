@@ -52,6 +52,7 @@ author: Ambreen Hanif
 
 
 
+
 ## My Approach
 
 I believe in the power of innovation and data to solve complex problems. I continually seek to expand my knowledge and stay up-to-date with technological advancements.
@@ -62,6 +63,13 @@ Feel free to connect with me to discuss potential collaborations or explore shar
 
 Feel free to contact me via email at [mylastname(dot)firstname@gmail(dot)com] or follow me on [GitHub](https://github.com/umberh).
 
+<div id="contact">
+  {% capture project_content %}
+  {% include section/contact.markdown %}
+  {% endcapture %}
+  {{ contact_content | markdownify }}
+  
+</div>
 ---
 
 Thank you for visiting my website!
