@@ -64,7 +64,7 @@ Feel free to connect with me to discuss potential collaborations or explore shar
 Feel free to contact me via email at [mylastname(dot)firstname@gmail(dot)com] or follow me on [GitHub](https://github.com/umberh).
 
 <div id="contact">
-  {% capture project_content %}
+  {% capture contact_content %}
   {% include section/contact.markdown %}
   {% endcapture %}
   {{ contact_content | markdownify }}
