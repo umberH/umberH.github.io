@@ -1,4 +1,3 @@
-## Projects
 
 Here are some of my recent projects:
 
