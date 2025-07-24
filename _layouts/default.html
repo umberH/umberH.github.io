@@ -22,6 +22,7 @@
   
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/color-schemes.css' | relative_url }}">
   
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="{{ page.title }} | {{ site.title }}">
@@ -104,6 +105,41 @@
           siteNav.classList.remove('active');
           mobileMenuToggle.classList.remove('active');
         });
+      });
+    }
+
+    // Color scheme switcher
+    const colorSchemes = [
+      'color-scheme-purple',
+      'color-scheme-green', 
+      'color-scheme-orange',
+      'color-scheme-teal',
+      'color-scheme-rose',
+      'color-scheme-indigo',
+      'color-scheme-slate'
+    ];
+    
+    let currentSchemeIndex = -1; // Start with default blue
+    
+    const colorSchemeBtn = document.getElementById('color-scheme-btn');
+    const body = document.body;
+    
+    if (colorSchemeBtn) {
+      colorSchemeBtn.addEventListener('click', function() {
+        // Remove current color scheme
+        colorSchemes.forEach(scheme => body.classList.remove(scheme));
+        
+        // Move to next color scheme
+        currentSchemeIndex = (currentSchemeIndex + 1) % colorSchemes.length;
+        
+        // Apply new color scheme
+        if (currentSchemeIndex >= 0) {
+          body.classList.add(colorSchemes[currentSchemeIndex]);
+        }
+        
+        // Update button emoji based on scheme
+        const emojis = ['🎨', '💜', '💚', '🧡', '🦋', '🌹', '🔷', '🌙'];
+        colorSchemeBtn.textContent = emojis[currentSchemeIndex + 1];
       });
     }
   </script>
