@@ -36,9 +36,11 @@ body {
   border-bottom: 1px solid var(--border-color);
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   z-index: 1000;
   transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
 }
 
 .site-header.scrolled {
@@ -51,6 +53,11 @@ body {
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
   align-items: center;
 }
 
@@ -75,6 +82,13 @@ body {
   display: flex;
   gap: 2rem;
   list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.trigger li {
+  margin: 0;
+  padding: 0;
 }
 
 .page-link {
@@ -83,7 +97,9 @@ body {
   font-weight: 500;
   transition: all 0.3s ease;
   position: relative;
-  padding: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  display: block;
+  border-radius: 4px;
 }
 
 .page-link::after {
@@ -103,6 +119,7 @@ body {
 
 .page-link:hover {
   color: var(--primary-color);
+  background-color: rgba(37, 99, 235, 0.1);
 }
 
 /* Hero Section */
@@ -176,7 +193,8 @@ body {
 
 /* Main Content */
 main {
-  margin-top: 80px;
+  margin-top: 0;
+  padding-top: 80px;
 }
 
 .container {
