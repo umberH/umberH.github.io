@@ -23,3 +23,14 @@ I have a strong background in various roles that span multiple disciplines:
     </li>
   {% endfor %}
 </ul>
+
+## Publications
+
+<ul>
+  {% for publication in site.data.publications %}
+    <li>
+      <i class="{{ publication.icon }}"></i>
+      <strong>{{ publication.title }}</strong>, {{ publication.journal }} ({{ publication.year }})
+    </li>
+  {% endfor %}
+</ul>

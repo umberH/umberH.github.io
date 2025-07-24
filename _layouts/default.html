@@ -6,6 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="{{ site.description }}">
   <meta name="author" content="{{ site.name }}">
+  <meta name="theme-color" content="#1e40af">
+  
+  <!-- Accessibility Meta Tags -->
+  <meta name="robots" content="index, follow">
+  <meta name="format-detection" content="telephone=no">
+  
+  <!-- Skip to main content link for screen readers -->
+  <style>
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 6px;
+      background: var(--primary-color);
+      color: white;
+      padding: 8px;
+      text-decoration: none;
+      border-radius: 4px;
+      z-index: 10000;
+      transition: top 0.3s;
+    }
+    .skip-link:focus {
+      top: 6px;
+    }
+  </style>
   
   <title>{{ page.title }} | {{ site.title }}</title>
   
@@ -36,9 +60,14 @@
   <meta name="twitter:description" content="{{ site.description }}">
 </head>
 <body>
+  <!-- Skip to main content link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
   {% include header.html %}
   
-  {{ content }}
+  <main id="main-content" tabindex="-1">
+    {{ content }}
+  </main>
   
   <!-- JavaScript for smooth scrolling and animations -->
   <script>
@@ -97,15 +126,24 @@
     function openDrawer() {
       siteNav.classList.add('active');
       mobileMenuToggle.classList.add('active');
+      mobileMenuToggle.setAttribute('aria-expanded', 'true');
       mobileDrawerOverlay.classList.add('active');
       document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      // Focus management
+      const firstNavLink = siteNav.querySelector('.page-link');
+      if (firstNavLink) {
+        firstNavLink.focus();
+      }
     }
     
     function closeDrawer() {
       siteNav.classList.remove('active');
       mobileMenuToggle.classList.remove('active');
+      mobileMenuToggle.setAttribute('aria-expanded', 'false');
       mobileDrawerOverlay.classList.remove('active');
       document.body.style.overflow = ''; // Restore scrolling
+      // Return focus to menu toggle
+      mobileMenuToggle.focus();
     }
     
     if (mobileMenuToggle && siteNav) {
@@ -257,9 +295,20 @@
           body.classList.add(colorSchemes[currentSchemeIndex]);
         }
         
-        // Update button emoji based on scheme
+        // Update button emoji and aria-pressed
         const emojis = ['🎨', '💜', '💚', '🧡', '🦋', '🌹', '🔷', '🌙', '🤖'];
         colorSchemeBtn.textContent = emojis[currentSchemeIndex + 1];
+        colorSchemeBtn.setAttribute('aria-pressed', currentSchemeIndex >= 0 ? 'true' : 'false');
+        
+        // Announce change to screen readers
+        const schemeNames = ['Default', 'Purple', 'Green', 'Orange', 'Teal', 'Rose', 'Indigo', 'Slate', 'Sci-Fi AI'];
+        const announcement = document.createElement('div');
+        announcement.setAttribute('aria-live', 'polite');
+        announcement.setAttribute('aria-atomic', 'true');
+        announcement.className = 'sr-only';
+        announcement.textContent = `Color scheme changed to ${schemeNames[currentSchemeIndex + 1]}`;
+        document.body.appendChild(announcement);
+        setTimeout(() => document.body.removeChild(announcement), 1000);
       });
     }
 
@@ -272,8 +321,10 @@
       // Toggle font options dropdown
       fontSelectorBtn.addEventListener('click', function(e) {
         e.stopPropagation();
+        const isActive = fontOptions.classList.contains('active');
         fontOptions.classList.toggle('active');
         fontSelectorBtn.classList.toggle('active');
+        fontSelectorBtn.setAttribute('aria-expanded', !isActive);
       });
       
       // Handle font selection
@@ -295,9 +346,19 @@
           // Close dropdown
           fontOptions.classList.remove('active');
           fontSelectorBtn.classList.remove('active');
+          fontSelectorBtn.setAttribute('aria-expanded', 'false');
           
           // Save to localStorage
           localStorage.setItem('selectedFont', selectedFont);
+          
+          // Announce change to screen readers
+          const announcement = document.createElement('div');
+          announcement.setAttribute('aria-live', 'polite');
+          announcement.setAttribute('aria-atomic', 'true');
+          announcement.className = 'sr-only';
+          announcement.textContent = `Font changed to ${selectedFont}`;
+          document.body.appendChild(announcement);
+          setTimeout(() => document.body.removeChild(announcement), 1000);
         }
       });
       
@@ -306,6 +367,7 @@
         if (!fontSelectorBtn.contains(e.target) && !fontOptions.contains(e.target)) {
           fontOptions.classList.remove('active');
           fontSelectorBtn.classList.remove('active');
+          fontSelectorBtn.setAttribute('aria-expanded', 'false');
         }
       });
       

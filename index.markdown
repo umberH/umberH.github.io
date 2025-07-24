@@ -5,14 +5,14 @@ author: Ambreen Hanif
 ---
 
 <!-- Hero Section -->
-<section class="hero-section">
+<section class="hero-section" role="banner" aria-labelledby="hero-title">
   <div class="hero-content">
-    <h1 class="hero-title">Hi, I'm Ambreen Hanif</h1>
+    <h1 class="hero-title" id="hero-title">Hi, I'm Ambreen Hanif</h1>
     <p class="hero-subtitle">Data Scientist & Machine Learning Engineer</p>
     <p class="hero-description">Passionate about leveraging data and AI to solve complex problems. Specializing in machine learning, data analysis, and software development.</p>
     <div class="hero-buttons">
       <a href="#about" class="cta-button">Learn More About Me</a>
-      <a href="https://calendly.com/your-calendly-link" target="_blank" class="cta-button cta-button-secondary">Book a Call</a>
+      <a href="https://calendly.com/your-calendly-link" target="_blank" class="cta-button cta-button-secondary" aria-label="Book a call with Ambreen (opens in new window)">Book a Call</a>
     </div>
   </div>
 </section>
@@ -39,12 +39,12 @@ author: Ambreen Hanif
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section">
-      <h2 class="section-title">Skills & Expertise</h2>
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <h2 class="section-title" id="skills-title">Skills & Expertise</h2>
       <div class="skills-section">
-        <div class="skills-carousel">
-          <button class="carousel-btn carousel-btn-prev" id="skills-prev">
-            <i class="fas fa-chevron-left"></i>
+        <div class="skills-carousel" role="region" aria-label="Skills carousel">
+          <button class="carousel-btn carousel-btn-prev" id="skills-prev" aria-label="Previous skills">
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
           </button>
           
           <div class="skills-container">
@@ -82,34 +82,64 @@ author: Ambreen Hanif
             </div>
           </div>
           
-          <button class="carousel-btn carousel-btn-next" id="skills-next">
-            <i class="fas fa-chevron-right"></i>
+          <button class="carousel-btn carousel-btn-next" id="skills-next" aria-label="Next skills">
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
           </button>
         </div>
         
-        <div class="carousel-dots" id="skills-dots"></div>
+        <div class="carousel-dots" id="skills-dots" role="tablist" aria-label="Skills navigation"></div>
       </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section">
-      <h2 class="section-title">Featured Projects</h2>
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <h2 class="section-title" id="projects-title">Featured Projects</h2>
       <div class="projects-section">
-        <div class="projects-grid">
-          {% for project in site.data.projects %}
+        <div class="projects-grid" role="list">
+          {% for project in site.projects limit:6 %}
           <div class="project-card">
-            <img src="{{ project.image | relative_url }}" alt="{{ project.title }}" class="project-image" />
-            <div class="project-content">
-              <h3 class="project-title">{{ project.title }}</h3>
-              <p class="project-description">{{ project.description }}</p>
-                             <div class="project-tags">
-                 {% for tag in project.tags %}
-                 <span class="project-tag">{{ tag }}</span>
-                 {% endfor %}
-               </div>
-            </div>
+            <a href="{{ project.url }}" class="project-link" aria-label="View details for {{ project.title }}">
+              {% if project.image %}
+              <img src="{{ project.image | relative_url }}" alt="{{ project.title }}" class="project-image" />
+              {% else %}
+              <div class="project-image-placeholder">
+                <i class="fas fa-project-diagram" aria-hidden="true"></i>
+              </div>
+              {% endif %}
+              <div class="project-content">
+                <h3 class="project-title">{{ project.title }}</h3>
+                {% if project.subtitle %}
+                <p class="project-subtitle">{{ project.subtitle }}</p>
+                {% endif %}
+                <p class="project-description">{{ project.description }}</p>
+                <div class="project-meta">
+                  {% if project.category %}
+                  <span class="project-category">{{ project.category }}</span>
+                  {% endif %}
+                  {% if project.date %}
+                  <time class="project-date" datetime="{{ project.date | date_to_xmlschema }}">
+                    {{ project.date | date: "%b %Y" }}
+                  </time>
+                  {% endif %}
+                </div>
+                {% if project.tags %}
+                <div class="project-tags">
+                  {% for tag in project.tags limit:3 %}
+                  <span class="project-tag">{{ tag }}</span>
+                  {% endfor %}
+                </div>
+                {% endif %}
+                <div class="project-cta">
+                  <span class="read-more">View Project Details</span>
+                  <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </div>
+              </div>
+            </a>
           </div>
           {% endfor %}
+        </div>
+        <div class="projects-cta">
+          <a href="/projects/" class="cta-button">View All Projects</a>
         </div>
       </div>
     </section>
@@ -131,7 +161,7 @@ author: Ambreen Hanif
 </main>
 
 <!-- Footer -->
-<footer class="site-footer">
+<footer class="site-footer" role="contentinfo">
   <div class="footer-content">
     <div class="footer-main">
       <div class="footer-section">
@@ -141,29 +171,29 @@ author: Ambreen Hanif
       
       <div class="footer-section">
         <h4 class="footer-subtitle">Quick Links</h4>
-        <div class="footer-links">
+        <nav class="footer-links" aria-label="Footer navigation">
           <a href="#about" class="footer-link">About</a>
           <a href="#skills" class="footer-link">Skills</a>
           <a href="#projects" class="footer-link">Projects</a>
           <a href="#resume" class="footer-link">Resume</a>
-        </div>
+        </nav>
       </div>
       
       <div class="footer-section">
         <h4 class="footer-subtitle">Get In Touch</h4>
-        <div class="footer-contact-icons">
-          <a href="mailto:hanif.ambreen@gmail.com" class="footer-icon-link" title="Email">
-            <i class="fas fa-envelope"></i>
+        <div class="footer-contact-icons" role="list">
+          <a href="mailto:hanif.ambreen@gmail.com" class="footer-icon-link" title="Email" aria-label="Send email to hanif.ambreen@gmail.com">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
           </a>
-          <a href="https://linkedin.com/in/ambreen16" class="footer-icon-link" target="_blank" title="LinkedIn">
-            <i class="fab fa-linkedin"></i>
+          <a href="https://linkedin.com/in/ambreen16" class="footer-icon-link" target="_blank" title="LinkedIn" aria-label="Visit Ambreen's LinkedIn profile (opens in new window)">
+            <i class="fab fa-linkedin" aria-hidden="true"></i>
           </a>
-          <a href="https://github.com/umberH" class="footer-icon-link" target="_blank" title="GitHub">
-            <i class="fab fa-github"></i>
+          <a href="https://github.com/umberH" class="footer-icon-link" target="_blank" title="GitHub" aria-label="Visit Ambreen's GitHub profile (opens in new window)">
+            <i class="fab fa-github" aria-hidden="true"></i>
           </a>
         </div>
-        <a href="https://calendly.com/your-calendly-link" target="_blank" class="footer-cta-button">
-          <i class="fas fa-calendar-alt"></i>
+        <a href="https://calendly.com/your-calendly-link" target="_blank" class="footer-cta-button" aria-label="Book a call with Ambreen (opens in new window)">
+          <i class="fas fa-calendar-alt" aria-hidden="true"></i>
           Book a Call
         </a>
       </div>

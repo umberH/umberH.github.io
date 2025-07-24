@@ -1,16 +1,16 @@
-<header class="site-header">
+<header class="site-header" role="banner">
   <div class="header-container">
     <div class="header-left">
-      <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+      <a class="site-title" rel="author" href="{{ "/" | relative_url }}" aria-label="Home">{{ site.title | escape }}</a>
     </div>
 
-    <div class="mobile-menu-toggle" id="mobile-menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-nav">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
 
-    <nav class="site-nav" id="site-nav">
+    <nav class="site-nav" id="site-nav" role="navigation" aria-label="Main navigation">
       <ul class="trigger">
         <li><a class="page-link" href="/#about">About</a></li>
         <li><a class="page-link" href="/#skills">Skills</a></li>
@@ -19,28 +19,28 @@
         <li><a class="page-link" href="/blog/">Blog</a></li>
         <li><a class="page-link" href="{{ site.baseurl }}/assets/Ambreen_Hanif_CV_2022.pdf" target="_blank">Download CV</a></li>
         <li class="color-scheme-toggle">
-          <button id="color-scheme-btn" class="color-scheme-btn">🎨</button>
+          <button id="color-scheme-btn" class="color-scheme-btn" aria-label="Change color scheme" aria-pressed="false">🎨</button>
         </li>
         <li class="font-selector-toggle">
-          <button id="font-selector-btn" class="font-selector-btn">🔤</button>
-          <div class="font-options" id="font-options">
-            <button class="font-option inter active" data-font="Inter">Inter</button>
-            <button class="font-option playfair" data-font="Playfair Display">Playfair Display</button>
-            <button class="font-option poppins" data-font="Poppins">Poppins</button>
-            <button class="font-option montserrat" data-font="Montserrat">Montserrat</button>
-            <button class="font-option raleway" data-font="Raleway">Raleway</button>
-            <button class="font-option source-sans" data-font="Source Sans Pro">Source Sans Pro</button>
-            <hr class="font-divider">
-            <button class="font-option dancing-script" data-font="Dancing Script">Dancing Script</button>
-            <button class="font-option great-vibes" data-font="Great Vibes">Great Vibes</button>
-            <button class="font-option caveat" data-font="Caveat">Caveat</button>
-            <button class="font-option pacifico" data-font="Pacifico">Pacifico</button>
-            <button class="font-option allura" data-font="Allura">Allura</button>
-            <button class="font-option satisfy" data-font="Satisfy">Satisfy</button>
-            <hr class="font-divider">
-            <button class="font-option orbitron" data-font="Orbitron">Orbitron</button>
-            <button class="font-option audiowide" data-font="Audiowide">Audiowide</button>
-            <button class="font-option rajdhani" data-font="Rajdhani">Rajdhani</button>
+          <button id="font-selector-btn" class="font-selector-btn" aria-label="Change font family" aria-expanded="false" aria-controls="font-options">🔤</button>
+          <div class="font-options" id="font-options" role="menu" aria-label="Font options">
+            <button class="font-option inter active" data-font="Inter" role="menuitem" aria-label="Apply Inter font">Inter</button>
+            <button class="font-option playfair" data-font="Playfair Display" role="menuitem" aria-label="Apply Playfair Display font">Playfair Display</button>
+            <button class="font-option poppins" data-font="Poppins" role="menuitem" aria-label="Apply Poppins font">Poppins</button>
+            <button class="font-option montserrat" data-font="Montserrat" role="menuitem" aria-label="Apply Montserrat font">Montserrat</button>
+            <button class="font-option raleway" data-font="Raleway" role="menuitem" aria-label="Apply Raleway font">Raleway</button>
+            <button class="font-option source-sans" data-font="Source Sans Pro" role="menuitem" aria-label="Apply Source Sans Pro font">Source Sans Pro</button>
+            <hr class="font-divider" role="separator">
+            <button class="font-option dancing-script" data-font="Dancing Script" role="menuitem" aria-label="Apply Dancing Script font">Dancing Script</button>
+            <button class="font-option great-vibes" data-font="Great Vibes" role="menuitem" aria-label="Apply Great Vibes font">Great Vibes</button>
+            <button class="font-option caveat" data-font="Caveat" role="menuitem" aria-label="Apply Caveat font">Caveat</button>
+            <button class="font-option pacifico" data-font="Pacifico" role="menuitem" aria-label="Apply Pacifico font">Pacifico</button>
+            <button class="font-option allura" data-font="Allura" role="menuitem" aria-label="Apply Allura font">Allura</button>
+            <button class="font-option satisfy" data-font="Satisfy" role="menuitem" aria-label="Apply Satisfy font">Satisfy</button>
+            <hr class="font-divider" role="separator">
+            <button class="font-option orbitron" data-font="Orbitron" role="menuitem" aria-label="Apply Orbitron font">Orbitron</button>
+            <button class="font-option audiowide" data-font="Audiowide" role="menuitem" aria-label="Apply Audiowide font">Audiowide</button>
+            <button class="font-option rajdhani" data-font="Rajdhani" role="menuitem" aria-label="Apply Rajdhani font">Rajdhani</button>
           </div>
         </li>
       </ul>

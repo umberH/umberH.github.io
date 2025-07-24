@@ -1,0 +1,132 @@
+---
+layout: default
+---
+
+<article class="project-page">
+  <!-- Project Header -->
+  <header class="project-header">
+    <div class="container">
+      <nav class="project-breadcrumb" aria-label="Breadcrumb">
+        <a href="/#projects" class="breadcrumb-link">
+          <i class="fas fa-arrow-left" aria-hidden="true"></i>
+          Back to Projects
+        </a>
+      </nav>
+      
+      <div class="project-header-content">
+        <div class="project-meta">
+          {% if page.category %}
+          <span class="project-category">{{ page.category }}</span>
+          {% endif %}
+          {% if page.date %}
+          <time class="project-date" datetime="{{ page.date | date_to_xmlschema }}">
+            {{ page.date | date: "%B %Y" }}
+          </time>
+          {% endif %}
+        </div>
+        
+        <h1 class="project-title">{{ page.title }}</h1>
+        
+        {% if page.subtitle %}
+        <p class="project-subtitle">{{ page.subtitle }}</p>
+        {% endif %}
+        
+        {% if page.description %}
+        <p class="project-description">{{ page.description }}</p>
+        {% endif %}
+        
+        {% if page.tags %}
+        <div class="project-tags">
+          {% for tag in page.tags %}
+          <span class="project-tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </header>
+
+  <!-- Project Content -->
+  <div class="project-content-section">
+    <div class="container">
+      <div class="project-content-wrapper">
+        <!-- Main Content -->
+        <main class="project-content" role="main">
+          {{ content }}
+        </main>
+        
+        <!-- Project Sidebar -->
+        <aside class="project-sidebar" role="complementary">
+          <!-- Project Info -->
+          <div class="sidebar-widget project-info">
+            <h3>Project Details</h3>
+            <div class="project-info-grid">
+              {% if page.role %}
+              <div class="info-item">
+                <span class="info-label">Role:</span>
+                <span class="info-value">{{ page.role }}</span>
+              </div>
+              {% endif %}
+              
+              {% if page.duration %}
+              <div class="info-item">
+                <span class="info-label">Duration:</span>
+                <span class="info-value">{{ page.duration }}</span>
+              </div>
+              {% endif %}
+              
+              {% if page.technologies %}
+              <div class="info-item">
+                <span class="info-label">Technologies:</span>
+                <div class="tech-list">
+                  {% for tech in page.technologies %}
+                  <span class="tech-tag">{{ tech }}</span>
+                  {% endfor %}
+                </div>
+              </div>
+              {% endif %}
+              
+              {% if page.client %}
+              <div class="info-item">
+                <span class="info-label">Client:</span>
+                <span class="info-value">{{ page.client }}</span>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          
+          <!-- Project Links -->
+          {% if page.links %}
+          <div class="sidebar-widget project-links">
+            <h3>Project Links</h3>
+            <div class="project-links-list">
+              {% for link in page.links %}
+              <a href="{{ link.url }}" class="project-link" target="_blank" rel="noopener noreferrer">
+                <i class="{{ link.icon }}" aria-hidden="true"></i>
+                <span>{{ link.text }}</span>
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+          
+          <!-- Related Projects -->
+          <div class="sidebar-widget related-projects">
+            <h3>Other Projects</h3>
+            <div class="related-projects-list">
+              {% assign current_project = page.title %}
+              {% for project in site.projects limit:3 %}
+                {% if project.title != current_project %}
+                <a href="{{ project.url }}" class="related-project-link">
+                  <h4>{{ project.title }}</h4>
+                  <p>{{ project.description | truncate: 100 }}</p>
+                </a>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</article> 
