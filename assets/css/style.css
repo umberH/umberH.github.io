@@ -381,9 +381,17 @@ body {
 
 .hero-description {
   font-size: 1.1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   opacity: 0.8;
   animation: fadeInUp 1s ease 0.4s both;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
 .cta-button {
@@ -401,6 +409,17 @@ body {
 .cta-button:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
+}
+
+.cta-button-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.cta-button-secondary:hover {
+  background: white;
+  color: var(--primary-color);
 }
 
 /* Animated Background */
@@ -910,6 +929,32 @@ main {
   font-size: 2.2rem;
 }
 
+.footer-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--gradient-primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.footer-cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  color: white;
+}
+
+.footer-cta-button i {
+  font-size: 1rem;
+}
+
 .footer-bottom {
   border-top: 1px solid #475569;
   padding-top: 1.5rem;
@@ -1075,6 +1120,17 @@ main {
   
   .hero-subtitle {
     font-size: 1.2rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-buttons .cta-button {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
   }
   
   .about-content {

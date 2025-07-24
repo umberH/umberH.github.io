@@ -10,7 +10,10 @@ author: Ambreen Hanif
     <h1 class="hero-title">Hi, I'm Ambreen Hanif</h1>
     <p class="hero-subtitle">Data Scientist & Machine Learning Engineer</p>
     <p class="hero-description">Passionate about leveraging data and AI to solve complex problems. Specializing in machine learning, data analysis, and software development.</p>
-    <a href="#about" class="cta-button">Learn More About Me</a>
+    <div class="hero-buttons">
+      <a href="#about" class="cta-button">Learn More About Me</a>
+      <a href="https://calendly.com/your-calendly-link" target="_blank" class="cta-button cta-button-secondary">Book a Call</a>
+    </div>
   </div>
 </section>
 
@@ -147,6 +150,7 @@ author: Ambreen Hanif
       </div>
       
       <div class="footer-section">
+        <h4 class="footer-subtitle">Get In Touch</h4>
         <div class="footer-contact-icons">
           <a href="mailto:hanif.ambreen@gmail.com" class="footer-icon-link" title="Email">
             <i class="fas fa-envelope"></i>
@@ -158,6 +162,10 @@ author: Ambreen Hanif
             <i class="fab fa-github"></i>
           </a>
         </div>
+        <a href="https://calendly.com/your-calendly-link" target="_blank" class="footer-cta-button">
+          <i class="fas fa-calendar-alt"></i>
+          Book a Call
+        </a>
       </div>
     </div>
     

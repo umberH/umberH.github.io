@@ -162,6 +162,7 @@ permalink: /blog/
       </div>
       
       <div class="footer-section">
+        <h4 class="footer-subtitle">Get In Touch</h4>
         <div class="footer-contact-icons">
           <a href="mailto:hanif.ambreen@gmail.com" class="footer-icon-link" title="Email">
             <i class="fas fa-envelope"></i>
@@ -173,6 +174,10 @@ permalink: /blog/
             <i class="fab fa-github"></i>
           </a>
         </div>
+        <a href="https://calendly.com/your-calendly-link" target="_blank" class="footer-cta-button">
+          <i class="fas fa-calendar-alt"></i>
+          Book a Call
+        </a>
       </div>
     </div>
     
