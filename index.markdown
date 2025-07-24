@@ -39,28 +39,52 @@ author: Ambreen Hanif
     <section id="skills" class="section">
       <h2 class="section-title">Skills & Expertise</h2>
       <div class="skills-section">
-        <div class="skills-grid">
-          <div class="skill-card">
-            <div class="skill-icon">🤖</div>
-            <h3 class="skill-name">Machine Learning</h3>
-            <p class="skill-description">Deep learning, neural networks, predictive modeling, and AI algorithm development</p>
+        <div class="skills-carousel">
+          <button class="carousel-btn carousel-btn-prev" id="skills-prev">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          
+          <div class="skills-container">
+            <div class="skills-track" id="skills-track">
+              <div class="skill-card">
+                <div class="skill-icon">🤖</div>
+                <h3 class="skill-name">Machine Learning</h3>
+                <p class="skill-description">Deep learning, neural networks, predictive modeling, and AI algorithm development</p>
+              </div>
+              <div class="skill-card">
+                <div class="skill-icon">📊</div>
+                <h3 class="skill-name">Data Analysis</h3>
+                <p class="skill-description">Statistical analysis, data visualization, and insights extraction from complex datasets</p>
+              </div>
+              <div class="skill-card">
+                <div class="skill-icon">💻</div>
+                <h3 class="skill-name">Software Development</h3>
+                <p class="skill-description">Full-stack development, API design, and scalable software solutions</p>
+              </div>
+              <div class="skill-card">
+                <div class="skill-icon">📋</div>
+                <h3 class="skill-name">Project Management</h3>
+                <p class="skill-description">Agile methodologies, team leadership, and end-to-end project delivery</p>
+              </div>
+              <div class="skill-card">
+                <div class="skill-icon">🔬</div>
+                <h3 class="skill-name">Research & Development</h3>
+                <p class="skill-description">Innovation, experimentation, and cutting-edge technology research</p>
+              </div>
+              <div class="skill-card">
+                <div class="skill-icon">📈</div>
+                <h3 class="skill-name">Business Intelligence</h3>
+                <p class="skill-description">Data-driven insights, KPI tracking, and strategic decision support</p>
+              </div>
+            </div>
           </div>
-          <div class="skill-card">
-            <div class="skill-icon">📊</div>
-            <h3 class="skill-name">Data Analysis</h3>
-            <p class="skill-description">Statistical analysis, data visualization, and insights extraction from complex datasets</p>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon">💻</div>
-            <h3 class="skill-name">Software Development</h3>
-            <p class="skill-description">Full-stack development, API design, and scalable software solutions</p>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon">📋</div>
-            <h3 class="skill-name">Project Management</h3>
-            <p class="skill-description">Agile methodologies, team leadership, and end-to-end project delivery</p>
-          </div>
+          
+          <button class="carousel-btn carousel-btn-next" id="skills-next">
+            <i class="fas fa-chevron-right"></i>
+          </button>
         </div>
+        
+        <div class="carousel-dots" id="skills-dots"></div>
       </div>
     </section>
 
