@@ -851,14 +851,14 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 160px;
-  height: 160px;
+  width: 80px;
+  height: 80px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   color: #cbd5e1;
   text-decoration: none;
   transition: all 0.3s ease;
-  font-size: 4rem;
+  font-size: 2rem;
   border: 2px solid transparent;
   position: relative;
   overflow: hidden;
@@ -888,7 +888,7 @@ main {
 }
 
 .footer-icon-link i {
-  font-size: 4.4rem;
+  font-size: 2.2rem;
 }
 
 .footer-bottom {
@@ -1114,13 +1114,13 @@ main {
   }
   
     .footer-icon-link {
-    width: 140px;
-    height: 140px;
-    font-size: 3.6rem;
+    width: 70px;
+    height: 70px;
+    font-size: 1.8rem;
   }
 
   .footer-icon-link i {
-    font-size: 4rem;
+    font-size: 2rem;
   }
 }
 
