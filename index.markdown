@@ -148,18 +148,15 @@ author: Ambreen Hanif
       
       <div class="footer-section">
         <h4 class="footer-subtitle">Get In Touch</h4>
-        <div class="footer-contact">
-          <a href="mailto:hanif.ambreen@gmail.com" class="footer-contact-link">
+        <div class="footer-contact-icons">
+          <a href="mailto:hanif.ambreen@gmail.com" class="footer-icon-link" title="Email">
             <i class="fas fa-envelope"></i>
-            <span>hanif.ambreen@gmail.com</span>
           </a>
-          <a href="https://linkedin.com/in/ambreen16" class="footer-contact-link" target="_blank">
+          <a href="https://linkedin.com/in/ambreen16" class="footer-icon-link" target="_blank" title="LinkedIn">
             <i class="fab fa-linkedin"></i>
-            <span>LinkedIn</span>
           </a>
-          <a href="https://github.com/umberH" class="footer-contact-link" target="_blank">
+          <a href="https://github.com/umberH" class="footer-icon-link" target="_blank" title="GitHub">
             <i class="fab fa-github"></i>
-            <span>GitHub</span>
           </a>
         </div>
       </div>
