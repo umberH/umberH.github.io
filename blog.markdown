@@ -141,3 +141,43 @@ permalink: /blog/
     </div>
   </div>
 </main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-main">
+      <div class="footer-section">
+        <h3 class="footer-title">Ambreen Hanif</h3>
+        <p class="footer-description">Data Scientist & Machine Learning Engineer passionate about leveraging AI to solve complex problems.</p>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-subtitle">Quick Links</h4>
+        <div class="footer-links">
+          <a href="/#about" class="footer-link">About</a>
+          <a href="/#skills" class="footer-link">Skills</a>
+          <a href="/#projects" class="footer-link">Projects</a>
+          <a href="/#resume" class="footer-link">Resume</a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <div class="footer-contact-icons">
+          <a href="mailto:hanif.ambreen@gmail.com" class="footer-icon-link" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://linkedin.com/in/ambreen16" class="footer-icon-link" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/umberH" class="footer-icon-link" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2024 Ambreen Hanif. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
