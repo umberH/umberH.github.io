@@ -296,6 +296,25 @@ body {
   font-size: 1rem;
 }
 
+/* Sci-Fi Fonts */
+.font-option.orbitron {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.font-option.audiowide {
+  font-family: 'Audiowide', cursive;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.font-option.rajdhani {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
 .page-link {
   color: var(--text-primary);
   text-decoration: none;

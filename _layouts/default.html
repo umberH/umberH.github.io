@@ -15,7 +15,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Caveat:wght@400;500;600;700&family=Pacifico&family=Allura&family=Satisfy&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Caveat:wght@400;500;600;700&family=Pacifico&family=Allura&family=Satisfy&family=Orbitron:wght@400;500;600;700;800;900&family=Audiowide&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -235,7 +235,8 @@
       'color-scheme-teal',
       'color-scheme-rose',
       'color-scheme-indigo',
-      'color-scheme-slate'
+      'color-scheme-slate',
+      'color-scheme-scifi-ai'
     ];
     
     let currentSchemeIndex = -1; // Start with default blue
@@ -257,7 +258,7 @@
         }
         
         // Update button emoji based on scheme
-        const emojis = ['🎨', '💜', '💚', '🧡', '🦋', '🌹', '🔷', '🌙'];
+        const emojis = ['🎨', '💜', '💚', '🧡', '🦋', '🌹', '🔷', '🌙', '🤖'];
         colorSchemeBtn.textContent = emojis[currentSchemeIndex + 1];
       });
     }

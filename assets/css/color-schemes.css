@@ -76,4 +76,22 @@
   --border-color: #64748b;
   --gradient-primary: linear-gradient(135deg, #475569 0%, #64748b 100%);
   --gradient-secondary: linear-gradient(135deg, #334155 0%, #475569 100%);
+}
+
+/* Option 9: Sci-Fi AI Theme (Neural Network) */
+.color-scheme-scifi-ai {
+  --primary-color: #00d4ff;
+  --secondary-color: #0099cc;
+  --accent-color: #ff00ff;
+  --text-primary: #ffffff;
+  --text-secondary: #b3e5fc;
+  --background-light: #0a0a0a;
+  --background-white: #1a1a1a;
+  --background-card: #2a2a2a;
+  --border-color: #00d4ff;
+  --gradient-primary: linear-gradient(135deg, #00d4ff 0%, #ff00ff 100%);
+  --gradient-secondary: linear-gradient(135deg, #0099cc 0%, #00d4ff 100%);
+  --shadow-sm: 0 2px 8px rgba(0, 212, 255, 0.2);
+  --shadow-md: 0 4px 16px rgba(0, 212, 255, 0.3);
+  --shadow-lg: 0 8px 32px rgba(0, 212, 255, 0.4);
 } 
