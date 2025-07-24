@@ -98,34 +98,7 @@ author: Ambreen Hanif
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-      <h2 class="section-title">Get In Touch</h2>
-      <div class="contact-section">
-        <div class="contact-grid">
-          <div class="contact-card">
-            <div class="contact-icon">📧</div>
-            <h3 class="contact-title">Email</h3>
-            <a href="mailto:hanif.ambreen@gmail.com" class="contact-link">hanif.ambreen@gmail.com</a>
-          </div>
-          <div class="contact-card">
-            <div class="contact-icon">💼</div>
-            <h3 class="contact-title">LinkedIn</h3>
-            <a href="https://linkedin.com/in/ambreen16" class="contact-link" target="_blank">Connect on LinkedIn</a>
-          </div>
-          <div class="contact-card">
-            <div class="contact-icon">🐙</div>
-            <h3 class="contact-title">GitHub</h3>
-            <a href="https://github.com/umberH" class="contact-link" target="_blank">View My Work</a>
-          </div>
-          <div class="contact-card">
-            <div class="contact-icon">📄</div>
-            <h3 class="contact-title">Resume</h3>
-            <a href="{{ '/assets/Ambreen_Hanif_CV_2022.pdf' | relative_url }}" class="contact-link" target="_blank">Download CV</a>
-          </div>
-        </div>
-      </div>
-    </section>
+
 
   </div>
 </main>
@@ -133,13 +106,44 @@ author: Ambreen Hanif
 <!-- Footer -->
 <footer class="site-footer">
   <div class="footer-content">
-    <div class="footer-links">
-      <a href="#about" class="footer-link">About</a>
-      <a href="#skills" class="footer-link">Skills</a>
-      <a href="#projects" class="footer-link">Projects</a>
-      <a href="#contact" class="footer-link">Contact</a>
+    <div class="footer-main">
+      <div class="footer-section">
+        <h3 class="footer-title">Ambreen Hanif</h3>
+        <p class="footer-description">Data Scientist & Machine Learning Engineer passionate about leveraging AI to solve complex problems.</p>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-subtitle">Quick Links</h4>
+        <div class="footer-links">
+          <a href="#about" class="footer-link">About</a>
+          <a href="#skills" class="footer-link">Skills</a>
+          <a href="#projects" class="footer-link">Projects</a>
+          <a href="#resume" class="footer-link">Resume</a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-subtitle">Get In Touch</h4>
+        <div class="footer-contact">
+          <a href="mailto:hanif.ambreen@gmail.com" class="footer-contact-link">
+            <i class="fas fa-envelope"></i>
+            <span>hanif.ambreen@gmail.com</span>
+          </a>
+          <a href="https://linkedin.com/in/ambreen16" class="footer-contact-link" target="_blank">
+            <i class="fab fa-linkedin"></i>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://github.com/umberH" class="footer-contact-link" target="_blank">
+            <i class="fab fa-github"></i>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
     </div>
-    <p>&copy; 2024 Ambreen Hanif. All rights reserved.</p>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2024 Ambreen Hanif. All rights reserved.</p>
+    </div>
   </div>
 </footer>
 
