@@ -1218,6 +1218,17 @@ main {
   font-size: 3rem;
 }
 
+.post-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-secondary);
+  color: white;
+  font-size: 3rem;
+}
+
 .post-image img {
   width: 100%;
   height: 100%;
@@ -1233,6 +1244,20 @@ main {
   gap: 1rem;
   margin-bottom: 1rem;
   font-size: 0.9rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.post-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.post-meta-item i {
+  font-size: 0.8rem;
+  opacity: 0.8;
 }
 
 .post-date {
@@ -1428,6 +1453,15 @@ main {
 
 .post-header-content .post-meta {
   margin-bottom: 1.5rem;
+}
+
+.post-header-content .post-meta-item {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.post-card .post-meta-item,
+.featured-post .post-meta-item {
+  color: var(--text-secondary);
 }
 
 .post-header-content .post-title {

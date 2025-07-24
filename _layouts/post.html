@@ -7,12 +7,33 @@ layout: default
     <div class="container">
       <div class="post-header-content">
         <div class="post-meta">
-          <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-            {{ page.date | date: "%B %d, %Y" }}
-          </time>
+          <div class="post-meta-item">
+            <i class="fas fa-calendar-alt"></i>
+            <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+              {{ page.date | date: "%B %d, %Y" }}
+            </time>
+          </div>
           {% if page.categories %}
-          <span class="post-category">{{ page.categories | first }}</span>
+          <div class="post-meta-item">
+            <i class="fas fa-folder"></i>
+            <span class="post-category">{{ page.categories | first }}</span>
+          </div>
           {% endif %}
+          <div class="post-meta-item">
+            <i class="fas fa-clock"></i>
+            <span class="reading-time">
+              {% assign words = content | number_of_words %}
+              {% assign reading_time = words | divided_by: 200.0 | ceil %}
+              {{ reading_time }} min read
+            </span>
+          </div>
+          <div class="post-meta-item">
+            <i class="fas fa-file-alt"></i>
+            <span class="word-count">
+              {% assign words = content | number_of_words %}
+              {{ words }} words
+            </span>
+          </div>
         </div>
         
         <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>

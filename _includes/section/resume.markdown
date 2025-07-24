@@ -23,10 +23,3 @@ I have a strong background in various roles that span multiple disciplines:
     </li>
   {% endfor %}
 </ul>
-
-## Skills
-<ul>
-  {% for skill in site.data.skills %}
-    <li><i class="{{ skill.icon }}"></i> {{ skill.name }}</li>
-  {% endfor %}
-</ul>

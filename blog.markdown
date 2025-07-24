@@ -23,14 +23,34 @@ permalink: /blog/
           {% for post in site.posts limit:3 %}
           <article class="featured-post">
             <div class="post-image">
-              <img src="{{ post.image | default: '/assets/images/blog-default.jpg' | relative_url }}" alt="{{ post.title }}" />
+              {% if post.image %}
+                <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" />
+              {% else %}
+                <div class="post-image-placeholder">
+                  <i class="fas fa-newspaper"></i>
+                </div>
+              {% endif %}
             </div>
             <div class="post-content">
               <div class="post-meta">
-                <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
+                <div class="post-meta-item">
+                  <i class="fas fa-calendar-alt"></i>
+                  <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
+                </div>
                 {% if post.categories %}
-                <span class="post-category">{{ post.categories | first }}</span>
+                <div class="post-meta-item">
+                  <i class="fas fa-folder"></i>
+                  <span class="post-category">{{ post.categories | first }}</span>
+                </div>
                 {% endif %}
+                <div class="post-meta-item">
+                  <i class="fas fa-clock"></i>
+                  <span class="reading-time">
+                    {% assign words = post.content | number_of_words %}
+                    {% assign reading_time = words | divided_by: 200.0 | ceil %}
+                    {{ reading_time }} min read
+                  </span>
+                </div>
               </div>
               <h3 class="post-title">
                 <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
@@ -51,10 +71,24 @@ permalink: /blog/
           <article class="post-card">
             <div class="post-header">
               <div class="post-meta">
-                <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
+                <div class="post-meta-item">
+                  <i class="fas fa-calendar-alt"></i>
+                  <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
+                </div>
                 {% if post.categories %}
-                <span class="post-category">{{ post.categories | first }}</span>
+                <div class="post-meta-item">
+                  <i class="fas fa-folder"></i>
+                  <span class="post-category">{{ post.categories | first }}</span>
+                </div>
                 {% endif %}
+                <div class="post-meta-item">
+                  <i class="fas fa-clock"></i>
+                  <span class="reading-time">
+                    {% assign words = post.content | number_of_words %}
+                    {% assign reading_time = words | divided_by: 200.0 | ceil %}
+                    {{ reading_time }} min read
+                  </span>
+                </div>
               </div>
               <h3 class="post-title">
                 <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
