@@ -554,9 +554,26 @@ main {
 
 .resume-section h2 {
   color: var(--text-primary);
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
-  font-weight: 600;
+  margin: 2.5rem 0 1.5rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.resume-section h2:first-child {
+  margin-top: 0;
+}
+
+.resume-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
 }
 
 .resume-section h3 {
@@ -578,9 +595,10 @@ main {
 }
 
 .resume-section li {
-  margin-bottom: 0.5rem;
-  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  padding-left: 2rem;
   position: relative;
+  line-height: 1.6;
 }
 
 .resume-section li::before {
@@ -589,6 +607,18 @@ main {
   position: absolute;
   left: 0;
   font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.resume-section li strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.resume-section li i {
+  color: var(--primary-color);
+  margin-right: 0.5rem;
+  font-style: normal;
 }
 
 
