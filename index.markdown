@@ -162,7 +162,7 @@ author: Ambreen Hanif
     </div>
     
     <div class="footer-bottom">
-      <p>&copy; 2024 Ambreen Hanif. All rights reserved.</p>
+      <p>&copy; 2025 Ambreen Hanif. All rights reserved.</p>
     </div>
   </div>
 </footer>

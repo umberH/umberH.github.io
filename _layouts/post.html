@@ -1,55 +1,110 @@
 ---
-layout: base
+layout: default
 ---
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-
-  <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post-meta">
-	
-      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        {{ page.date | date: date_format }}
-		
-      </time>
-      {% include share-buttons.html %}
-      <!-- {% include reading-time.html %} -->
-      {% include page-author.html %}
-      {%- if page.author -%}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
-      {%- endif -%}
-	  <!-- {% include post-readingtime.erb %} -->
-	  </p>
+<article class="blog-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <!-- Post Header -->
+  <header class="post-header-section">
+    <div class="container">
+      <div class="post-header-content">
+        <div class="post-meta">
+          <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+            {{ page.date | date: "%B %d, %Y" }}
+          </time>
+          {% if page.categories %}
+          <span class="post-category">{{ page.categories | first }}</span>
+          {% endif %}
+        </div>
+        
+        <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
+        
+        {% if page.excerpt %}
+        <p class="post-excerpt">{{ page.excerpt }}</p>
+        {% endif %}
+        
+        {% if page.tags %}
+        <div class="post-tags">
+          {% for tag in page.tags %}
+          <span class="post-tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
   </header>
-  
-  <!-- <div class="page-sidebar">
-        {% include page-author.html %}
-        {% include page-categories.html %}
-        {% include page-tags.html %}
-      </div> -->
 
-  <div class="post-content e-content" itemprop="articleBody">
-    {{ content}}
+  <!-- Post Content -->
+  <div class="post-content-section">
+    <div class="container">
+      <div class="post-content-wrapper">
+        <div class="post-content" itemprop="articleBody">
+          {{ content }}
+        </div>
+        
+        <aside class="post-sidebar">
+          <div class="sidebar-widget">
+            <h3>About the Author</h3>
+            <div class="author-info">
+              <img src="{{ '/assets/images/dp.png' | relative_url }}" alt="Ambreen Hanif" class="author-image" />
+              <h4>Ambreen Hanif</h4>
+              <p>Data Scientist & Machine Learning Engineer passionate about leveraging AI to solve complex problems.</p>
+            </div>
+          </div>
+          
+          {% if page.categories %}
+          <div class="sidebar-widget">
+            <h3>Categories</h3>
+            <div class="categories-list">
+              {% for category in page.categories %}
+              <a href="/blog/category/{{ category | downcase }}/" class="category-link">{{ category }}</a>
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+          
+          <div class="sidebar-widget">
+            <h3>Recent Posts</h3>
+            <div class="recent-posts">
+              {% for post in site.posts limit:3 %}
+              {% if post.url != page.url %}
+              <a href="{{ post.url | relative_url }}" class="recent-post-link">
+                <h4>{{ post.title }}</h4>
+                <span class="recent-post-date">{{ post.date | date: "%b %d, %Y" }}</span>
+              </a>
+              {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
   </div>
 
-  <!-- {% if page.next_in_category != nil %}
-	<a href="{{page.next_in_category.url}}" class="next-link">Older Post</a>
-{% endif %}
-{% if page.previous_in_category != nil %}
-	<a href="{{page.previous_in_category.url}}" class="previous-link">Newer Post</a>
-{% endif %}
-   -->
-		{% if page.share %}
-          {% include share-buttons.html %}
+  <!-- Post Navigation -->
+  <nav class="post-navigation">
+    <div class="container">
+      <div class="nav-links">
+        {% if page.previous.url %}
+        <a href="{{ page.previous.url | relative_url }}" class="nav-link prev">
+          <span class="nav-arrow">←</span>
+          <div class="nav-content">
+            <span class="nav-label">Previous Post</span>
+            <span class="nav-title">{{ page.previous.title }}</span>
+          </div>
+        </a>
         {% endif %}
-
-        {% if site.disqus.shortname %}
-          {% include disqus-comments.html %}
+        
+        {% if page.next.url %}
+        <a href="{{ page.next.url | relative_url }}" class="nav-link next">
+          <div class="nav-content">
+            <span class="nav-label">Next Post</span>
+            <span class="nav-title">{{ page.next.title }}</span>
+          </div>
+          <span class="nav-arrow">→</span>
+        </a>
         {% endif %}
-
-        {% include page-pagination.html %}
-
-  
+      </div>
+    </div>
+  </nav>
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
