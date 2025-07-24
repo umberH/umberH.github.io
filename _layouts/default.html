@@ -89,22 +89,61 @@
       observer.observe(section);
     });
 
-    // Mobile menu toggle
+    // Mobile drawer functionality
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     const siteNav = document.getElementById('site-nav');
+    const mobileDrawerOverlay = document.getElementById('mobile-drawer-overlay');
+    
+    function openDrawer() {
+      siteNav.classList.add('active');
+      mobileMenuToggle.classList.add('active');
+      mobileDrawerOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+    
+    function closeDrawer() {
+      siteNav.classList.remove('active');
+      mobileMenuToggle.classList.remove('active');
+      mobileDrawerOverlay.classList.remove('active');
+      document.body.style.overflow = ''; // Restore scrolling
+    }
     
     if (mobileMenuToggle && siteNav) {
-      mobileMenuToggle.addEventListener('click', function() {
-        siteNav.classList.toggle('active');
-        mobileMenuToggle.classList.toggle('active');
+      // Open drawer
+      mobileMenuToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (siteNav.classList.contains('active')) {
+          closeDrawer();
+        } else {
+          openDrawer();
+        }
       });
 
-      // Close mobile menu when clicking on a link
+      // Close drawer when clicking overlay
+      if (mobileDrawerOverlay) {
+        mobileDrawerOverlay.addEventListener('click', closeDrawer);
+      }
+
+      // Close drawer when clicking on a link
       document.querySelectorAll('.page-link').forEach(link => {
         link.addEventListener('click', function() {
-          siteNav.classList.remove('active');
-          mobileMenuToggle.classList.remove('active');
+          closeDrawer();
         });
+      });
+      
+      // Close drawer when clicking color scheme button
+      const colorSchemeBtn = document.getElementById('color-scheme-btn');
+      if (colorSchemeBtn) {
+        colorSchemeBtn.addEventListener('click', function(e) {
+          e.stopPropagation(); // Don't close drawer when changing colors
+        });
+      }
+      
+      // Close drawer on escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && siteNav.classList.contains('active')) {
+          closeDrawer();
+        }
       });
     }
 
