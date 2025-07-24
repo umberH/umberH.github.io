@@ -687,7 +687,7 @@ main {
 
 .footer-contact-icons {
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
   justify-content: flex-start;
   align-items: center;
   margin-top: 1rem;
@@ -697,14 +697,14 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80px;
-  height: 80px;
+  width: 160px;
+  height: 160px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   color: #cbd5e1;
   text-decoration: none;
   transition: all 0.3s ease;
-  font-size: 2rem;
+  font-size: 4rem;
   border: 2px solid transparent;
   position: relative;
   overflow: hidden;
@@ -726,15 +726,15 @@ main {
 }
 
 .footer-icon-link:hover {
-  background: var(--accent-color);
+  background: rgba(255, 255, 255, 0.2);
   color: white;
   transform: translateY(-3px) scale(1.1);
-  border-color: var(--accent-color);
-  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
 }
 
 .footer-icon-link i {
-  font-size: 2.2rem;
+  font-size: 4.4rem;
 }
 
 .footer-bottom {
@@ -940,17 +940,17 @@ main {
   
   .footer-contact-icons {
     justify-content: center;
-    gap: 2rem;
+    gap: 2.5rem;
   }
   
-  .footer-icon-link {
-    width: 70px;
-    height: 70px;
-    font-size: 1.8rem;
+    .footer-icon-link {
+    width: 140px;
+    height: 140px;
+    font-size: 3.6rem;
   }
-  
+
   .footer-icon-link i {
-    font-size: 1.8rem;
+    font-size: 4rem;
   }
 }
 }
