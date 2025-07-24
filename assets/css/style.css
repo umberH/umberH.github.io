@@ -146,6 +146,7 @@ body {
 .font-selector-toggle {
   margin-left: 0.5rem;
   position: relative;
+  display: block;
 }
 
 .font-selector-btn {
@@ -161,6 +162,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 10;
 }
 
 .font-selector-btn:hover {
@@ -1075,7 +1078,6 @@ main {
   .footer-icon-link i {
     font-size: 4rem;
   }
-}
 }
 
 @media (max-width: 480px) {

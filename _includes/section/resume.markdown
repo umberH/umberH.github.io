@@ -1,3 +1,8 @@
+---
+layout: section
+title: Resume
+---
+
 ## Professional Experience
 
 I have a strong background in various roles that span multiple disciplines:
