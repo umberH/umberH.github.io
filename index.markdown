@@ -147,7 +147,6 @@ author: Ambreen Hanif
       </div>
       
       <div class="footer-section">
-        <h4 class="footer-subtitle">Get In Touch</h4>
         <div class="footer-contact-icons">
           <a href="mailto:hanif.ambreen@gmail.com" class="footer-icon-link" title="Email">
             <i class="fas fa-envelope"></i>

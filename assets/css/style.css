@@ -687,23 +687,24 @@ main {
 
 .footer-contact-icons {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   justify-content: flex-start;
   align-items: center;
+  margin-top: 1rem;
 }
 
 .footer-icon-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 65px;
-  height: 65px;
+  width: 80px;
+  height: 80px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   color: #cbd5e1;
   text-decoration: none;
   transition: all 0.3s ease;
-  font-size: 1.6rem;
+  font-size: 2rem;
   border: 2px solid transparent;
   position: relative;
   overflow: hidden;
@@ -733,7 +734,7 @@ main {
 }
 
 .footer-icon-link i {
-  font-size: 1.5rem;
+  font-size: 2.2rem;
 }
 
 .footer-bottom {
