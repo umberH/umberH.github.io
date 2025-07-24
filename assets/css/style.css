@@ -93,7 +93,8 @@ body {
   font-weight: 700;
   color: var(--primary-color);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, font-family 0.3s ease;
+  font-family: 'Inter', sans-serif;
 }
 
 .site-title:hover {
@@ -140,6 +141,112 @@ body {
 .color-scheme-btn:hover {
   background: var(--secondary-color);
   transform: scale(1.1);
+}
+
+.font-selector-toggle {
+  margin-left: 0.5rem;
+  position: relative;
+}
+
+.font-selector-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.font-selector-btn:hover {
+  background: var(--secondary-color);
+  transform: scale(1.1);
+}
+
+.font-selector-btn.active {
+  background: var(--secondary-color);
+}
+
+.font-options {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  padding: 1rem;
+  min-width: 200px;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.font-options.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.font-option {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.font-option:hover {
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--primary-color);
+}
+
+.font-option.active {
+  background: var(--primary-color);
+  color: white;
+}
+
+.font-option.playfair {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+.font-option.poppins {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.font-option.montserrat {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+.font-option.raleway {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+}
+
+.font-option.source-sans {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+}
+
+.font-option.inter {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
 }
 
 .page-link {
@@ -869,15 +976,31 @@ main {
     color: var(--primary-color);
   }
   
-  .color-scheme-toggle {
+    .color-scheme-toggle {
     margin: 1rem 2rem;
     text-align: center;
   }
-  
+
   .color-scheme-btn {
     width: 50px;
     height: 50px;
     font-size: 1.5rem;
+  }
+
+  .font-selector-toggle {
+    margin: 1rem 2rem;
+    text-align: center;
+  }
+
+  .font-selector-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  .font-options {
+    right: -50px;
+    min-width: 180px;
   }
   
   .hero-title {

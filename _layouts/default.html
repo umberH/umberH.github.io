@@ -15,7 +15,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
   
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -260,6 +260,63 @@
         const emojis = ['🎨', '💜', '💚', '🧡', '🦋', '🌹', '🔷', '🌙'];
         colorSchemeBtn.textContent = emojis[currentSchemeIndex + 1];
       });
+    }
+
+    // Font selector functionality
+    const fontSelectorBtn = document.getElementById('font-selector-btn');
+    const fontOptions = document.getElementById('font-options');
+    const siteTitle = document.querySelector('.site-title');
+    
+    if (fontSelectorBtn && fontOptions) {
+      // Toggle font options dropdown
+      fontSelectorBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        fontOptions.classList.toggle('active');
+        fontSelectorBtn.classList.toggle('active');
+      });
+      
+      // Handle font selection
+      fontOptions.addEventListener('click', function(e) {
+        if (e.target.classList.contains('font-option')) {
+          const selectedFont = e.target.getAttribute('data-font');
+          
+          // Update site title font
+          siteTitle.style.fontFamily = `'${selectedFont}', sans-serif`;
+          
+          // Update active state
+          document.querySelectorAll('.font-option').forEach(option => {
+            option.classList.remove('active');
+          });
+          e.target.classList.add('active');
+          
+          // Close dropdown
+          fontOptions.classList.remove('active');
+          fontSelectorBtn.classList.remove('active');
+          
+          // Save to localStorage
+          localStorage.setItem('selectedFont', selectedFont);
+        }
+      });
+      
+      // Close dropdown when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!fontSelectorBtn.contains(e.target) && !fontOptions.contains(e.target)) {
+          fontOptions.classList.remove('active');
+          fontSelectorBtn.classList.remove('active');
+        }
+      });
+      
+      // Load saved font preference
+      const savedFont = localStorage.getItem('selectedFont');
+      if (savedFont) {
+        siteTitle.style.fontFamily = `'${savedFont}', sans-serif`;
+        document.querySelectorAll('.font-option').forEach(option => {
+          option.classList.remove('active');
+          if (option.getAttribute('data-font') === savedFont) {
+            option.classList.add('active');
+          }
+        });
+      }
     }
   </script>
 </body>
