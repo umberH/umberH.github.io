@@ -15,7 +15,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Caveat:wght@400;500;600;700&family=Pacifico&family=Allura&family=Satisfy&display=swap" rel="stylesheet">
   
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -281,7 +281,9 @@
           const selectedFont = e.target.getAttribute('data-font');
           
           // Update site title font
-          siteTitle.style.fontFamily = `'${selectedFont}', sans-serif`;
+          const isCursive = ['Dancing Script', 'Great Vibes', 'Caveat', 'Pacifico', 'Allura', 'Satisfy'].includes(selectedFont);
+          const fallback = isCursive ? 'cursive' : 'sans-serif';
+          siteTitle.style.fontFamily = `'${selectedFont}', ${fallback}`;
           
           // Update active state
           document.querySelectorAll('.font-option').forEach(option => {
@@ -309,7 +311,9 @@
       // Load saved font preference
       const savedFont = localStorage.getItem('selectedFont');
       if (savedFont) {
-        siteTitle.style.fontFamily = `'${savedFont}', sans-serif`;
+        const isCursive = ['Dancing Script', 'Great Vibes', 'Caveat', 'Pacifico', 'Allura', 'Satisfy'].includes(savedFont);
+        const fallback = isCursive ? 'cursive' : 'sans-serif';
+        siteTitle.style.fontFamily = `'${savedFont}', ${fallback}`;
         document.querySelectorAll('.font-option').forEach(option => {
           option.classList.remove('active');
           if (option.getAttribute('data-font') === savedFont) {

@@ -1,7 +1,3 @@
----
-layout: section
-title: Resume
----
 
 ## Professional Experience
 

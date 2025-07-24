@@ -252,6 +252,50 @@ body {
   font-weight: 600;
 }
 
+.font-divider {
+  border: none;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.1);
+  margin: 0.5rem 0;
+}
+
+/* Creative & Cursive Fonts */
+.font-option.dancing-script {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.font-option.great-vibes {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+.font-option.caveat {
+  font-family: 'Caveat', cursive;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.font-option.pacifico {
+  font-family: 'Pacifico', cursive;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.font-option.allura {
+  font-family: 'Allura', cursive;
+  font-weight: 400;
+  font-size: 1.3rem;
+}
+
+.font-option.satisfy {
+  font-family: 'Satisfy', cursive;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
 .page-link {
   color: var(--text-primary);
   text-decoration: none;
