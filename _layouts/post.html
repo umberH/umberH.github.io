@@ -6,7 +6,21 @@ layout: default
   <header class="post-header-section">
     <div class="container">
       <div class="post-header-content">
-        <div class="post-meta">
+        <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
+        
+        {% if page.excerpt %}
+        <p class="post-excerpt">{{ page.excerpt }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <div class="post-content-section">
+    <div class="container">
+      <!-- Post Metadata -->
+      <div class="post-metadata">
+        <div class="post-meta-grid">
           <div class="post-meta-item">
             <i class="fas fa-calendar-alt"></i>
             <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
@@ -36,26 +50,17 @@ layout: default
           </div>
         </div>
         
-        <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
-        
-        {% if page.excerpt %}
-        <p class="post-excerpt">{{ page.excerpt }}</p>
-        {% endif %}
-        
         {% if page.tags %}
-        <div class="post-tags">
-          {% for tag in page.tags %}
-          <span class="post-tag">{{ tag }}</span>
-          {% endfor %}
+        <div class="post-tags-section">
+          <div class="post-tags">
+            {% for tag in page.tags %}
+            <span class="post-tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
         </div>
         {% endif %}
       </div>
-    </div>
-  </header>
-
-  <!-- Post Content -->
-  <div class="post-content-section">
-    <div class="container">
+      
       <div class="post-content-wrapper">
         <div class="post-content" itemprop="articleBody">
           {{ content }}
