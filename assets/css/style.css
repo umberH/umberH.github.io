@@ -222,12 +222,15 @@ body {
 .typing-subtitle {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 2px;
   font-size: 1.8rem;
   font-weight: 600;
   color: var(--primary-color);
   margin-bottom: 1rem;
   min-height: 2.5rem;
+  text-align: center;
+  width: 100%;
 }
 
 .typing-text-role {

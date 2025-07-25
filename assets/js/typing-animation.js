@@ -9,10 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const roles = [
     'Data Scientist',
     'Machine Learning Engineer',
-    'Mother',
-    // Add more roles as needed:
-    // 'Researcher',
-    // 'Mentor'
+    'Researcher',
+    'Generative AI Engineer'
   ];
 
   let currentRoleIndex = 0;
