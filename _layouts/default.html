@@ -48,6 +48,9 @@
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/color-schemes.css' | relative_url }}">
   
+  <!-- Typing Animation JavaScript -->
+  <script src="{{ '/assets/js/typing-animation.js' | relative_url }}" defer></script>
+  
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="{{ page.title }} | {{ site.title }}">
   <meta property="og:description" content="{{ site.description }}">
@@ -384,6 +387,73 @@
           }
         });
       }
+    }
+
+    // Projects carousel functionality
+    const projectsCarousel = document.querySelector('.projects-carousel');
+    if (projectsCarousel) {
+      const track = projectsCarousel.querySelector('.projects-track');
+      const cards = projectsCarousel.querySelectorAll('.project-card');
+      const prevBtn = projectsCarousel.querySelector('.carousel-btn-prev');
+      const nextBtn = projectsCarousel.querySelector('.carousel-btn-next');
+      const dots = projectsCarousel.querySelectorAll('.carousel-dot');
+      
+      let currentIndex = 0;
+      const cardWidth = 350 + 32; // card width + gap
+      const maxIndex = Math.max(0, cards.length - Math.floor(track.offsetWidth / cardWidth));
+      
+      function updateCarousel() {
+        const translateX = -currentIndex * cardWidth;
+        track.style.transform = `translateX(${translateX}px)`;
+        
+        // Update dots
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentIndex);
+        });
+        
+        // Update buttons
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex >= maxIndex;
+      }
+      
+      // Button controls
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+          }
+        });
+      }
+      
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateCarousel();
+          }
+        });
+      }
+      
+      // Dot controls
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          currentIndex = index;
+          updateCarousel();
+        });
+      });
+      
+      // Initialize
+      updateCarousel();
+      
+      // Handle window resize
+      window.addEventListener('resize', () => {
+        const newMaxIndex = Math.max(0, cards.length - Math.floor(track.offsetWidth / cardWidth));
+        if (currentIndex > newMaxIndex) {
+          currentIndex = newMaxIndex;
+        }
+        updateCarousel();
+      });
     }
   </script>
 </body>

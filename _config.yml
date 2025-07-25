@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Ambreen Hanif
+title: Ambreen Hanif - Data Scientist & Machine Learning Engineer
 
 
 description: >- # this means to ignore newlines until "baseurl:"
@@ -49,6 +49,12 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:title/
 
 reading_time:
   second_plural: "sec"    # default: seconds

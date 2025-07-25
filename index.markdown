@@ -32,7 +32,7 @@ author: Ambreen Hanif
             <p>I believe in the power of data to transform businesses and create meaningful impact. My approach combines technical expertise with strategic thinking to deliver solutions that drive real value.</p>
           </div>
           <div class="about-image">
-            <img src="{{ '/assets/images/dp.png' | relative_url }}" alt="Ambreen Hanif" loading="lazy" />
+            <img src="{{ '/assets/images/dp.webp' | relative_url }}" alt="Ambreen Hanif" loading="lazy" />
           </div>
         </div>
       </div>
@@ -94,11 +94,11 @@ author: Ambreen Hanif
     <!-- Projects Section -->
     <section id="projects" class="section" aria-labelledby="projects-title">
       <h2 class="section-title" id="projects-title">Featured Projects</h2>
-      <div class="projects-section">
-        <div class="projects-grid" role="list">
-          {% for project in site.projects limit:6 %}
-          <div class="project-card">
-            <a href="{{ project.url }}" class="project-link" aria-label="View details for {{ project.title }}">
+      <div class="projects-carousel">
+        <div class="projects-container">
+          <div class="projects-track" role="list">
+            {% for project in site.projects %}
+            <div class="project-card" role="listitem">
               {% if project.image %}
               <img src="{{ project.image | relative_url }}" alt="{{ project.title }}" class="project-image" loading="lazy" />
               {% else %}
@@ -129,17 +129,25 @@ author: Ambreen Hanif
                   {% endfor %}
                 </div>
                 {% endif %}
-                <div class="project-cta">
+                <a href="{{ project.url }}" class="project-cta" aria-label="View details for {{ project.title }}">
                   <span class="read-more">View Project Details</span>
                   <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                </div>
+                </a>
               </div>
-            </a>
+            </div>
+            {% endfor %}
           </div>
-          {% endfor %}
         </div>
-        <div class="projects-cta">
-          <a href="/projects/" class="cta-button">View All Projects</a>
+        <button class="carousel-btn carousel-btn-prev" aria-label="Previous project">
+          <i class="fas fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <button class="carousel-btn carousel-btn-next" aria-label="Next project">
+          <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        </button>
+        <div class="carousel-dots" role="tablist" aria-label="Projects navigation">
+          {% for project in site.projects %}
+          <button class="carousel-dot" aria-label="Go to project {{ forloop.index }}" role="tab"></button>
+          {% endfor %}
         </div>
       </div>
     </section>

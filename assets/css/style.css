@@ -172,6 +172,50 @@ body {
   color: var(--secondary-color);
 }
 
+/* Typing Animation Styles */
+.typing-title {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.typing-text {
+  display: inline-block;
+  white-space: nowrap;
+  border-right: 2px solid var(--primary-color);
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+.typing-cursor {
+  color: var(--primary-color);
+  font-weight: bold;
+  animation: blink 1s infinite;
+  opacity: 0;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--primary-color); }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Responsive adjustments for typing animation */
+@media (max-width: 768px) {
+  .typing-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .typing-title {
+    font-size: 1rem;
+  }
+}
+
 .site-nav {
   display: flex;
   align-items: center;
@@ -887,6 +931,91 @@ main {
 .projects-cta {
   text-align: center;
   margin-top: 3rem;
+}
+
+/* Projects Carousel */
+.projects-carousel {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.projects-container {
+  overflow: hidden;
+  margin: 0 -1rem;
+}
+
+.projects-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.projects-track .project-card {
+  min-width: 350px;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.projects-carousel .carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--background-white);
+  border: 2px solid var(--border-color);
+  color: var(--text-primary);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  box-shadow: var(--shadow-sm);
+}
+
+.projects-carousel .carousel-btn:hover {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-md);
+}
+
+.projects-carousel .carousel-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.projects-carousel .carousel-btn-prev {
+  left: -25px;
+}
+
+.projects-carousel .carousel-btn-next {
+  right: -25px;
+}
+
+.projects-carousel .carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.projects-carousel .carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: var(--border-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.projects-carousel .carousel-dot.active {
+  background: var(--primary-color);
+  transform: scale(1.2);
 }
 
 /* Projects Page Styles */
@@ -2512,6 +2641,24 @@ main {
   
   .filter-group, .search-group {
     width: 100%;
+  }
+  
+  /* Projects carousel responsive */
+  .projects-carousel .carousel-btn {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .projects-carousel .carousel-btn-prev {
+    left: -20px;
+  }
+  
+  .projects-carousel .carousel-btn-next {
+    right: -20px;
+  }
+  
+  .projects-track .project-card {
+    min-width: 300px;
   }
 }
 

@@ -9,7 +9,7 @@ description: Learn more about Ambreen Hanif, a Data Scientist and Machine Learni
   <div class="container">
     <div class="about-hero">
       <div class="about-image">
-        <img src="{{ '/assets/images/dp.png' | relative_url }}" alt="Ambreen Hanif" class="profile-image" />
+        <img src="{{ '/assets/images/dp.webp' | relative_url }}" alt="Ambreen Hanif" class="profile-image" />
       </div>
       <div class="about-hero-content">
         <h1 class="about-title">About Ambreen Hanif</h1>
