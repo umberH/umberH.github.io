@@ -7,10 +7,7 @@ author: Ambreen Hanif
 <!-- Hero Section -->
 <section class="hero-section" role="banner" aria-labelledby="hero-title">
   <div class="hero-content">
-    <h1 class="hero-title typing-title" id="hero-title">
-      <span class="typing-text" data-text="Hi, I'm Ambreen Hanif"></span>
-      <span class="typing-cursor">|</span>
-    </h1>
+    <h1 class="hero-title" id="hero-title">Hi, I'm Ambreen Hanif</h1>
     <h2 class="hero-subtitle typing-subtitle">
       <span class="typing-text-role" data-text="Data Scientist"></span>
       <span class="typing-cursor-role">|</span>

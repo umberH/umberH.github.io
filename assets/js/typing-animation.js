@@ -1,96 +1,65 @@
-// Typing Animation for Hero Title and Cycling Roles
+// Typing Animation for Roles Only
+// Only animates the roles, not the main title
+
 document.addEventListener('DOMContentLoaded', function() {
-  const typingText = document.querySelector('.typing-text');
-  const typingCursor = document.querySelector('.typing-cursor');
   const typingTextRole = document.querySelector('.typing-text-role');
   const typingCursorRole = document.querySelector('.typing-cursor-role');
-  
-  // Array of roles to cycle through
+
+  // Add or edit your roles here!
   const roles = [
     'Data Scientist',
-    'Machine Learning Engineer', 
-    'Mother'
+    'Machine Learning Engineer',
+    'Mother',
+    // Add more roles as needed:
+    // 'Researcher',
+    // 'Mentor'
   ];
-  
+
   let currentRoleIndex = 0;
   let isDeleting = false;
   let roleIndex = 0;
-  
-  // Function to type the main title
-  function typeMainTitle() {
-    if (typingText && typingCursor) {
-      const text = typingText.getAttribute('data-text');
-      let index = 0;
-      
-      // Clear initial text
-      typingText.textContent = '';
-      
-      function typeText() {
-        if (index < text.length) {
-          typingText.textContent += text.charAt(index);
-          index++;
-          setTimeout(typeText, 80);
-        } else {
-          // Show cursor after typing is complete
-          typingCursor.style.opacity = '1';
-          // Start the role cycling animation after main title is done
-          setTimeout(startRoleAnimation, 1000);
-        }
-      }
-      
-      setTimeout(typeText, 500);
-    }
-  }
-  
-  // Function to handle role typing animation
-  function startRoleAnimation() {
+
+  function typeRole() {
     if (!typingTextRole || !typingCursorRole) return;
-    
+
     const currentRole = roles[currentRoleIndex];
-    
+
     if (!isDeleting) {
-      // Typing mode
+      // Typing
       if (roleIndex < currentRole.length) {
         typingTextRole.textContent = currentRole.substring(0, roleIndex + 1);
         roleIndex++;
-        setTimeout(startRoleAnimation, 100);
+        setTimeout(typeRole, 100);
       } else {
-        // Finished typing, wait then start deleting
+        // Pause, then start deleting
         setTimeout(() => {
           isDeleting = true;
-          startRoleAnimation();
+          typeRole();
         }, 2000);
       }
     } else {
-      // Deleting mode
+      // Deleting
       if (roleIndex > 0) {
         typingTextRole.textContent = currentRole.substring(0, roleIndex - 1);
         roleIndex--;
-        setTimeout(startRoleAnimation, 50);
+        setTimeout(typeRole, 50);
       } else {
-        // Finished deleting, move to next role
+        // Next role
         isDeleting = false;
         currentRoleIndex = (currentRoleIndex + 1) % roles.length;
-        setTimeout(startRoleAnimation, 500);
+        setTimeout(typeRole, 500);
       }
     }
-    
-    // Show cursor during animation
+
     typingCursorRole.style.opacity = '1';
   }
-  
-  // Start the main title animation
-  typeMainTitle();
+
+  // Start animation
+  typeRole();
 });
 
-// Reset animation when page is refreshed
+// Optional: Reset on page refresh
 window.addEventListener('beforeunload', function() {
-  const typingText = document.querySelector('.typing-text');
   const typingTextRole = document.querySelector('.typing-text-role');
-  if (typingText) {
-    typingText.textContent = '';
-  }
-  if (typingTextRole) {
-    typingTextRole.textContent = '';
-  }
+  if (typingTextRole) typingTextRole.textContent = '';
 }); 
