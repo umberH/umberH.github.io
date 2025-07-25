@@ -32,7 +32,7 @@ author: Ambreen Hanif
             <p>I believe in the power of data to transform businesses and create meaningful impact. My approach combines technical expertise with strategic thinking to deliver solutions that drive real value.</p>
           </div>
           <div class="about-image">
-            <img src="{{ '/assets/images/dp.png' | relative_url }}" alt="Ambreen Hanif" />
+            <img src="{{ '/assets/images/dp.png' | relative_url }}" alt="Ambreen Hanif" loading="lazy" />
           </div>
         </div>
       </div>
@@ -100,7 +100,7 @@ author: Ambreen Hanif
           <div class="project-card">
             <a href="{{ project.url }}" class="project-link" aria-label="View details for {{ project.title }}">
               {% if project.image %}
-              <img src="{{ project.image | relative_url }}" alt="{{ project.title }}" class="project-image" />
+              <img src="{{ project.image | relative_url }}" alt="{{ project.title }}" class="project-image" loading="lazy" />
               {% else %}
               <div class="project-image-placeholder">
                 <i class="fas fa-project-diagram" aria-hidden="true"></i>

@@ -2514,3 +2514,41 @@ main {
     width: 100%;
   }
 }
+
+/* Performance Optimizations */
+* {
+  box-sizing: border-box;
+}
+
+/* Optimize images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Reduce layout shifts */
+.hero-section,
+.site-header,
+.project-card {
+  contain: layout style paint;
+}
+
+/* Touch-friendly buttons for mobile */
+.cta-button,
+.project-link,
+.page-link {
+  min-height: 44px;
+  min-width: 44px;
+  touch-action: manipulation;
+}
+
+/* Font display optimization */
+@font-face {
+  font-family: 'Inter';
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-display: swap;
+}
