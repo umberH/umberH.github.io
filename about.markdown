@@ -189,7 +189,7 @@ description: Learn more about Ambreen Hanif, a Data Scientist and Machine Learni
           <div class="contact-option">
             <h3>💼 Consulting & Projects</h3>
             <p>Looking for AI/ML consulting or project collaboration? Let's discuss how we can work together.</p>
-            <a href="https://calendly.com/your-calendly-link" target="_blank" class="contact-link">
+            <a href="https://cal.com/ambreen-hanif-qas6oz/30min" target="_blank" class="contact-link">
               <i class="fas fa-calendar-alt" aria-hidden="true"></i>
               Schedule a Call
             </a>

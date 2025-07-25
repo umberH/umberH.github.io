@@ -15,7 +15,7 @@ author: Ambreen Hanif
     <p class="hero-description">Passionate about leveraging data and AI to solve complex problems. Specializing in machine learning, data analysis, and software development.</p>
     <div class="hero-buttons">
       <a href="#about" class="cta-button">Learn More About Me</a>
-      <a href="https://calendly.com/your-calendly-link" target="_blank" class="cta-button cta-button-secondary" aria-label="Book a call with Ambreen (opens in new window)">Book a Call</a>
+      <a href="https://cal.com/ambreen-hanif-qas6oz/30min" target="_blank" class="cta-button cta-button-secondary" aria-label="Book a call with Ambreen (opens in new window)">Book a Call</a>
     </div>
   </div>
 </section>
@@ -203,7 +203,7 @@ author: Ambreen Hanif
             <i class="fab fa-github" aria-hidden="true"></i>
           </a>
         </div>
-        <a href="https://calendly.com/your-calendly-link" target="_blank" class="footer-cta-button" aria-label="Book a call with Ambreen (opens in new window)">
+        <a href="https://cal.com/ambreen-hanif-qas6oz/30min" target="_blank" class="footer-cta-button" aria-label="Book a call with Ambreen (opens in new window)">
           <i class="fas fa-calendar-alt" aria-hidden="true"></i>
           Book a Call
         </a>

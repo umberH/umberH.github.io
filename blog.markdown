@@ -174,7 +174,7 @@ permalink: /blog/
             <i class="fab fa-github"></i>
           </a>
         </div>
-        <a href="https://calendly.com/your-calendly-link" target="_blank" class="footer-cta-button">
+        <a href="https://cal.com/ambreen-hanif-qas6oz/30min" target="_blank" class="footer-cta-button">
           <i class="fas fa-calendar-alt"></i>
           Book a Call
         </a>
