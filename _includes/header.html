@@ -1,10 +1,7 @@
 <header class="site-header" role="banner">
   <div class="header-container">
     <div class="header-left">
-      <a class="site-title typing-title" rel="author" href="{{ "/" | relative_url }}" aria-label="Home">
-        <span class="typing-text" data-text="Ambreen Hanif - Data Scientist & Machine Learning Engineer"></span>
-        <span class="typing-cursor">|</span>
-      </a>
+      <a class="site-title" rel="author" href="{{ "/" | relative_url }}" aria-label="Home">{{ site.title | escape }}</a>
     </div>
 
     <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-nav">

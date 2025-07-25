@@ -171,18 +171,20 @@ body {
 .site-title:hover {
   color: var(--secondary-color);
 }
-
-/* Typing Animation Styles */
 .typing-title {
   display: flex;
   align-items: center;
   gap: 2px;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
 }
 
 .typing-text {
   display: inline-block;
   white-space: nowrap;
-  border-right: 2px solid var(--primary-color);
+  border-right: 3px solid var(--primary-color);
   animation: blink-caret 0.75s step-end infinite;
 }
 
@@ -206,13 +208,54 @@ body {
 /* Responsive adjustments for typing animation */
 @media (max-width: 768px) {
   .typing-title {
-    font-size: 1.2rem;
+    font-size: 2.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .typing-title {
-    font-size: 1rem;
+    font-size: 2rem;
+  }
+}
+
+/* Typing Subtitle Styles */
+.typing-subtitle {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  min-height: 2.5rem;
+}
+
+.typing-text-role {
+  display: inline-block;
+  white-space: nowrap;
+  border-right: 2px solid var(--primary-color);
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+.typing-cursor-role {
+  color: var(--primary-color);
+  font-weight: bold;
+  animation: blink 1s infinite;
+  opacity: 0;
+}
+
+/* Responsive adjustments for typing subtitle */
+@media (max-width: 768px) {
+  .typing-subtitle {
+    font-size: 1.5rem;
+    min-height: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .typing-subtitle {
+    font-size: 1.3rem;
+    min-height: 1.8rem;
   }
 }
 
