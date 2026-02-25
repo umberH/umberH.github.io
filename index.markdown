@@ -19,61 +19,34 @@ author: Ambreen Hanif
     </div>
   </div>
 </section> -->
-<div class="hero-noise"></div>
-<div class="vert-rule"></div>
+<section class="hero-section" role="banner" aria-labelledby="hero-title">
+  <div class="hero-content hero-content--left">
 
-<section class="hero" id="home" role="banner">
+    <p class="hero-eyebrow">Data Scientist &amp; ML Engineer — Sydney</p>
 
-  <nav class="hero-nav">
-    <span class="hero-nav__monogram">AH</span>
-    <ul class="hero-nav__links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Work</a></li>
-      <li><a href="#resume">Research</a></li>
-      <li><a href="/blog/">Blog</a></li>
-    </ul>
-  </nav>
-  
-
-  <div class="hero-body">
-    <p class="hero-eyebrow">
-      <span class="hero-eyebrow__line"></span>
-      Data Scientist &amp; ML Engineer — Sydney
-    </p>
-
-    <h1 class="hero-headline">
-      <span class="hero-headline__word">Making</span>
-      <span class="hero-headline__word">data</span>
-      <span class="hero-headline__word hero-headline__word--accent">think.</span>
+    <h1 class="hero-title" id="hero-title">
+      Making<br>data<em> think.</em>
     </h1>
 
-    <p class="hero-sub">
-      PhD in Computer Science. I build machine learning systems that move from
-      raw, messy data to decisions that hold up — in production, under pressure,
-      at scale.
+    <p class="hero-description">
+      PhD in Computer Science. I build machine learning systems that move 
+      from raw, messy data to decisions that hold up — in production, 
+      under pressure, at scale.
     </p>
 
-    <div class="hero-cta">
-      <a href="https://cal.com/ambreen-hanif-qas6oz/30min" class="hero-cta__primary">
+    <div class="hero-buttons">
+      <a href="https://cal.com/ambreen-hanif-qas6oz/30min"
+         target="_blank"
+         class="cta-button"
+         aria-label="Book a call with Ambreen (opens in new window)">
         Book a call
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-          <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.3"
-                stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
       </a>
-      <a href="#about" class="hero-cta__secondary">Learn more</a>
+      <a href="#about" class="cta-button cta-button-secondary">
+        See my work
+      </a>
     </div>
+
   </div>
-
-  <footer class="hero-foot">
-    <span class="hero-foot__copy">&copy; 2025 Ambreen Hanif</span>
-    <div class="hero-foot__tags">
-      <span>Machine Learning</span>
-      <span>PhD Research</span>
-      <span>Python &middot; PyTorch</span>
-    </div>
-  </footer>
-
 </section>
 
 <!-- Main Content -->
