@@ -1,11 +1,18 @@
+- title: Senior Generative AI Engineer (Research Lead)
+  company: Macquarie University
+  duration: 2024 - present
+  description: Designed and deployed RAG-based and GraphRAG-based intelligent advising solutions, including chatbot, for courses and student progression, leveraging multi-agent LLM orchestration and knowledge graphs to deliver scalable, explainable, and policy-compliant decision support.
+  icon: fas fa-briefcase
+  
+  
 - title: Data Scientist
   company: Prospa
   duration: 2020 - present
-  description: I worked on developing insights and explanations, machine learning models, and data pipelines to drive business insights and operational efficiency. I have developed dashboards to monitor the data and model drift patterns. 
+  description: Built ML models, explainability frameworks, and production data pipelines, complemented by drift-monitoring dashboards to ensure performance stability and business impact.
   icon: fas fa-briefcase
     
 - title: Machine Learning Engineer
   company: Cognitivo 
   duration: 2019 - 2020
-  description: Developed Image processing-based ML solution for road sign tracking and improving the model performance.
+  description: Built and optimized a computer vision model for road sign detection and tracking, improving accuracy and real-time performance, and containerized the solution using Docker for scalable and reproducible deployment.
   icon: fas fa-briefcase
