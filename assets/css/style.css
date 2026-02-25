@@ -1,6 +1,6 @@
 /* Modern Personal Website Styles */
 :root {
-  /* Modern Dark Blue Theme */
+  /* /* Modern Dark Blue Theme */
   --primary-color: #1e40af;
   --secondary-color: #1e3a8a;
   --accent-color: #3b82f6;
@@ -39,7 +39,21 @@
   /* Gradients */
   --gradient-primary: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
   --gradient-secondary: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
-  --gradient-accent: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+  --gradient-accent: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%); */
+
+  --bg:          #fdf8f6;   /* warm parchment — replaces f8fafc */
+  --bg-card:     #ffffff;
+  --bg-dark:     #1a1410;   /* hero, footer */
+  --text:        #1a1410;   /* replaces text-primary */
+  --text-muted:  #8c8480;   /* replaces text-secondary */
+  --text-faint:  #c4bbb7;   /* replaces text-light */
+  --border:      #ede6e1;   /* replaces border-color, warmer */
+  --accent:      #d4a0a0;   /* powder pink — replaces primary-color */
+  --accent-dark: #b07878;   /* hover states — replaces secondary-color */
+  --accent-warm: #c8a882;   /* hero italic word, gold warmth */
+
+  /* shadows collapsed to one subtle value */
+  --shadow-sm:   0 1px 3px rgba(0,0,0,0.06);
 }
 
 /* Accessibility Focus Styles */
