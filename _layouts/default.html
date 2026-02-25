@@ -285,7 +285,9 @@
       
       let currentIndex = 0;
       const cardWidth = 350 + 32; // card width + gap
-      const maxIndex = Math.max(0, cards.length - Math.floor(track.offsetWidth / cardWidth));
+      function getMaxIndex() {
+        return Math.max(0, cards.length - Math.floor(track.offsetWidth / cardWidth));
+      }
       
       function updateCarousel() {
         const translateX = -currentIndex * cardWidth;
