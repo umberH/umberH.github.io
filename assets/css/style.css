@@ -1461,17 +1461,26 @@ main {
 
 .timeline {
   position: relative;
-  padding: 0.5rem 0 0.5rem 2.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
 }
 
 .timeline::before {
-  content: '';
+ content: '';
   position: absolute;
-  left: 7px;
+  left: 50%;
   top: 0;
   bottom: 0;
   width: 1px;
-  background: var(--border);
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--border) 8%,
+    var(--border) 92%,
+    transparent
+  );
+  transform: translateX(-50%);
 }
 
 .timeline-item {
@@ -1534,14 +1543,205 @@ main {
 }
 
 .timeline-divider {
+  position: relative;
+  text-align: center;
+  margin: 4rem 0 3rem;
+  z-index: 2;
+}
+
+.timeline-divider span {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--bg-card);
+  background: var(--accent);
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+}
+
+/* ── First divider — sits at very top as section opener ─────── */
+.timeline-divider:first-child {
+  margin-top: 0;
+}
+
+/* ── Each item ──────────────────────────────────────────────── */
+.timeline-item {
+  position: relative;
+  width: 45%;
+  margin-bottom: 3rem;
+  /* card styling */
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.timeline-item:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* ── Left side (odd items) ───────────────────────────────────── */
+.timeline-item:nth-child(odd) {
+  margin-left: 0;
+  margin-right: auto;
+  text-align: right;
+}
+
+/* ── Right side (even items) ────────────────────────────────── */
+.timeline-item:nth-child(even) {
+  margin-left: auto;
+  margin-right: 0;
+  text-align: left;
+}
+
+/* ── Connector line from card to centre ─────────────────────── */
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  top: 1.6rem;
+  width: 5%;
+  height: 1px;
+  background: var(--border);
+}
+
+.timeline-item:nth-child(odd)::after {
+  right: -5.5%;
+}
+
+.timeline-item:nth-child(even)::after {
+  left: -5.5%;
+}
+
+/* ── Centre dot on the line ─────────────────────────────────── */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 1.25rem;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg-card);
+  box-shadow: 0 0 0 1px var(--accent);
+  z-index: 2;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.timeline-item:nth-child(odd)::before {
+  right: -8%;        /* sits on the centre line */
+}
+
+.timeline-item:nth-child(even)::before {
+  left: -8%;
+}
+
+.timeline-item:hover::before {
+  background: var(--accent-dark);
+  box-shadow: 0 0 0 3px rgba(212,160,160,0.25);
+}
+
+/* ── Typography inside cards ────────────────────────────────── */
+.timeline-date {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);           /* pink date — accent, not faint */
+  margin-bottom: 0.4rem;
+  display: block;
+  font-weight: 500;
+}
+
+.timeline-role {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+  font-family: 'Fraunces', serif;  /* matches your heading font */
+}
+
+.timeline-company {
+  font-size: 0.8rem;
+  color: var(--accent-dark);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.timeline-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ── Tag chips (optional — add data-tags to your HTML) ───────── */
+.timeline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.85rem;
+  justify-content: flex-end;     /* right-aligned on left cards */
+}
+
+.timeline-item:nth-child(even) .timeline-tags {
+  justify-content: flex-start;   /* left-aligned on right cards */
+}
+
+.timeline-tag {
   font-size: 0.68rem;
   font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin: 3.5rem 0 2.5rem -2.5rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--border);
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  background: rgba(212,160,160,0.12);
+  color: var(--accent-dark);
+  border: 1px solid rgba(212,160,160,0.25);
+}
+
+/* ── Scroll-in animation ─────────────────────────────────────── */
+.timeline-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease,
+              box-shadow 0.3s ease;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Mobile — collapse to single column ─────────────────────── */
+@media (max-width: 700px) {
+  .timeline::before {
+    left: 14px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    margin-left: 2.5rem !important;
+    margin-right: 0 !important;
+    text-align: left !important;
+  }
+
+  .timeline-item::before {
+    left: -2.1rem !important;
+    right: auto !important;
+  }
+
+  .timeline-item::after {
+    left: -1.2rem !important;
+    right: auto !important;
+    width: 1.2rem;
+  }
+
+  .timeline-tags {
+    justify-content: flex-start !important;
+  }
 }
 
 /* ── Old resume section styles kept for backward compat ─────── */
