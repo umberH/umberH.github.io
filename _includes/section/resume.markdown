@@ -1,87 +1,76 @@
 
 ## Professional Experience
 
-<div class="timeline">
+  <div class="timeline">
 
-  <!-- ─── Professional Experience ──────────────────────────── -->
-  <p class="timeline-divider">Professional Experience</p>
+    <!-- ── EXPERIENCE ── -->
+    <div class="timeline-divider">
+      <span>Experience</span>
+    </div>
 
-  <!-- Role 1 — Most recent -->
-  <div class="timeline-item">
-    <span class="timeline-date">2020 — Present</span>
-    <p class="timeline-role">Data Scientist</p>
-    <p class="timeline-company">Prospa</p>
-    <p class="timeline-desc">
-      Developed machine learning models and data pipelines to drive business insights
-      and operational efficiency. Built dashboards to monitor data and model drift
-      patterns. Delivered explainability tooling for credit risk models.
-    </p>
+    <div class="timeline-item">
+      <span class="timeline-date">2020 — Present</span>
+      <div class="timeline-role">Data Scientist</div>
+      <div class="timeline-company">Prospa, Sydney</div>
+      <p class="timeline-desc">
+        Developed ML models, data pipelines and explainability tools 
+        to drive business insights. Built dashboards to monitor data 
+        and model drift patterns in production.
+      </p>
+      <div class="timeline-tags">
+        <span class="timeline-tag">Python</span>
+        <span class="timeline-tag">MLOps</span>
+        <span class="timeline-tag">Data Pipelines</span>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="timeline-date">2019 — 2020</span>
+      <div class="timeline-role">Machine Learning Engineer</div>
+      <div class="timeline-company">Cognitivo</div>
+      <p class="timeline-desc">
+        Developed image processing ML solutions for road sign tracking 
+        and improved model performance for computer vision pipelines.
+      </p>
+      <div class="timeline-tags">
+        <span class="timeline-tag">Computer Vision</span>
+        <span class="timeline-tag">PyTorch</span>
+      </div>
+    </div>
+
+    <!-- ── EDUCATION ── -->
+    <div class="timeline-divider">
+      <span>Education</span>
+    </div>
+
+    <div class="timeline-item">
+      <span class="timeline-date">2024</span>
+      <div class="timeline-role">PhD, Computer Science</div>
+      <div class="timeline-company">Macquarie University · Sydney</div>
+      <p class="timeline-desc">
+        Research focused on machine learning and AI systems.
+      </p>
+      <div class="timeline-tags">
+        <span class="timeline-tag">Machine Learning</span>
+        <span class="timeline-tag">Research</span>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="timeline-date">2021</span>
+      <div class="timeline-role">Masters of Research</div>
+      <div class="timeline-company">Macquarie University · Sydney</div>
+      <p class="timeline-desc">
+        Advanced research in computer science and applied AI.
+      </p>
+      <div class="timeline-tags">
+        <span class="timeline-tag">AI</span>
+        <span class="timeline-tag">Research</span>
+      </div>
+    </div>
+
   </div>
-
-  <!-- Role 2 -->
-  <div class="timeline-item">
-    <span class="timeline-date">2019 — 2020</span>
-    <p class="timeline-role">Machine Learning Engineer</p>
-    <p class="timeline-company">Cognitivo</p>
-    <p class="timeline-desc">
-      Developed an image-processing ML solution for road sign tracking and detection.
-      Improved model performance through dataset curation and architecture optimisation.
-    </p>
-  </div>
-
-  <!-- Add more roles here following the same pattern -->
-  <!-- Copy a .timeline-item block and update the content -->
-
-  <!-- ─── Education ─────────────────────────────────────────── -->
-  <p class="timeline-divider">Education</p>
-
-  <!-- Education 1 — Most recent -->
-  <div class="timeline-item">
-    <span class="timeline-date">2024</span>
-    <p class="timeline-role">PhD in Computer Science</p>
-    <p class="timeline-company">Macquarie University, Sydney</p>
-    <p class="timeline-desc">
-      Research focus on Explainable AI (XAI) and adaptive learning systems
-      for educational technology. Developed graph-based ML methods for
-      interpretable decision-making.
-    </p>
-  </div>
-
-  <!-- Education 2 -->
-  <div class="timeline-item">
-    <span class="timeline-date">2021</span>
-    <p class="timeline-role">Masters of Research</p>
-    <p class="timeline-company">Macquarie University, Sydney</p>
-    <p class="timeline-desc">
-      Research in machine learning and artificial intelligence with a focus
-      on explainability and transparency in AI systems.
-    </p>
-  </div>
-
-</div>
-
-I have a strong background in various roles that span multiple disciplines:
-
-<ul>
-  {% for experience in site.data.experience %}
-    <li>
-      <i class="{{ experience.icon }}"></i>
-      <strong>{{ experience.title }}</strong> at {{ experience.company }}, {{ experience.location }} ({{ experience.duration }})
-      <br>
-      <i>{{ experience.description }}</i>
-    </li>
-  {% endfor %}
-</ul>
-
-## Education
-<ul>
-  {% for education in site.data.education %}
-    <li>
-      <i class="{{ education.icon }}"></i>
-      <strong>{{ education.degree }}</strong>, {{ education.institution }} ({{ education.year }}) - {{ education.location }}
-    </li>
-  {% endfor %}
-</ul>
+</section>
 
 ## Publications
 
