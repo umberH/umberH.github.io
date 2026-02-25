@@ -55,7 +55,6 @@
   /* shadows collapsed to one subtle value */
   --shadow-sm:   0 1px 3px rgba(0,0,0,0.06); */
 
-  :root {
   /* Names unchanged — only values updated */
   --primary-color:    #d4a0a0;   /* was blue, now powder pink */
   --secondary-color:  #b07878;   /* was dark blue, now deep rose */
