@@ -1,6 +1,6 @@
 /* Modern Personal Website Styles */
 :root {
-  /* /* Modern Dark Blue Theme */
+   /* /* Modern Dark Blue Theme */
   --primary-color: #1e40af;
   --secondary-color: #1e3a8a;
   --accent-color: #3b82f6;
@@ -39,7 +39,7 @@
   /* Gradients */
   --gradient-primary: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
   --gradient-secondary: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
-  --gradient-accent: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%); */
+  --gradient-accent: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%); 
 
   --bg:          #fdf8f6;   /* warm parchment — replaces f8fafc */
   --bg-card:     #ffffff;
@@ -53,7 +53,45 @@
   --accent-warm: #c8a882;   /* hero italic word, gold warmth */
 
   /* shadows collapsed to one subtle value */
-  --shadow-sm:   0 1px 3px rgba(0,0,0,0.06);
+  --shadow-sm:   0 1px 3px rgba(0,0,0,0.06); */
+
+  :root {
+  /* Names unchanged — only values updated */
+  --primary-color:    #d4a0a0;   /* was blue, now powder pink */
+  --secondary-color:  #b07878;   /* was dark blue, now deep rose */
+  --accent-color:     #d4a0a0;
+
+  --text-primary:     #1a1410;   /* was cool grey, now warm near-black */
+  --text-secondary:   #8c8480;   /* warm muted */
+  --text-light:       #c4bbb7;   /* warm faint */
+
+  --background-light: #fdf8f6;   /* was cool off-white, now warm parchment */
+  --background-white: #ffffff;
+  --background-card:  #f9f4f2;   /* warm card */
+
+  --border-color:     #ede6e1;   /* warm border */
+
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md:  0 2px 8px rgba(0,0,0,0.08);
+  --shadow-lg:  0 4px 16px rgba(0,0,0,0.10);
+
+  /* Gradients flattened — same name, no longer a gradient */
+  --gradient-primary:   #d4a0a0;
+  --gradient-secondary: #b07878;
+  --gradient-accent:    #d4a0a0;
+
+  /* New tokens used by hero + timeline */
+  --bg:          #fdf8f6;
+  --bg-card:     #ffffff;
+  --bg-dark:     #1a1410;
+  --text:        #1a1410;
+  --text-muted:  #8c8480;
+  --text-faint:  #c4bbb7;
+  --border:      #ede6e1;
+  --accent:      #d4a0a0;
+  --accent-dark: #b07878;
+  --accent-warm: #c8a882;
+}
 }
 
 /* Accessibility Focus Styles */
