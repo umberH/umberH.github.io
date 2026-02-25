@@ -462,6 +462,23 @@ img {
   align-items: center;
   gap: 1rem;
   animation: fadeInUp 0.6s ease both;
+  min-height: 1.2rem; /* prevents layout jump between roles */
+}
+
+.eyebrow-static {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.typing-text-role {
+  color: var(--accent);   /* pink, ties to your token */
+  white-space: nowrap;
+}
+
+.typing-cursor-role {
+  color: var(--accent);
+  font-weight: 300;
+  animation: blink 1s infinite;
 }
 
 .hero-eyebrow::before {
