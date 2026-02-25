@@ -22,8 +22,10 @@ author: Ambreen Hanif
 <section class="hero-section" role="banner" aria-labelledby="hero-title">
   <div class="hero-content hero-content--left">
 
-    <p class="hero-eyebrow">Data Scientist &amp; ML Engineer — Sydney</p>
-
+    <p class="hero-eyebrow">
+      <span class="eyebrow-static">Sydney —</span>
+      <span class="typing-text-role"></span><span class="typing-cursor-role">|</span>
+    </p>
     <h1 class="hero-title" id="hero-title">
       Making<br>data<em> think.</em>
     </h1>
