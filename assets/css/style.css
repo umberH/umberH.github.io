@@ -2854,3 +2854,180 @@ img {
 .hero-content--left .hero-buttons {
   justify-content: flex-start;
 }
+
+/* ============================================================
+   PATCH — append to the very bottom of assets/css/style.css
+   1. Powder pink palette token override
+   2. Timeline component
+   ============================================================ */
+
+/* ── 1. Palette override ──────────────────────────────────── */
+:root {
+  --bg:          #fdf8f6;
+  --bg-card:     #ffffff;
+  --bg-dark:     #1a1410;
+  --text:        #1a1410;
+  --text-muted:  #8c8480;
+  --text-faint:  #c4bbb7;
+  --border:      #ede6e1;
+  --accent:      #d4a0a0;
+  --accent-dark: #b07878;
+  --accent-warm: #c8a882;
+
+  /* legacy aliases so nothing breaks */
+  --primary-color:    #d4a0a0;
+  --secondary-color:  #b07878;
+  --accent-color:     #d4a0a0;
+  --text-primary:     #1a1410;
+  --text-secondary:   #8c8480;
+  --text-light:       #c4bbb7;
+  --background-light: #fdf8f6;
+  --background-white: #ffffff;
+  --background-card:  #f9f4f2;
+  --border-color:     #ede6e1;
+}
+
+/* Accent touches that were blue, now pink */
+.site-title:hover         { color: var(--accent-dark); }
+.page-link:hover          { color: var(--text); }
+.cta-button               { background: #1a1410; color: #fdf8f6; }
+.cta-button:hover         { background: var(--accent-dark); color: #fff; }
+.cta-button-secondary     { color: rgba(255,255,255,0.65); border-color: rgba(255,255,255,0.2); }
+.cta-button-secondary:hover { color: #fff; border-color: rgba(255,255,255,0.55); background: transparent; }
+
+.hero-title em            { color: var(--accent); }
+.hero-eyebrow             { color: rgba(255,255,255,0.4); }
+
+.carousel-dot.active      { background: var(--accent); }
+.carousel-btn:hover       { background: var(--accent-dark); border-color: var(--accent-dark); color: #fff; }
+
+.project-cta              { color: var(--accent-dark); }
+.read-more                { color: var(--accent-dark); }
+.footer-link:hover        { color: var(--accent); }
+.post-title a:hover       { color: var(--accent-dark); }
+
+:focus-visible            { outline-color: var(--accent-dark); }
+
+
+/* ── 2. Timeline ──────────────────────────────────────────── */
+
+/* Wrapper — replaces the old .resume-section card */
+.resume-section {
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+}
+
+.timeline {
+  position: relative;
+  padding: 0.5rem 0 0.5rem 2.5rem;
+}
+
+/* The vertical bar */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;                       /* centres on the pin dot */
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--border);
+}
+
+/* Each role */
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Pin dot */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2.5rem;
+  top: 0.35rem;                    /* aligns with first line of text */
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+  box-shadow: 0 0 0 1px var(--accent);
+  transition: background 0.2s;
+}
+
+.timeline-item:hover::before {
+  background: var(--accent-dark);
+  box-shadow: 0 0 0 1px var(--accent-dark);
+}
+
+/* Date range — top label */
+.timeline-date {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 0.35rem;
+  display: block;
+}
+
+/* Role title */
+.timeline-role {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin-bottom: 0.15rem;
+}
+
+/* Company */
+.timeline-company {
+  font-size: 0.875rem;
+  color: var(--accent-dark);
+  font-weight: 400;
+  margin-bottom: 0.65rem;
+}
+
+/* Description */
+.timeline-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  max-width: 58ch;
+}
+
+/* Section divider between Experience and Education */
+.timeline-divider {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 3.5rem 0 2.5rem -2.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── Timeline responsive ── */
+@media (max-width: 600px) {
+  .timeline {
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    left: 5px;
+  }
+
+  .timeline-item::before {
+    left: -2rem;
+    width: 8px;
+    height: 8px;
+  }
+
+  .timeline-role  { font-size: 0.95rem; }
+  .timeline-desc  { font-size: 0.825rem; }
+}
