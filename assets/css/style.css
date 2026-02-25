@@ -2443,3 +2443,7 @@ main {
   .blog-title            { font-size: 2rem; }
   .categories-grid       { grid-template-columns: 1fr; }
 }
+
+/* Add to style.css */
+.animate-hidden  { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.animate-visible { opacity: 1; transform: translateY(0); }
