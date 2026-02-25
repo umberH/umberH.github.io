@@ -260,134 +260,19 @@
       updateCarousel();
       
       // Handle window resize
-      window.addEventListener('resize', function() {
-        const newCardsPerView = Math.floor(skillsTrack.parentElement.offsetWidth / cardWidth);
-        if (newCardsPerView !== cardsPerView) {
-          location.reload(); // Simple solution for responsive behavior
-        }
+      // FIX — recalculate properly
+          .addEventListener('resize', function() {
+        currentSlide = 0;
+        updateCarousel();
       });
     }
 
-    // Color scheme switcher
-    const colorSchemes = [
-      'color-scheme-purple',
-      'color-scheme-green', 
-      'color-scheme-orange',
-      'color-scheme-teal',
-      'color-scheme-rose',
-      'color-scheme-indigo',
-      'color-scheme-slate',
-      'color-scheme-scifi-ai'
-    ];
     
-    let currentSchemeIndex = -1; // Start with default blue
-    
-    const colorSchemeBtn = document.getElementById('color-scheme-btn');
-    const body = document.body;
-    
-    if (colorSchemeBtn) {
-      colorSchemeBtn.addEventListener('click', function() {
-        // Remove current color scheme
-        colorSchemes.forEach(scheme => body.classList.remove(scheme));
-        
-        // Move to next color scheme
-        currentSchemeIndex = (currentSchemeIndex + 1) % colorSchemes.length;
-        
-        // Apply new color scheme
-        if (currentSchemeIndex >= 0) {
-          body.classList.add(colorSchemes[currentSchemeIndex]);
-        }
-        
-        // Update button emoji and aria-pressed
-        const emojis = ['🎨', '💜', '💚', '🧡', '🦋', '🌹', '🔷', '🌙', '🤖'];
-        colorSchemeBtn.textContent = emojis[currentSchemeIndex + 1];
-        colorSchemeBtn.setAttribute('aria-pressed', currentSchemeIndex >= 0 ? 'true' : 'false');
-        
-        // Announce change to screen readers
-        const schemeNames = ['Default', 'Purple', 'Green', 'Orange', 'Teal', 'Rose', 'Indigo', 'Slate', 'Sci-Fi AI'];
-        const announcement = document.createElement('div');
-        announcement.setAttribute('aria-live', 'polite');
-        announcement.setAttribute('aria-atomic', 'true');
-        announcement.className = 'sr-only';
-        announcement.textContent = `Color scheme changed to ${schemeNames[currentSchemeIndex + 1]}`;
-        document.body.appendChild(announcement);
-        setTimeout(() => document.body.removeChild(announcement), 1000);
-      });
-    }
-
-    // Font selector functionality
-    const fontSelectorBtn = document.getElementById('font-selector-btn');
-    const fontOptions = document.getElementById('font-options');
-    const siteTitle = document.querySelector('.site-title');
-    
-    if (fontSelectorBtn && fontOptions) {
-      // Toggle font options dropdown
-      fontSelectorBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        const isActive = fontOptions.classList.contains('active');
-        fontOptions.classList.toggle('active');
-        fontSelectorBtn.classList.toggle('active');
-        fontSelectorBtn.setAttribute('aria-expanded', !isActive);
-      });
       
-      // Handle font selection
-      fontOptions.addEventListener('click', function(e) {
-        if (e.target.classList.contains('font-option')) {
-          const selectedFont = e.target.getAttribute('data-font');
-          
-          // Update site title font
-          const isCursive = ['Dancing Script', 'Great Vibes', 'Caveat', 'Pacifico', 'Allura', 'Satisfy'].includes(selectedFont);
-          const fallback = isCursive ? 'cursive' : 'sans-serif';
-          siteTitle.style.fontFamily = `'${selectedFont}', ${fallback}`;
-          
-          // Update active state
-          document.querySelectorAll('.font-option').forEach(option => {
-            option.classList.remove('active');
-          });
-          e.target.classList.add('active');
-          
-          // Close dropdown
-          fontOptions.classList.remove('active');
-          fontSelectorBtn.classList.remove('active');
-          fontSelectorBtn.setAttribute('aria-expanded', 'false');
-          
-          // Save to localStorage
-          localStorage.setItem('selectedFont', selectedFont);
-          
-          // Announce change to screen readers
-          const announcement = document.createElement('div');
-          announcement.setAttribute('aria-live', 'polite');
-          announcement.setAttribute('aria-atomic', 'true');
-          announcement.className = 'sr-only';
-          announcement.textContent = `Font changed to ${selectedFont}`;
-          document.body.appendChild(announcement);
-          setTimeout(() => document.body.removeChild(announcement), 1000);
-        }
-      });
       
-      // Close dropdown when clicking outside
-      document.addEventListener('click', function(e) {
-        if (!fontSelectorBtn.contains(e.target) && !fontOptions.contains(e.target)) {
-          fontOptions.classList.remove('active');
-          fontSelectorBtn.classList.remove('active');
-          fontSelectorBtn.setAttribute('aria-expanded', 'false');
-        }
-      });
       
-      // Load saved font preference
-      const savedFont = localStorage.getItem('selectedFont');
-      if (savedFont) {
-        const isCursive = ['Dancing Script', 'Great Vibes', 'Caveat', 'Pacifico', 'Allura', 'Satisfy'].includes(savedFont);
-        const fallback = isCursive ? 'cursive' : 'sans-serif';
-        siteTitle.style.fontFamily = `'${savedFont}', ${fallback}`;
-        document.querySelectorAll('.font-option').forEach(option => {
-          option.classList.remove('active');
-          if (option.getAttribute('data-font') === savedFont) {
-            option.classList.add('active');
-          }
-        });
-      }
-    }
+     
+    
 
     // Projects carousel functionality
     const projectsCarousel = document.querySelector('.projects-carousel');
