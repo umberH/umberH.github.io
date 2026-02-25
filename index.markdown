@@ -5,20 +5,7 @@ author: Ambreen Hanif
 ---
 
 <!-- Hero Section -->
-<!-- <section class="hero-section" role="banner" aria-labelledby="hero-title">
-  <div class="hero-content">
-    <h1 class="hero-title" id="hero-title">Hi, I'm Ambreen Hanif</h1>
-    <h2 class="hero-subtitle typing-subtitle">
-      <span class="typing-text-role" data-text="Data Scientist"></span>
-      <span class="typing-cursor-role">|</span>
-    </h2>
-    <p class="hero-description">Passionate about leveraging data and AI to solve complex problems. Specializing in machine learning, data analysis, and software development.</p>
-    <div class="hero-buttons">
-      <a href="#about" class="cta-button">Learn More About Me</a>
-      <a href="https://cal.com/ambreen-hanif-qas6oz/30min" target="_blank" class="cta-button cta-button-secondary" aria-label="Book a call with Ambreen (opens in new window)">Book a Call</a>
-    </div>
-  </div>
-</section> -->
+
 <section class="hero-section" role="banner" aria-labelledby="hero-title">
   <div class="hero-content hero-content--left">
 
