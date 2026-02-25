@@ -69,8 +69,7 @@
       </div>
     </div>
 
-  </div>
-</section>
+ 
 
 ## Publications
 
