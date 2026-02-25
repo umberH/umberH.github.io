@@ -120,3 +120,20 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.skills-carousel, .projects-carousel')
     .forEach(initCarousel);
 });
+
+// Timeline scroll-in animation
+const timelineItems = document.querySelectorAll('.timeline-item');
+if (timelineItems.length) {
+  const tlObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, i * 100);        // staggered reveal
+        tlObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  timelineItems.forEach(item => tlObserver.observe(item));
+}
