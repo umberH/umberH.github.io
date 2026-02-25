@@ -8,7 +8,6 @@ date: 2024-03-20
 tags: [AutoML, Machine Learning, Platform, Business Intelligence, MLOps]
 role: Senior ML Engineer
 duration: 12 months
-client: DataCorp Analytics
 technologies: [Python, Scikit-learn, FastAPI, React, Kubernetes, Docker, Azure]
 image: /assets/images/projects/automl-platform-hero.jpg
 links:
