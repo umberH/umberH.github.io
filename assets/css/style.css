@@ -470,16 +470,8 @@ img {
   flex-shrink: 0;
 }
 
-.typing-text-role {
-  color: var(--accent);   /* pink, ties to your token */
-  white-space: nowrap;
-}
 
-.typing-cursor-role {
-  color: var(--accent);
-  font-weight: 300;
-  animation: blink 1s infinite;
-}
+
 
 .hero-eyebrow::before {
   content: '';
@@ -618,15 +610,19 @@ img {
   width: 100%;
 }
 
-.typing-text-role {
+/* .typing-text-role {
   display: inline-block;
   white-space: nowrap;
   border-right: 2px solid var(--primary-color);
   animation: blink-caret 0.75s step-end infinite;
+} */
+.typing-text-role {
+  color: var(--accent);   /* pink, ties to your token */
+  white-space: nowrap;
 }
 
 .typing-cursor-role {
-  color: var(--primary-color);
+  color: var(--accent);
   font-weight: bold;
   animation: blink 1s infinite;
   opacity: 0;
