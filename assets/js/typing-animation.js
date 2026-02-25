@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const roles = [
     'Data Scientist',
     'Machine Learning Engineer',
-    'Researcher',
+    'AI Researcher',
     'Generative AI Engineer'
   ];
 
