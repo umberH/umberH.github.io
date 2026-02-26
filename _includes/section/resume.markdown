@@ -27,8 +27,14 @@
 
     {% for item in site.data.education %}
     <div class="timeline-item">
-      <span class="timeline-date">{{ item.date }}</span>
-      <div class="timeline-role">{{ item.role }}</div>
+      <span class="timeline-date">{{ item.duration }}</span>
+      {% if item.icon %}
+    <span class="timeline-icon"><i class="fas {{ item.icon }}"></i></span>
+    {% else %}
+    <span class="timeline-icon"><i class="fas fa-briefcase"></i></span>
+    {% endif %}
+  </div>
+      <div class="timeline-role">{{ item.title }}</div>
       <div class="timeline-company">{{ item.company }}</div>
       {% if item.description %}
       <p class="timeline-desc">{{ item.description }}</p>
