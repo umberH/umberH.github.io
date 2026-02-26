@@ -135,5 +135,20 @@ if (timelineItems.length) {
     });
   }, { threshold: 0.15 });
 
+  // Skills bar animation on scroll
+const skillGroups = document.querySelectorAll('.skill-group');
+if (skillGroups.length) {
+  const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        skillObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  skillGroups.forEach(group => skillObserver.observe(group));
+}
+
   timelineItems.forEach(item => tlObserver.observe(item));
 }
