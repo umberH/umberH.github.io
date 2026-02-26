@@ -1684,7 +1684,7 @@ main {
   flex-wrap: wrap;
   gap: 0.35rem;
   margin-top: 0.85rem;
-  justify-content: flex-end;     /* right-aligned on left cards */
+  justify-content: flex-start;     /* right-aligned on left cards */
 }
 
 .timeline-item:nth-child(even) .timeline-tags {
