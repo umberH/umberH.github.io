@@ -22,9 +22,9 @@ title: Ambreen Hanif
 
 
 description: >- # this means to ignore newlines until "baseurl:"
-From raw data to real decisions — Ambreen Hanif is a 
+"From raw data to real decisions — Ambreen Hanif is a 
 Sydney-based Data Scientist and ML Engineer with a PhD in CS, 
-specialising in machine learning and generative AI. 
+specialising in machine learning and generative AI."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
