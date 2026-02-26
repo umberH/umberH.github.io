@@ -6,9 +6,16 @@
 
     {% for item in site.data.experience %}
     <div class="timeline-item">
-      <span class="timeline-date">{{ item.date }}</span>
-      <div class="timeline-role">{{ item.role }}</div>
-      <div class="timeline-company">{{ item.company }}</div>
+      <div class="timeline-header">
+        <span class="timeline-icon">
+          <i class="fas {% if item.icon %}{{ item.icon }}{% else %}fa-briefcase{% endif %}"></i>
+        </span>
+        <div class="timeline-header-text">
+          <span class="timeline-date">{{ item.date }}</span>
+          <div class="timeline-role">{{ item.role }}</div>
+          <div class="timeline-company">{{ item.company }}</div>
+        </div>
+      </div>
       {% if item.description %}
       <p class="timeline-desc">{{ item.description }}</p>
       {% endif %}
