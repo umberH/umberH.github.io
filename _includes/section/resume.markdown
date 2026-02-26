@@ -62,9 +62,13 @@
 
 <ul>
   {% for publication in site.data.publications %}
-    <li>
-      <i class="{{ publication.icon }}"></i>
-      <strong>{{ publication.title }}</strong>, {{ publication.journal }} ({{ publication.year }})
-    </li>
+    <a href="https://scholar.google.com.au/citations?hl=en&user=ZhWJUCcAAAAJ" target="_blank" aria-label="Google Scholar profile">
+  <svg xmlns="http://www.w3.org/2000/svg" 
+       viewBox="0 0 24 24" 
+       width="24" height="24" 
+       fill="currentColor">
+    <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5h3.75v8.25h3V9.5H12l9.75-4.5H24L12 0z"/>
+  </svg>
+</a>
   {% endfor %}
 </ul>
