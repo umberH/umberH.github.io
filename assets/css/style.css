@@ -1596,7 +1596,7 @@ main {
 .timeline-item:nth-child(even) {
   margin-left: auto;
   margin-right: 0;
-  text-align: left;
+  text-align: right;
 }
 
 /* ── Connector line from card to centre ─────────────────────── */
@@ -1637,7 +1637,7 @@ main {
 }
 
 .timeline-item:nth-child(even)::before {
-  left: -8%;
+  right: -8%;
 }
 
 .timeline-item:hover::before {
