@@ -41,7 +41,31 @@ author: Ambreen Hanif
 <!-- Main Content -->
 <main>
   <div class="container">
-    
+    <div class="skills-ticker" aria-hidden="true">
+  <div class="skills-ticker-track">
+
+    {% comment %} Set 1 {% endcomment %}
+    {% for group in site.data.skills %}
+      {% for skill in group.skills %}
+        <span class="skills-ticker-item">
+          <i class="fas {{ skill.icon }}"></i> {{ skill.name }}
+        </span>
+        <span class="skills-ticker-separator">●</span>
+      {% endfor %}
+    {% endfor %}
+
+    {% comment %} Set 2 — duplicate for seamless loop {% endcomment %}
+    {% for group in site.data.skills %}
+      {% for skill in group.skills %}
+        <span class="skills-ticker-item">
+          <i class="fas {{ skill.icon }}"></i> {{ skill.name }}
+        </span>
+        <span class="skills-ticker-separator">●</span>
+      {% endfor %}
+    {% endfor %}
+
+  </div>
+</div>
     <!-- About Section -->
     <section id="about" class="section">
       <div class="about-section">
