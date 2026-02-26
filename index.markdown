@@ -74,9 +74,22 @@ author: Ambreen Hanif
         <div class="about-content">
           <div class="about-text">
             <h2>About Me</h2>
-            <p>I'm a seasoned professional with extensive experience in technology and data-driven fields. I specialize in machine learning, data analysis, software development, and project management.</p>
-            <p>With a passion for innovation and problem-solving, I continuously seek to expand my knowledge and stay up-to-date with the latest technological advancements in the field of artificial intelligence and data science.</p>
-            <p>I believe in the power of data to transform businesses and create meaningful impact. My approach combines technical expertise with strategic thinking to deliver solutions that drive real value.</p>
+                     <p> Most machine learning work looks clean in a notebook
+          and breaks in production. I spent a PhD figuring out
+          why — and the last four years at Prospa making sure
+          it doesn't.</p>
+          
+          <p>I'm a Data Scientist and ML Engineer based in Sydney.
+          I build models that go into production, pipelines that
+          don't fall apart when real data shows up, and dashboards
+          that catch drift before anyone else notices.</p>
+          
+          </p>Generative AI is where my head is right now —
+          specifically what happens when LLMs meet messy,
+          real-world business data.</p>
+          
+          <p>I also write about this work. Not the polished version —
+          the actual version.</p>
           </div>
           <div class="about-image">
             <img src="{{ '/assets/images/dp.webp' | relative_url }}" alt="Ambreen Hanif" loading="lazy" />
