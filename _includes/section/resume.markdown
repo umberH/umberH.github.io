@@ -28,7 +28,7 @@
       {% endif %}
     </div>
     {% endfor %}
-
+</div>
     <!-- ── EDUCATION ── -->
     <div class="timeline-divider"><span>Education</span></div>
 
