@@ -11,8 +11,8 @@
           <i class="fas {% if item.icon %}{{ item.icon }}{% else %}fa-briefcase{% endif %}"></i>
         </span>
         <div class="timeline-header-text">
-          <span class="timeline-date">{{ item.date }}</span>
-          <div class="timeline-role">{{ item.role }}</div>
+          <span class="timeline-date">{{ item.duration }}</span>
+          <div class="timeline-role">{{ item.title }}</div>
           <div class="timeline-company">{{ item.company }}</div>
         </div>
       </div>
@@ -44,14 +44,14 @@
       {% endif %}
     </span>
     <div class="timeline-header-text">
-      <span class="timeline-date">{{ item.duration }}</span>
-      <div class="timeline-role">{{ item.title }}</div>
-      <div class="timeline-company">{{ item.company }}</div>
+      <span class="timeline-duration">{{ item.year }}</span>
+      <div class="timeline-role">{{ item.degree }}</div>
+      <div class="timeline-company">{{ item.institution }}</div>
     </div>
   </div>
 
   {% if item.description %}
-  <p class="timeline-desc">{{ item.description }}</p>
+  <p class="timeline-desc">{{ item.location }}</p>
   {% endif %}
 
   {% if item.tags %}
