@@ -34,13 +34,6 @@ author: Ambreen Hanif
         See my work
       </a>
     </div>
-
-  </div>
-</section>
-
-<!-- Main Content -->
-<main>
-  <div class="container">
     <div class="skills-ticker" aria-hidden="true">
   <div class="skills-ticker-track">
 
@@ -66,6 +59,14 @@ author: Ambreen Hanif
 
   </div>
 </div>
+
+  </div>
+</section>
+
+<!-- Main Content -->
+<main>
+  <div class="container">
+    
     <!-- About Section -->
     <section id="about" class="section">
       <div class="about-section">
