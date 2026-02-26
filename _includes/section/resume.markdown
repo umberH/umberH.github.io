@@ -32,31 +32,38 @@
     <!-- ── EDUCATION ── -->
     <div class="timeline-divider"><span>Education</span></div>
 
-    {% for item in site.data.education %}
-    <div class="timeline-item">
-      <span class="timeline-date">{{ item.duration }}</span>
+{% for item in site.data.education %}
+<div class="timeline-item">                      <!-- opens card -->
+
+  <div class="timeline-header">                  <!-- groups icon + text -->
+    <span class="timeline-icon">
       {% if item.icon %}
-    <span class="timeline-icon"><i class="fas {{ item.icon }}"></i></span>
-    {% else %}
-    <span class="timeline-icon"><i class="fas fa-briefcase"></i></span>
-    {% endif %}
-  </div>
+        <i class="fas {{ item.icon }}"></i>
+      {% else %}
+        <i class="fas fa-graduation-cap"></i>    <!-- better default for education -->
+      {% endif %}
+    </span>
+    <div class="timeline-header-text">
+      <span class="timeline-date">{{ item.duration }}</span>
       <div class="timeline-role">{{ item.title }}</div>
       <div class="timeline-company">{{ item.company }}</div>
-      {% if item.description %}
-      <p class="timeline-desc">{{ item.description }}</p>
-      {% endif %}
-      {% if item.tags %}
-      <div class="timeline-tags">
-        {% for tag in item.tags %}
-        <span class="timeline-tag">{{ tag }}</span>
-        {% endfor %}
-      </div>
-      {% endif %}
     </div>
-    {% endfor %}
-
   </div>
+
+  {% if item.description %}
+  <p class="timeline-desc">{{ item.description }}</p>
+  {% endif %}
+
+  {% if item.tags %}
+  <div class="timeline-tags">
+    {% for tag in item.tags %}
+    <span class="timeline-tag">{{ tag }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+</div>                                           <!-- closes card -->
+{% endfor %}
 
 ## Publications
 
