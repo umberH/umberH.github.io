@@ -16,3 +16,13 @@
   duration: 2019 - 2020
   description: Built and optimized a computer vision model for road sign detection and tracking, improving accuracy and real-time performance, and containerized the solution using Docker for scalable and reproducible deployment.
   icon: fas fa-briefcase
+
+
+- title: Senior Lecturer
+  company: Namal
+  duration: 2014-2018
+  description: Designed and delivered undergraduate and postgraduate coursework 
+  in computer science and data science. Developed lab exercises 
+  that bridged theory and hands-on implementation, giving students 
+  practical experience with real tools and datasets.
+  icon: icon: fa-chalkboard-teacher
