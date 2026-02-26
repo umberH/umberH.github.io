@@ -37,7 +37,9 @@ author: Ambreen Hanif
     
 
   </div>
-  <div class="skills-ticker" aria-hidden="true">
+ 
+</section>
+ <div class="skills-ticker" aria-hidden="true">
   <div class="skills-ticker-track">
 
     {% comment %} Set 1 {% endcomment %}
@@ -62,8 +64,6 @@ author: Ambreen Hanif
 
   </div>
 </div>
-</section>
-
 <!-- Main Content -->
 <main>
   <div class="container">
