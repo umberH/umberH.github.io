@@ -1,8 +1,47 @@
-- name: Machine Learning
-  icon: fas fa-robot
-- name: Data Analysis
-  icon: fas fa-chart-line
-- name: Software Development
-  icon: fas fa-code
-- name: Project Management
-  icon: fas fa-tasks
+- group: ML & AI
+  icon: fa-robot
+  skills:
+    - name: Machine Learning
+      icon: fa-robot
+      level: 95
+    - name: Deep Learning
+      icon: fa-brain
+      level: 90
+    - name: Generative AI
+      icon: fa-microchip
+      level: 85
+    - name: Neural Networks
+      icon: fa-project-diagram
+      level: 88
+
+- group: Data & Engineering
+  icon: fa-database
+  skills:
+    - name: Python
+      icon: fa-code
+      level: 95
+    - name: Data Pipelines
+      icon: fa-database
+      level: 88
+    - name: MLOps
+      icon: fa-project-diagram
+      level: 82
+    - name: Data Analysis
+      icon: fa-chart-bar
+      level: 92
+
+- group: Research & Strategy
+  icon: fa-flask
+  skills:
+    - name: R&D
+      icon: fa-flask
+      level: 90
+    - name: Business Intelligence
+      icon: fa-chart-line
+      level: 85
+    - name: Project Management
+      icon: fa-tasks
+      level: 80
+    - name: Innovation
+      icon: fa-lightbulb
+      level: 88
