@@ -28,7 +28,7 @@
       {% endif %}
     </div>
     {% endfor %}
-</div>
+    
     <!-- ── EDUCATION ── -->
     <div class="timeline-divider"><span>Education</span></div>
 
@@ -44,7 +44,7 @@
       {% endif %}
     </span>
     <div class="timeline-header-text">
-      <span class="timeline-duration">{{ item.year }}</span>
+      <span class="timeline-date">{{ item.year }}</span>
       <div class="timeline-role">{{ item.degree }}</div>
       <div class="timeline-company">{{ item.institution }}</div>
     </div>
@@ -64,6 +64,7 @@
 
 </div>                                           <!-- closes card -->
 {% endfor %}
+</div>
 
 ## Publications
 
