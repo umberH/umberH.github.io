@@ -3,130 +3,149 @@ layout: default
 ---
 
 <article class="project-page">
-  <!-- Project Header -->
+
+  <!-- ── Dark header — matches hero tone ── -->
   <header class="project-header">
     <div class="container">
+
       <nav class="project-breadcrumb" aria-label="Breadcrumb">
         <a href="/#projects" class="breadcrumb-link">
           <i class="fas fa-arrow-left" aria-hidden="true"></i>
-          Back to Projects
+          <span>Projects</span>
         </a>
       </nav>
-      
+
       <div class="project-header-content">
-        <div class="project-meta">
+
+        <!-- meta row — category + date -->
+        <div class="project-header-meta">
           {% if page.category %}
-          <span class="project-category">{{ page.category }}</span>
+          <span class="project-header-category">{{ page.category }}</span>
           {% endif %}
           {% if page.date %}
-          <time class="project-date" datetime="{{ page.date | date_to_xmlschema }}">
+          <time class="project-header-date"
+                datetime="{{ page.date | date_to_xmlschema }}">
             {{ page.date | date: "%B %Y" }}
           </time>
           {% endif %}
         </div>
-        
-        <h1 class="project-title">{{ page.title }}</h1>
-        
+
+        <h1 class="project-header-title">{{ page.title }}</h1>
+
         {% if page.subtitle %}
-        <p class="project-subtitle">{{ page.subtitle }}</p>
+        <p class="project-header-subtitle">{{ page.subtitle }}</p>
         {% endif %}
-        
+
         {% if page.description %}
-        <p class="project-description">{{ page.description }}</p>
+        <p class="project-header-description">{{ page.description }}</p>
         {% endif %}
-        
+
+        <!-- tags -->
         {% if page.tags %}
-        <div class="project-tags">
+        <div class="project-header-tags">
           {% for tag in page.tags %}
-          <span class="project-tag">{{ tag }}</span>
+          <span class="project-header-tag">{{ tag }}</span>
           {% endfor %}
         </div>
         {% endif %}
+
+        <!-- quick-info strip -->
+        <div class="project-header-strip">
+          {% if page.role %}
+          <div class="strip-item">
+            <span class="strip-label">Role</span>
+            <span class="strip-value">{{ page.role }}</span>
+          </div>
+          {% endif %}
+          {% if page.duration %}
+          <div class="strip-item">
+            <span class="strip-label">Duration</span>
+            <span class="strip-value">{{ page.duration }}</span>
+          </div>
+          {% endif %}
+          {% if page.client %}
+          <div class="strip-item">
+            <span class="strip-label">Client</span>
+            <span class="strip-value">{{ page.client }}</span>
+          </div>
+          {% endif %}
+        </div>
+
       </div>
     </div>
   </header>
 
-  <!-- Project Content -->
-  <div class="project-content-section">
+  <!-- ── Main content + sidebar ── -->
+  <div class="project-body">
     <div class="container">
-      <div class="project-content-wrapper">
-        <!-- Main Content -->
-        <main class="project-content" role="main">
+      <div class="project-body-grid">
+
+        <!-- Content -->
+        <main class="project-main-content" role="main">
           {{ content }}
         </main>
-        
-        <!-- Project Sidebar -->
-        <aside class="project-sidebar" role="complementary">
-          <!-- Project Info -->
-          <div class="sidebar-widget project-info">
-            <h3>Project Details</h3>
-            <div class="project-info-grid">
-              {% if page.role %}
-              <div class="info-item">
-                <span class="info-label">Role:</span>
-                <span class="info-value">{{ page.role }}</span>
-              </div>
-              {% endif %}
-              
-              {% if page.duration %}
-              <div class="info-item">
-                <span class="info-label">Duration:</span>
-                <span class="info-value">{{ page.duration }}</span>
-              </div>
-              {% endif %}
-              
-              {% if page.technologies %}
-              <div class="info-item">
-                <span class="info-label">Technologies:</span>
-                <div class="tech-list">
-                  {% for tech in page.technologies %}
-                  <span class="tech-tag">{{ tech }}</span>
-                  {% endfor %}
-                </div>
-              </div>
-              {% endif %}
-              
-              {% if page.client %}
-              <div class="info-item">
-                <span class="info-label">Client:</span>
-                <span class="info-value">{{ page.client }}</span>
-              </div>
-              {% endif %}
+
+        <!-- Sidebar -->
+        <aside class="project-aside" role="complementary">
+
+          <!-- Technologies -->
+          {% if page.technologies %}
+          <div class="aside-widget">
+            <h3 class="aside-title">
+              <i class="fas fa-layer-group"></i> Stack
+            </h3>
+            <div class="aside-tags">
+              {% for tech in page.technologies %}
+              <span class="aside-tag">{{ tech }}</span>
+              {% endfor %}
             </div>
           </div>
-          
-          <!-- Project Links -->
+          {% endif %}
+
+          <!-- Links -->
           {% if page.links %}
-          <div class="sidebar-widget project-links">
-            <h3>Project Links</h3>
-            <div class="project-links-list">
+          <div class="aside-widget">
+            <h3 class="aside-title">
+              <i class="fas fa-link"></i> Links
+            </h3>
+            <div class="aside-links">
               {% for link in page.links %}
-              <a href="{{ link.url }}" class="project-link" target="_blank" rel="noopener noreferrer">
+              <a href="{{ link.url }}"
+                 class="aside-link"
+                 target="_blank"
+                 rel="noopener noreferrer">
                 <i class="{{ link.icon }}" aria-hidden="true"></i>
                 <span>{{ link.text }}</span>
+                <i class="fas fa-arrow-up-right-from-square aside-link-arrow"></i>
               </a>
               {% endfor %}
             </div>
           </div>
           {% endif %}
-          
-          <!-- Related Projects -->
-          <div class="sidebar-widget related-projects">
-            <h3>Other Projects</h3>
-            <div class="related-projects-list">
+
+          <!-- Other projects -->
+          <div class="aside-widget">
+            <h3 class="aside-title">
+              <i class="fas fa-grid-2"></i> Other Projects
+            </h3>
+            <div class="aside-related">
               {% assign current_project = page.title %}
               {% for project in site.projects limit:3 %}
                 {% if project.title != current_project %}
-                <a href="{{ project.url }}" class="related-project-link">
-                  <h4>{{ project.title }}</h4>
-                  <p>{{ project.description | truncate: 100 }}</p>
+                <a href="{{ project.url }}" class="aside-related-item">
+                  <span class="aside-related-title">{{ project.title }}</span>
+                  <span class="aside-related-desc">
+                    {{ project.description | truncate: 80 }}
+                  </span>
                 </a>
                 {% endif %}
               {% endfor %}
             </div>
           </div>
+
         </aside>
       </div>
     </div>
   </div>
-</article> 
+
+</article>
