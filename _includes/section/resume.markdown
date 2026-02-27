@@ -69,7 +69,7 @@
 ## Publications
 
 <div class="publications-scholar-link">
-  <a href="[YOUR_GOOGLE_SCHOLAR_URL](https://scholar.google.com.au/citations?hl=en&user=ZhWJUCcAAAAJ)" 
+  <a href="https://scholar.google.com.au/citations?hl=en&user=ZhWJUCcAAAAJ" 
      target="_blank" 
      rel="noopener noreferrer"
      class="scholar-link"
