@@ -99,7 +99,7 @@ author: Ambreen Hanif
     </section>
 
     <!-- Projects Section -->
-    {% include projects-carousel.html %}   ← pulls from _data/projects.yml
+    {% include section/projects-carousel.markdown %}   ← pulls from _data/projects.yml
 
     <!-- Resume Section -->
     <section id="resume" class="section">
