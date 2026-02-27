@@ -1,151 +1,75 @@
 ---
 layout: default
+title: Projects
 ---
 
-<article class="project-page">
+---
+layout: default
+title: Projects
+---
 
-  <!-- ── Dark header — matches hero tone ── -->
-  <header class="project-header">
-    <div class="container">
+<div class="projects-page-header">
+  <div class="container">
+    <h1 class="section-title">All Projects</h1>
+    <p class="projects-page-subtitle">
+      Machine learning, data science and AI projects.
+    </p>
+  </div>
+</div>
 
-      <nav class="project-breadcrumb" aria-label="Breadcrumb">
-        <a href="/#projects" class="breadcrumb-link">
-          <i class="fas fa-arrow-left" aria-hidden="true"></i>
-          <span>Projects</span>
-        </a>
-      </nav>
+<div class="container">
+  <div class="projects-grid">
 
-      <div class="project-header-content">
+    {% for project in site.data.projects %}
+    <div class="project-card">
 
-        <!-- meta row — category + date -->
-        <div class="project-header-meta">
-          {% if page.category %}
-          <span class="project-header-category">{{ page.category }}</span>
+      {% if project.image %}
+      <img src="{{ project.image | relative_url }}"
+           alt="{{ project.title }}"
+           class="project-image"
+           loading="lazy" />
+      {% else %}
+      <div class="project-image-placeholder">
+        <i class="fas fa-project-diagram" aria-hidden="true"></i>
+      </div>
+      {% endif %}
+
+      <div class="project-content">
+        <h3 class="project-title">{{ project.title }}</h3>
+        {% if project.subtitle %}
+        <p class="project-subtitle">{{ project.subtitle }}</p>
+        {% endif %}
+        <p class="project-description">{{ project.description }}</p>
+
+        <div class="project-meta">
+          {% if project.category %}
+          <span class="project-category">{{ project.category }}</span>
           {% endif %}
-          {% if page.date %}
-          <time class="project-header-date"
-                datetime="{{ page.date | date_to_xmlschema }}">
-            {{ page.date | date: "%B %Y" }}
+          {% if project.date %}
+          <time class="project-date" datetime="{{ project.date }}">
+            {{ project.date | date: "%b %Y" }}
           </time>
           {% endif %}
         </div>
 
-        <h1 class="project-header-title">{{ page.title }}</h1>
-
-        {% if page.subtitle %}
-        <p class="project-header-subtitle">{{ page.subtitle }}</p>
-        {% endif %}
-
-        {% if page.description %}
-        <p class="project-header-description">{{ page.description }}</p>
-        {% endif %}
-
-        <!-- tags -->
-        {% if page.tags %}
-        <div class="project-header-tags">
-          {% for tag in page.tags %}
-          <span class="project-header-tag">{{ tag }}</span>
+        {% if project.tags %}
+        <div class="project-tags">
+          {% for tag in project.tags limit:3 %}
+          <span class="project-tag">{{ tag }}</span>
           {% endfor %}
         </div>
         {% endif %}
 
-        <!-- quick-info strip -->
-        <div class="project-header-strip">
-          {% if page.role %}
-          <div class="strip-item">
-            <span class="strip-label">Role</span>
-            <span class="strip-value">{{ page.role }}</span>
-          </div>
-          {% endif %}
-          {% if page.duration %}
-          <div class="strip-item">
-            <span class="strip-label">Duration</span>
-            <span class="strip-value">{{ page.duration }}</span>
-          </div>
-          {% endif %}
-          {% if page.client %}
-          <div class="strip-item">
-            <span class="strip-label">Client</span>
-            <span class="strip-value">{{ page.client }}</span>
-          </div>
-          {% endif %}
-        </div>
-
+        <a href="{{ project.url }}"
+           class="project-cta"
+           aria-label="View details for {{ project.title }}">
+          <span class="read-more">View Project Details</span>
+          <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
       </div>
+
     </div>
-  </header>
+    {% endfor %}
 
-  <!-- ── Main content + sidebar ── -->
-  <div class="project-body">
-    <div class="container">
-      <div class="project-body-grid">
-
-        <!-- Content -->
-        <main class="project-main-content" role="main">
-          {{ content }}
-        </main>
-
-        <!-- Sidebar -->
-        <aside class="project-aside" role="complementary">
-
-          <!-- Technologies -->
-          {% if page.technologies %}
-          <div class="aside-widget">
-            <h3 class="aside-title">
-              <i class="fas fa-layer-group"></i> Stack
-            </h3>
-            <div class="aside-tags">
-              {% for tech in page.technologies %}
-              <span class="aside-tag">{{ tech }}</span>
-              {% endfor %}
-            </div>
-          </div>
-          {% endif %}
-
-          <!-- Links -->
-          {% if page.links %}
-          <div class="aside-widget">
-            <h3 class="aside-title">
-              <i class="fas fa-link"></i> Links
-            </h3>
-            <div class="aside-links">
-              {% for link in page.links %}
-              <a href="{{ link.url }}"
-                 class="aside-link"
-                 target="_blank"
-                 rel="noopener noreferrer">
-                <i class="{{ link.icon }}" aria-hidden="true"></i>
-                <span>{{ link.text }}</span>
-                <i class="fas fa-arrow-up-right-from-square aside-link-arrow"></i>
-              </a>
-              {% endfor %}
-            </div>
-          </div>
-          {% endif %}
-
-          <!-- Other projects -->
-          <div class="aside-widget">
-            <h3 class="aside-title">
-              <i class="fas fa-grid-2"></i> Other Projects
-            </h3>
-            <div class="aside-related">
-              {% assign current_project = page.title %}
-              {% for project in site.projects limit:3 %}
-                {% if project.title != current_project %}
-                <a href="{{ project.url }}" class="aside-related-item">
-                  <span class="aside-related-title">{{ project.title }}</span>
-                  <span class="aside-related-desc">
-                    {{ project.description | truncate: 80 }}
-                  </span>
-                </a>
-                {% endif %}
-              {% endfor %}
-            </div>
-          </div>
-
-        </aside>
-      </div>
-    </div>
   </div>
-
-</article>
+</div>
