@@ -2742,3 +2742,49 @@ main {
     padding: 0.5rem 2rem;
   }
 }
+
+
+
+.publications-scholar-link {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.scholar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1.4rem;
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: all 0.3s ease;
+  background: var(--background-white);
+}
+
+.scholar-link:hover {
+  border-color: var(--accent);
+  color: var(--accent-dark);
+  background: rgba(212,160,160,0.08);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.scholar-link .ai-google-scholar {
+  font-size: 1rem;
+  color: var(--accent);
+}
+
+.scholar-link .fa-arrow-right {
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
+}
+
+.scholar-link:hover .fa-arrow-right {
+  transform: translateX(3px);
+}
