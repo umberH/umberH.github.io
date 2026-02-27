@@ -84,7 +84,7 @@ author: Ambreen Hanif
           don't fall apart when real data shows up, and dashboards
           that catch drift before anyone else notices.</p>
           
-          </p>Generative AI is where my head is right now —
+          <p>Generative AI is where my head is right now —
           specifically what happens when LLMs meet messy,
           real-world business data.</p>
           
@@ -95,59 +95,6 @@ author: Ambreen Hanif
             <img src="{{ '/assets/images/dp.webp' | relative_url }}" alt="Ambreen Hanif" loading="lazy" />
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section" aria-labelledby="skills-title">
-      <h2 class="section-title" id="skills-title">Skills & Expertise</h2>
-      <div class="skills-section">
-        <div class="skills-carousel" role="region" aria-label="Skills carousel">
-          <button class="carousel-btn carousel-btn-prev" id="skills-prev" aria-label="Previous skills">
-            <i class="fas fa-chevron-left" aria-hidden="true"></i>
-          </button>
-          
-          <div class="skills-container">
-            <div class="skills-track" id="skills-track">
-              <div class="skill-card">
-                <div class="skill-icon">🤖</div>
-                <h3 class="skill-name">Machine Learning</h3>
-                <p class="skill-description">Deep learning, neural networks, predictive modeling, and AI algorithm development</p>
-              </div>
-              <div class="skill-card">
-                <div class="skill-icon">📊</div>
-                <h3 class="skill-name">Data Analysis</h3>
-                <p class="skill-description">Statistical analysis, data visualization, and insights extraction from complex datasets</p>
-              </div>
-              <div class="skill-card">
-                <div class="skill-icon">💻</div>
-                <h3 class="skill-name">Software Development</h3>
-                <p class="skill-description">Full-stack development, API design, and scalable software solutions</p>
-              </div>
-              <div class="skill-card">
-                <div class="skill-icon">📋</div>
-                <h3 class="skill-name">Project Management</h3>
-                <p class="skill-description">Agile methodologies, team leadership, and end-to-end project delivery</p>
-              </div>
-              <div class="skill-card">
-                <div class="skill-icon">🔬</div>
-                <h3 class="skill-name">Research & Development</h3>
-                <p class="skill-description">Innovation, experimentation, and cutting-edge technology research</p>
-              </div>
-              <div class="skill-card">
-                <div class="skill-icon">📈</div>
-                <h3 class="skill-name">Business Intelligence</h3>
-                <p class="skill-description">Data-driven insights, KPI tracking, and strategic decision support</p>
-              </div>
-            </div>
-          </div>
-          
-          <button class="carousel-btn carousel-btn-next" id="skills-next" aria-label="Next skills">
-            <i class="fas fa-chevron-right" aria-hidden="true"></i>
-          </button>
-        </div>
-        
-        <div class="carousel-dots" id="skills-dots" role="tablist" aria-label="Skills navigation"></div>
       </div>
     </section>
 
