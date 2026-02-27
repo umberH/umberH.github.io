@@ -68,9 +68,15 @@
 
 ## Publications
 
-
- 
-    <a href="https://scholar.google.com.au/citations?hl=en&user=ZhWJUCcAAAAJ" target="_blank" aria-label="Google Scholar profile">
-
-</a>
+<div class="publications-scholar-link">
+  <a href="[YOUR_GOOGLE_SCHOLAR_URL](https://scholar.google.com.au/citations?hl=en&user=ZhWJUCcAAAAJ)" 
+     target="_blank" 
+     rel="noopener noreferrer"
+     class="scholar-link"
+     aria-label="View all publications on Google Scholar">
+    <i class="ai ai-google-scholar"></i>
+    <span>View all on Google Scholar</span>
+    <i class="fas fa-arrow-right"></i>
+  </a>
+</div>
 
