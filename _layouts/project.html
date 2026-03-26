@@ -1,71 +1,217 @@
 ---
 layout: default
-title: Projects
-permalink: /projects/
 ---
 
-<div class="projects-page-header">
-  <div class="container">
-    <h1 class="section-title">All Projects</h1>
-    <p class="projects-page-subtitle">
-      Machine learning, data science and AI projects.
-    </p>
-  </div>
-</div>
+<!-- Project Detail Page -->
+<article class="project-detail">
+  <!-- Project Hero -->
+  <header class="project-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb navigation">
+        <a href="/" class="breadcrumb-link">Home</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="/projects/" class="breadcrumb-link">Projects</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">{{ page.title }}</span>
+      </nav>
 
-<div class="container">
-  <div class="projects-grid">
-
-    {% for project in site.data.projects %}
-    <div class="project-card">
-
-      {% if project.image %}
-      <img src="{{ project.image | relative_url }}"
-           alt="{{ project.title }}"
-           class="project-image"
-           loading="lazy" />
-      {% else %}
-      <div class="project-image-placeholder">
-        <i class="fas fa-project-diagram" aria-hidden="true"></i>
-      </div>
-      {% endif %}
-
-      <div class="project-content">
-        <h3 class="project-title">{{ project.title }}</h3>
-        {% if project.subtitle %}
-        <p class="project-subtitle">{{ project.subtitle }}</p>
-        {% endif %}
-        <p class="project-description">{{ project.description }}</p>
-
-        <div class="project-meta">
-          {% if project.category %}
-          <span class="project-category">{{ project.category }}</span>
+      <div class="project-hero-content">
+        <div class="project-hero-text">
+          {% if page.category %}
+          <span class="project-category-badge">{{ page.category }}</span>
           {% endif %}
-          {% if project.date %}
-          <time class="project-date" datetime="{{ project.date }}">
-            {{ project.date | date: "%b %Y" }}
-          </time>
+
+          <h1 class="project-hero-title">{{ page.title }}</h1>
+
+          <p class="project-hero-description">{{ page.description }}</p>
+
+          {% if page.tags %}
+          <div class="project-tags-hero">
+            {% for tag in page.tags %}
+            <span class="project-tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          {% if page.date %}
+          <div class="project-meta-info">
+            <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+            <time datetime="{{ page.date | date_to_xmlschema }}">
+              {{ page.date | date: "%B %Y" }}
+            </time>
+          </div>
           {% endif %}
         </div>
 
-        {% if project.tags %}
-        <div class="project-tags">
-          {% for tag in project.tags limit:3 %}
-          <span class="project-tag">{{ tag }}</span>
-          {% endfor %}
+        {% if page.image %}
+        <div class="project-hero-image">
+          <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" loading="eager" />
         </div>
         {% endif %}
-
-        <a href="{{ project.url }}"
-           class="project-cta"
-           aria-label="View details for {{ project.title }}">
-          <span class="read-more">View Project Details</span>
-          <i class="fas fa-arrow-right" aria-hidden="true"></i>
-        </a>
       </div>
-
     </div>
-    {% endfor %}
+  </header>
 
-  </div>
-</div>
+  <!-- Technologies Used -->
+  {% if page.technologies %}
+  <section class="project-technologies">
+    <div class="container">
+      <h2 class="technologies-title">Technologies Used</h2>
+      <div class="technologies-grid">
+        {% for tech in page.technologies %}
+        <div class="technology-badge">
+          <i class="fas fa-code" aria-hidden="true"></i>
+          <span>{{ tech }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Project Content -->
+  <main class="project-content">
+    <div class="container">
+      <div class="project-body">
+        {{ content }}
+      </div>
+    </div>
+  </main>
+
+  <!-- Project Navigation -->
+  <nav class="project-navigation" aria-label="Project navigation">
+    <div class="container">
+      <div class="project-nav-buttons">
+        {% assign projects = site.projects | sort: 'date' | reverse %}
+        {% for project in projects %}
+          {% if project.url == page.url %}
+            {% assign current_index = forloop.index0 %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+
+        {% assign prev_index = current_index | minus: 1 %}
+        {% assign next_index = current_index | plus: 1 %}
+
+        {% if prev_index >= 0 %}
+          {% assign prev_project = projects[prev_index] %}
+          <a href="{{ prev_project.url }}" class="project-nav-button project-nav-prev" aria-label="Previous project: {{ prev_project.title }}">
+            <span class="nav-arrow">
+              <i class="fas fa-arrow-left" aria-hidden="true"></i>
+            </span>
+            <span class="nav-content">
+              <span class="nav-label">Previous Project</span>
+              <span class="nav-title">{{ prev_project.title }}</span>
+            </span>
+          </a>
+        {% else %}
+          <div class="project-nav-spacer"></div>
+        {% endif %}
+
+        <a href="/projects/" class="project-nav-button project-nav-all" aria-label="View all projects">
+          <i class="fas fa-th" aria-hidden="true"></i>
+          <span>All Projects</span>
+        </a>
+
+        {% if next_index < projects.size %}
+          {% assign next_project = projects[next_index] %}
+          <a href="{{ next_project.url }}" class="project-nav-button project-nav-next" aria-label="Next project: {{ next_project.title }}">
+            <span class="nav-content">
+              <span class="nav-label">Next Project</span>
+              <span class="nav-title">{{ next_project.title }}</span>
+            </span>
+            <span class="nav-arrow">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </span>
+          </a>
+        {% else %}
+          <div class="project-nav-spacer"></div>
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+
+  <!-- Related Projects -->
+  <section class="related-projects">
+    <div class="container">
+      <h2 class="section-title">Related Projects</h2>
+      <div class="related-projects-grid">
+        {% assign related = site.projects | where_exp: "project", "project.url != page.url" %}
+        {% if page.category %}
+          {% assign related = related | where: "category", page.category %}
+        {% endif %}
+
+        {% assign related_count = 0 %}
+        {% for project in related limit: 3 %}
+          {% assign related_count = related_count | plus: 1 %}
+          <article class="related-project-card">
+            <a href="{{ project.url }}" class="related-project-link" aria-label="View {{ project.title }}">
+              {% if project.image %}
+              <div class="related-project-image">
+                <img src="{{ project.image | relative_url }}" alt="{{ project.title }}" loading="lazy" />
+              </div>
+              {% endif %}
+              <div class="related-project-content">
+                <h3 class="related-project-title">{{ project.title }}</h3>
+                <p class="related-project-description">{{ project.description | truncate: 120 }}</p>
+                {% if project.tags %}
+                <div class="related-project-tags">
+                  {% for tag in project.tags limit: 3 %}
+                  <span class="project-tag-small">{{ tag }}</span>
+                  {% endfor %}
+                </div>
+                {% endif %}
+              </div>
+            </a>
+          </article>
+        {% endfor %}
+
+        {% if related_count == 0 %}
+          {% assign all_other = site.projects | where_exp: "project", "project.url != page.url" %}
+          {% for project in all_other limit: 3 %}
+            <article class="related-project-card">
+              <a href="{{ project.url }}" class="related-project-link" aria-label="View {{ project.title }}">
+                {% if project.image %}
+                <div class="related-project-image">
+                  <img src="{{ project.image | relative_url }}" alt="{{ project.title }}" loading="lazy" />
+                </div>
+                {% endif %}
+                <div class="related-project-content">
+                  <h3 class="related-project-title">{{ project.title }}</h3>
+                  <p class="related-project-description">{{ project.description | truncate: 120 }}</p>
+                  {% if project.tags %}
+                  <div class="related-project-tags">
+                    {% for tag in project.tags limit: 3 %}
+                    <span class="project-tag-small">{{ tag }}</span>
+                    {% endfor %}
+                  </div>
+                  {% endif %}
+                </div>
+              </a>
+            </article>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="project-cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">Interested in collaborating?</h2>
+        <p class="cta-description">Let's discuss how we can work together on innovative projects.</p>
+        <div class="cta-buttons">
+          <a href="https://cal.com/ambreen-hanif-qas6oz/30min" target="_blank" class="cta-button" aria-label="Book a call with Ambreen (opens in new window)">
+            <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+            Book a Call
+          </a>
+          <a href="mailto:hanif.ambreen@gmail.com" class="cta-button cta-button-secondary">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            Send Email
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>

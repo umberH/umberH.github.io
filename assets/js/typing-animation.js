@@ -1,3 +1,33 @@
+// ── Nav Bar Scroll Effect ────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function() {
+  const header = document.querySelector('.site-header');
+  let isHovering = false;
+
+  if (header) {
+    // Show on scroll
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+      } else if (!isHovering) {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Show on hover near top
+    document.addEventListener('mousemove', function(e) {
+      if (e.clientY <= 80) {
+        isHovering = true;
+        header.classList.add('scrolled');
+      } else if (window.scrollY <= 100) {
+        isHovering = false;
+        header.classList.remove('scrolled');
+      } else {
+        isHovering = false;
+      }
+    });
+  }
+});
+
 // ── Typing Animation ─────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', function() {
   const typingTextRole   = document.querySelector('.typing-text-role');
