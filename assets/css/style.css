@@ -619,6 +619,7 @@ img {
   color: inherit;
   height: 100%;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .cta-button-secondary {
