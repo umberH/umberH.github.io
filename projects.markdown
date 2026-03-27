@@ -2,6 +2,7 @@
 layout: default
 title: Projects - Ambreen Hanif
 description: Explore my portfolio of data science and machine learning projects, from AI-powered applications to research initiatives.
+permalink: /projects/
 ---
 
 <!-- Projects Header -->
@@ -48,7 +49,8 @@ description: Explore my portfolio of data science and machine learning projects,
 <main class="projects-main">
   <div class="container">
     <div class="projects-grid" id="projects-grid">
-      {% for project in site.projects %}
+      {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
+      {% for project in sorted_projects %}
       <article class="project-card" data-category="{{ project.category }}" data-technologies="{{ project.technologies | join: ',' }}">
         <a href="{{ project.url }}" class="project-link" aria-label="View details for {{ project.title }}">
           {% if project.image %}
@@ -58,7 +60,7 @@ description: Explore my portfolio of data science and machine learning projects,
             <i class="fas fa-project-diagram" aria-hidden="true"></i>
           </div>
           {% endif %}
-          
+
           <div class="project-content">
             <div class="project-meta">
               {% if project.category %}
@@ -70,15 +72,15 @@ description: Explore my portfolio of data science and machine learning projects,
               </time>
               {% endif %}
             </div>
-            
+
             <h2 class="project-title">{{ project.title }}</h2>
-            
+
             {% if project.subtitle %}
             <p class="project-subtitle">{{ project.subtitle }}</p>
             {% endif %}
-            
+
             <p class="project-description">{{ project.description }}</p>
-            
+
             {% if project.technologies %}
             <div class="project-technologies">
               {% for tech in project.technologies limit:4 %}
@@ -89,7 +91,7 @@ description: Explore my portfolio of data science and machine learning projects,
               {% endif %}
             </div>
             {% endif %}
-            
+
             {% if project.tags %}
             <div class="project-tags">
               {% for tag in project.tags limit:3 %}
@@ -97,7 +99,7 @@ description: Explore my portfolio of data science and machine learning projects,
               {% endfor %}
             </div>
             {% endif %}
-            
+
             <div class="project-cta">
               <span class="read-more">View Project Details</span>
               <i class="fas fa-arrow-right" aria-hidden="true"></i>

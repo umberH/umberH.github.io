@@ -8,7 +8,7 @@
     - "Python"
     - "AutoML"
     - "Data Science"
-  link: "#"
+  link: "/projects/automl-platform/"
 
 - title: Explainable AI (XAI) Framework
   description: Built a comprehensive framework for making machine learning models interpretable and transparent. Implemented various XAI techniques including SHAP, LIME, and feature importance analysis.
@@ -18,7 +18,7 @@
     - "Machine Learning"
     - "Python"
     - "Interpretability"
-  link: "#"
+  link: "/projects/explainable-ai-framework/"
 
 - title: Stock Market Forecasting System
   description: Created a sophisticated stock market prediction system using time series analysis and deep learning models. Achieved 15% improvement in prediction accuracy compared to traditional methods.
@@ -28,7 +28,7 @@
     - "Deep Learning"
     - "Finance"
     - "Python"
-  link: "#"
+  link: "/projects/stock-market-forecasting/"
 
 - title: Personality Detection from Text
   description: Developed an NLP-based system that analyzes text to predict personality traits using machine learning algorithms. Processed large datasets and achieved 85% accuracy in personality classification.
@@ -38,7 +38,7 @@
     - "Machine Learning"
     - "Text Analysis"
     - "Python"
-  link: "#"
+  link: "/projects/personality-detection/"
 
 - title: ALAP - Automated Learning Assessment Platform
   description: Designed and implemented an intelligent platform for automated assessment of learning outcomes. Features include adaptive testing, performance analytics, and personalized feedback systems.
@@ -48,7 +48,7 @@
     - "Machine Learning"
     - "Web Development"
     - "Analytics"
-  link: "#"
+  link: "/projects/alap-platform/"
 
 - title: Ultrasound Training Simulator
   description: Created an innovative virtual reality-based training simulator for medical ultrasound procedures. Combines computer vision and haptic feedback for realistic training experience.
@@ -58,4 +58,4 @@
     - "VR/AR"
     - "Healthcare"
     - "Unity"
-  link: "#"
+  link: "/projects/ultrasound-training-simulator/"

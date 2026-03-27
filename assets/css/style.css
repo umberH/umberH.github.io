@@ -936,7 +936,7 @@ main {
 .project-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  border-color: var(--accent-dark);
+  border-color: var(--color-dark);
 }
 
 .project-image {
@@ -1500,8 +1500,8 @@ main {
 }
 
 .related-project-link:hover {
-  background: var(--primary-color);
-  color: #ffffff;
+  background: var(--background-light);
+  border-color: var(--color-dark);
   transform: translateX(5px);
 }
 
@@ -3025,8 +3025,8 @@ main {
 
 .project-card:hover .project-tag {
   background: var(--background-light);
-  border-color: var(--accent);
-  color: var(--accent-dark);
+  border-color: var(--color-dark);
+  color: var(--text-secondary);
 }
 
 /* ── CTA link ────────────────────────────────────────────────── */

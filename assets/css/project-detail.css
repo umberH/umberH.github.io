@@ -503,11 +503,15 @@
 .project-cta {
   background: linear-gradient(135deg, var(--color-dark) 0%, #2a2420 100%);
   padding: 4rem 0;
+  width: 100%;
 }
 
 .cta-content {
   text-align: center;
   color: #ffffff;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .cta-title {
