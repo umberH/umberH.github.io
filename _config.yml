@@ -26,6 +26,23 @@ description: "From raw data to real decisions — Ambreen Hanif is a Sydney-base
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://umberh.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
+# SEO settings
+author:
+  name: Ambreen Hanif
+  email: hanif.ambreen@gmail.com
+  twitter: umbreenh
+
+tagline: "Data Scientist & ML Engineer | Sydney | Machine Learning, AI, GenAI"
+keywords: "data science, machine learning, ML engineer, AI, artificial intelligence, generative AI, Sydney, PhD computer science, AutoML, XAI, explainable AI"
+
+logo: /assets/images/favicon.svg
+
+social:
+  name: Ambreen Hanif
+  links:
+    - https://github.com/umberH
+    - https://linkedin.com/in/ambreen16
+
 
 #github: [metadata] 
 #encoding: UTF-8 
