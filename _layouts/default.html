@@ -266,8 +266,7 @@
       updateCarousel();
       
       // Handle window resize
-      // FIX — recalculate properly
-          .addEventListener('resize', function() {
+      window.addEventListener('resize', function() {
         currentSlide = 0;
         updateCarousel();
       });
@@ -288,22 +287,23 @@
       const prevBtn = projectsCarousel.querySelector('.carousel-btn-prev');
       const nextBtn = projectsCarousel.querySelector('.carousel-btn-next');
       const dots = projectsCarousel.querySelectorAll('.carousel-dot');
-      
+
       let currentIndex = 0;
       const cardWidth = 350 + 32; // card width + gap
       function getMaxIndex() {
         return Math.max(0, cards.length - Math.floor(track.offsetWidth / cardWidth));
       }
-      
+
       function updateCarousel() {
+        const maxIndex = getMaxIndex();
         const translateX = -currentIndex * cardWidth;
         track.style.transform = `translateX(${translateX}px)`;
-        
+
         // Update dots
         dots.forEach((dot, index) => {
           dot.classList.toggle('active', index === currentIndex);
         });
-        
+
         // Update buttons
         prevBtn.disabled = currentIndex === 0;
         nextBtn.disabled = currentIndex >= maxIndex;
