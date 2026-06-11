@@ -36,6 +36,16 @@ email: hanif.ambreen@[gmaildotcom]
 theme: minima
 #skin: dark
 #date_format: "%Y-%m-%d %H:%M"
+
+# Syntax highlighting
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+
 #social_links:
     #twitter_username: umbreenh
 github_username:  umberH
