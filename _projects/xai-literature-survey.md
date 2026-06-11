@@ -124,7 +124,47 @@ Four interdependent layers spanning the entire ML lifecycle:
 - Audit trails and documentation
 - Fairness, accountability, transparency monitoring
 
-### 2. Application Domains Analysis
+### 3. Comprehensive XAI Technique Benchmark
+
+**17 XAI techniques evaluated** across multiple modalities using lifecycle-aware metrics:
+
+#### **Tabular Data Methods**
+- SHAP (SHapley Additive exPlanations)
+- LIME (Local Interpretable Model-agnostic Explanations)
+- Integrated Gradients
+- Counterfactual Explanations
+- Anchors
+
+#### **Image Data Methods**
+- GradCAM (Gradient-weighted Class Activation Mapping)
+- LIME for Images
+- Layer-wise Relevance Propagation (LRP)
+- Attention Visualization
+- Concept Activation Vectors (CAVs)
+
+#### **Text Data Methods**
+- Attention Weights
+- LIME for Text
+- Integrated Gradients for NLP
+- Influence Functions
+- Rationale Extraction
+
+#### **Evaluation Metrics**
+
+**Lifecycle-Aware Metrics:**
+- **Fidelity**: How accurately explanations reflect true model behavior
+- **Completeness**: Coverage of relevant features/factors
+- **Monotonicity**: Consistency with feature importance rankings
+- **Stability**: Robustness to input perturbations
+- **Complexity**: Cognitive load and interpretability
+
+**Cognitively Aligned Metrics:**
+- Human comprehensibility scores
+- Task completion time with explanations
+- Decision confidence improvement
+- Trust calibration
+
+### 4. Application Domains Analysis
 
 **Distribution of XAI Applications:**
 - Healthcare & Medical Diagnosis: 28%
@@ -296,18 +336,20 @@ Created comprehensive visualizations:
 
 ## Survey Statistics
 
-- **Total Papers Reviewed**: 247
-- **Papers Included in Final Analysis**: 203
-- **Unique XAI Techniques Identified**: 47
-- **Application Domains Covered**: 15
-- **Average Citation Count**: 42 (median: 18)
-- **Highly Cited Papers (>100 citations)**: 31
+- **Total Papers Reviewed**: 202 peer-reviewed studies
+- **XAI Techniques Benchmarked**: 17 methods across 3 modalities
+- **Explanation Strategy Types**: 5 cognitively grounded categories
+- **Architecture Layers**: 4 lifecycle-centric layers
+- **Application Domains Covered**: Multiple high-stakes domains
+- **Evaluation Dimensions**: Lifecycle-aware + cognitively aligned metrics
 
 ## Impact & Dissemination
 
 ### Publications
-- Survey paper submitted to *ACM Computing Surveys* (Under Review)
-- Workshop paper accepted at *XAI4Science Workshop, NeurIPS 2024*
+- **Published**: ACM Computing Surveys, Vol. 58, No. 12, Article 305 (May 2026)
+- **Co-authors**: Ambreen Hanif, Radwa El Shawi, Amin Beheshti, Boualem Benatallah
+- **Pages**: 42 pages
+- **DOI**: [10.1145/3806829](https://dl.acm.org/doi/10.1145/3806829)
 
 ### Community Contributions
 - **Open Dataset**: Curated bibliography with extracted metadata
@@ -339,7 +381,8 @@ Created comprehensive visualizations:
 
 ### Resources
 
-**Survey Paper**: [Link available upon publication]
+**Survey Paper**: [ACM Computing Surveys](https://dl.acm.org/doi/10.1145/3806829)
+**PDF**: [Download PDF](https://dl.acm.org/doi/pdf/10.1145/3806829)
 **Interactive Explorer**: [xai-survey.ambreenhanif.com]
 **GitHub Repository**: [github.com/umberH/xai-literature-survey]
 **Dataset**: [Curated bibliography in BibTeX and CSV formats]
