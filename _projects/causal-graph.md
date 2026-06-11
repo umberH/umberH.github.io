@@ -2,7 +2,7 @@
 layout: project
 title: Causal Graph Learning
 description: A framework for discovering causal relationships from observational data and constructing causal graphs that enable counterfactual reasoning and intervention analysis for robust decision-making.
-image: /assets/images/causal-graph.jpg
+image: /assets/images/projects/placeholder.png
 tags:
   - Causal Inference
   - Machine Learning

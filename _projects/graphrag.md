@@ -2,7 +2,7 @@
 layout: project
 title: GraphRAG
 description: A graph-based Retrieval-Augmented Generation system that leverages knowledge graphs to enhance contextual understanding and improve LLM responses through structured relationship mapping.
-image: /assets/images/graphrag.jpg
+image: /assets/images/projects/placeholder.png
 tags:
   - RAG
   - Knowledge Graphs

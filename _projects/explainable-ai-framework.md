@@ -2,7 +2,7 @@
 layout: project
 title: Explainable AI (XAI) Framework
 description: Built a comprehensive framework for making machine learning models interpretable and transparent. Implemented various XAI techniques including SHAP, LIME, and feature importance analysis.
-image: /assets/images/project2.jpg
+image: /assets/images/projects/XAI.png
 tags:
   - XAI
   - Machine Learning

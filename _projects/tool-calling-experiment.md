@@ -2,7 +2,7 @@
 layout: project
 title: Tool Calling Experiment
 description: Experimental framework for enhancing LLM capabilities through dynamic tool integration, exploring function calling patterns, tool selection strategies, and error recovery mechanisms.
-image: /assets/images/tool-calling.jpg
+image: /assets/images/projects/placeholder.png
 tags:
   - LLM
   - Function Calling

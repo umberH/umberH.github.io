@@ -2,7 +2,7 @@
 layout: project
 title: Multi-Model Integration Dashboard
 description: A comprehensive analytics dashboard that integrates multiple machine learning models for real-time monitoring, performance comparison, ensemble predictions, and continuous learning across diverse data sources.
-image: /assets/images/dashboard.jpg
+image: /assets/images/projects/evidence.png
 tags:
   - MLOps
   - Dashboard

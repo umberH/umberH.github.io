@@ -2,7 +2,7 @@
 layout: project
 title: AutoML Platform
 description: Developed an automated machine learning platform that streamlines the model development process. Features include automated feature engineering, hyperparameter optimization, and model selection algorithms.
-image: /assets/images/project1.jpg
+image: /assets/images/projects/AUTOML.png
 tags:
   - Machine Learning
   - Python

@@ -2,7 +2,7 @@
 layout: project
 title: Student Progression with GraphRAG
 description: An intelligent learning analytics system that uses GraphRAG to track student learning journeys, identify knowledge gaps, and provide personalized recommendations based on concept relationships and learning pathways.
-image: /assets/images/student-progression.jpg
+image: /assets/images/projects/placeholder.png
 tags:
   - Education Technology
   - GraphRAG

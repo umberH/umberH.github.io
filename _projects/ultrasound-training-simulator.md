@@ -2,7 +2,7 @@
 layout: project
 title: Ultrasound Training Simulator
 description: Created an innovative virtual reality-based training simulator for medical ultrasound procedures. Combines computer vision and haptic feedback for realistic training experience.
-image: /assets/images/project6.jpg
+image: /assets/images/projects/placeholder.png
 tags:
   - Computer Vision
   - VR/AR

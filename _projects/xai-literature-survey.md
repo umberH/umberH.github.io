@@ -1,8 +1,9 @@
 ---
 layout: project
-title: Systematic Literature Survey of XAI
-description: A comprehensive systematic literature review of Explainable AI (XAI) techniques, analyzing 200+ papers to map the landscape of interpretability methods, evaluation metrics, and application domains.
-image: /assets/images/xai-survey.jpg
+title: Survey on Explainable AI for Traditional Machine Learning and Domains
+description: Published in ACM Computing Surveys (2026), this comprehensive survey reconceptualizes explainability as a reflexive, system-level property spanning the entire ML lifecycle, introducing a cognitively grounded taxonomy and lifecycle-centric architecture for XAI.
+image: /assets/images/projects/XAI.png
+paper: https://dl.acm.org/doi/10.1145/3806829
 tags:
   - XAI
   - Research
@@ -21,7 +22,12 @@ date: 2024-09-10
 
 ## Overview
 
-This systematic literature survey provides a comprehensive analysis of Explainable AI (XAI) research from 2016 to 2024, examining the evolution of interpretability techniques, their theoretical foundations, practical applications, and evaluation methodologies. The survey synthesizes insights from over 200 peer-reviewed papers across multiple domains to create a structured taxonomy of XAI approaches and identify key research gaps.
+**Published in:** ACM Computing Surveys, Vol. 58, No. 12, Article 305 (May 2026)
+**DOI:** [10.1145/3806829](https://dl.acm.org/doi/10.1145/3806829)
+
+The increasing deployment of opaque AI models in high-stakes domains has intensified the demand for Explainable AI (XAI) that is both cognitively aligned and operationally embedded. This survey reconceptualizes explainability as a reflexive, system-level property spanning the entire machine learning lifecycle—from data collection and model development to deployment and monitoring.
+
+Rather than treating explanations as post-hoc additions, we introduce a **lifecycle-centric architecture** that integrates explainability at every stage, supported by a **cognitively grounded taxonomy** of explanation strategies tailored to diverse stakeholder needs.
 
 ## Research Methodology
 
@@ -63,26 +69,60 @@ Extracted information for each paper:
 - Key findings and limitations
 - Citation count and impact
 
-## Key Findings
+## Key Contributions
 
-### 1. XAI Techniques Taxonomy
+### 1. Cognitively Grounded Taxonomy of Explanation Strategies
 
-Developed a comprehensive taxonomy organizing XAI methods:
+This survey introduces a novel **human-centered taxonomy** of explanation types aligned with cognitive reasoning models:
 
-#### **Model-Agnostic Methods**
-- **Perturbation-Based**: LIME, Anchors, SHAP
-- **Surrogate Models**: Global/Local surrogate trees
-- **Example-Based**: Prototypes, Counterfactuals, Influential instances
+#### **Analogical Explanations**
+- Leverage familiar examples to explain unfamiliar concepts
+- Example: "This credit risk is similar to cases X, Y, Z"
+- Aligned with case-based reasoning in human cognition
 
-#### **Model-Specific Methods**
-- **Gradient-Based**: Saliency maps, Integrated Gradients, GradCAM
-- **Attention Mechanisms**: Self-attention visualization, Attention rollout
-- **Intrinsically Interpretable**: Decision trees, Linear models, Rule-based systems
+#### **Contrastive Explanations**
+- Answer "Why P rather than Q?" questions
+- Counterfactual reasoning: "If feature X changed, outcome would be Y"
+- Natural for human causal thinking
 
-#### **Hybrid Approaches**
-- Neural-symbolic integration
-- Concept-based explanations
-- Causal explanation methods
+#### **Conceptual Explanations**
+- High-level abstraction through learned concepts
+- Example: "Detected 'stripedness' and 'four legs' → classified as zebra"
+- Maps to prototype theory in psychology
+
+#### **Narrative Explanations**
+- Sequential, story-like explanations of decision processes
+- Temporal causality and process transparency
+- Aligns with human preference for narrative structure
+
+#### **Interactive Explanations**
+- User-guided, iterative exploration
+- Adaptive to user expertise and information needs
+- Supports active learning and verification
+
+### 2. Lifecycle-Centric XAI Architecture
+
+Four interdependent layers spanning the entire ML lifecycle:
+
+#### **Operational Layer**
+- Data collection, preprocessing, feature engineering
+- Model training, validation, deployment
+- Embedded explainability considerations at each stage
+
+#### **Explainability Layer**
+- Technique selection based on model type and stakeholder needs
+- Implementation of explanation generation
+- Integration with operational processes
+
+#### **Interactivity Layer**
+- User interface design for explanation consumption
+- Feedback mechanisms and refinement
+- Personalization and adaptation
+
+#### **Governance Layer**
+- Regulatory compliance (GDPR, EU AI Act)
+- Audit trails and documentation
+- Fairness, accountability, transparency monitoring
 
 ### 2. Application Domains Analysis
 
@@ -308,11 +348,22 @@ Created comprehensive visualizations:
 ### Citation
 
 ```bibtex
-@article{hanif2024xai,
-  title={Explainable AI: A Systematic Literature Review of Techniques, Applications, and Evaluation},
-  author={Hanif, Ambreen},
-  journal={ACM Computing Surveys},
-  year={2024},
-  note={Under Review}
+@article{10.1145/3806829,
+  author = {Hanif, Ambreen and Shawi, Radwa El and Beheshti, Amin and Benatallah, Boualem},
+  title = {Survey on Explainable AI for Traditional Machine Learning and Domains},
+  year = {2026},
+  issue_date = {September 2026},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {58},
+  number = {12},
+  issn = {0360-0300},
+  url = {https://doi.org/10.1145/3806829},
+  doi = {10.1145/3806829},
+  journal = {ACM Comput. Surv.},
+  month = {may},
+  articleno = {305},
+  numpages = {42},
+  keywords = {Explainable AI, cognitive alignment, human-centered explainability, evaluation metrics, applications}
 }
 ```

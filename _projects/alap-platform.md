@@ -2,7 +2,7 @@
 layout: project
 title: ALAP - Automated Learning Assessment Platform
 description: Designed and implemented an intelligent platform for automated assessment of learning outcomes. Features include adaptive testing, performance analytics, and personalized feedback systems.
-image: /assets/images/project5.jpg
+image: /assets/images/projects/loandefault.png
 tags:
   - Education Technology
   - Machine Learning

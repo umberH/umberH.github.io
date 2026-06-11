@@ -2,7 +2,7 @@
 layout: project
 title: Personality Detection from Text
 description: Developed an NLP-based system that analyzes text to predict personality traits using machine learning algorithms. Processed large datasets and achieved 85% accuracy in personality classification.
-image: /assets/images/project4.jpg
+image: /assets/images/projects/loandefault.png
 tags:
   - NLP
   - Machine Learning

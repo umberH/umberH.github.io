@@ -2,7 +2,7 @@
 layout: project
 title: Stock Market Forecasting System
 description: Created a sophisticated stock market prediction system using time series analysis and deep learning models. Achieved 15% improvement in prediction accuracy compared to traditional methods.
-image: /assets/images/project3.jpg
+image: /assets/images/projects/loandefault.png
 tags:
   - Time Series
   - Deep Learning

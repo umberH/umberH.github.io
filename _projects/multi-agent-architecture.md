@@ -2,7 +2,7 @@
 layout: project
 title: Multi-Agent Architecture
 description: A distributed multi-agent system where specialized AI agents collaborate, communicate, and coordinate to solve complex tasks that exceed the capabilities of individual agents.
-image: /assets/images/multi-agent.jpg
+image: /assets/images/projects/placeholder.png
 tags:
   - Multi-Agent Systems
   - AI Architecture
