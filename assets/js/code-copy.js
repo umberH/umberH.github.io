@@ -1,7 +1,7 @@
 // Add copy button to code blocks
 document.addEventListener('DOMContentLoaded', function() {
   // Find all code blocks
-  const codeBlocks = document.querySelectorAll('.highlight');
+  const codeBlocks = document.querySelectorAll('div.highlight');
 
   codeBlocks.forEach(function(codeBlock) {
     // Skip if button already exists
