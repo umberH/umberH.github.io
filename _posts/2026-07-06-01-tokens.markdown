@@ -11,7 +11,7 @@ title: "Tokens: How Words Become Numbers"
 series: AI in Simple English — Learn LLMs by Building
 post_number: 1
 publish_date: 2026-07-06
-phase: Phase 1 — Foundations
+phase: Phase 1 — Foundations Learning
 status: draft
 ---
 
@@ -153,4 +153,4 @@ Three things you'll bump into immediately:
 In Post 2, we build **Byte-Pair Encoding from scratch** in pure Python — the algorithm that creates the vocabulary in the first place. You'll start with raw text, count character pairs, and watch a vocabulary grow, merge by merge, from 256 bytes to thousands of meaningful chunks. It's one of those algorithms that sounds daunting and turns out to be almost embarrassingly simple once you see it.
 
 ---
-*Part 1 of [AI in Simple English — Learn LLMs by Building](https://medium.com/@your-handle). New posts every Monday and Thursday. Follow the series on [GitHub](https://github.com/your-username/ai-in-simple-english) and [LinkedIn](#).*
+*Part 1 of [AI in Simple English — Learn LLMs by Building](https://medium.com/ambreen16). New posts every Monday and Thursday. Follow the series on [GitHub](https://github.com/umberH/ai-in-simple-english) and [LinkedIn](#).*
