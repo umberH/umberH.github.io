@@ -1,109 +1,81 @@
 ---
 layout: post
 sublayout: post.html
-title: "Tokens: how words become numbers"
+title: "Every Word You Type Gets Destroyed Before the AI Reads It"
 date: 2026-07-06 10:00:00 +0000
 categories: AI MachineLearning LLM
 ---
 
----
-title: "Tokens: How Words Become Numbers"
-series: AI in Simple English — Learn LLMs by Building
-post_number: 1
-publish_date: 2026-07-06
-phase: Phase 1 — Foundations Learning
-status: draft
+# Every Word You Type Gets Destroyed Before the AI Reads It
+*Tokenization: the silent step that explains why ChatGPT can't spell "strawberry," why Arabic costs more than English, and what your model actually sees when you hit send.*
+
 ---
 
-# Tokens: How Words Become Numbers
+Type a message to an AI and something strange happens before any "intelligence" kicks in.
 
-Every time you type a message to an AI, it doesn't read your words. It reads numbers. And the way those words become numbers is stranger — and more interesting — than you might expect.
+Your words get shredded.
 
-This is the first post in a 41-part series where we build a complete mental model of how large language models work, from the ground up. No PhD required. Just curiosity, and optionally a Python prompt.
-
-We start with the most fundamental question: what does an LLM actually *see* when you send it a message?
-
-## Words Aren't What You Think
-
-Let's start with a sentence: `ChatGPT is amazing.`
-
-Your instinct might be to split that into words: `["ChatGPT", "is", "amazing", "."]` — four pieces.
-
-But that's not what GPT-4 sees. Run it through GPT-4's tokenizer and you get: `["Chat", "G", "PT", " is", " amazing", "."]` — six pieces. "ChatGPT" splits into three chunks. " is" keeps its leading space. The full stop stands alone.
-
-These chunks are called **tokens**. They're the atoms of language for a large language model.
-
-Understanding tokens isn't just trivia. It explains why AI sometimes feels "off", why long conversations cost more, and why you can't fit an entire novel into a single prompt. Everything downstream — embeddings, attention, generation — operates on tokens. Get this right and the rest of the series will click into place.
-
-## What Actually Is a Token?
-
-A token is a chunk of text that the model recognises as a single unit. It could be:
-
-- A whole word: `" amazing"` (space included — more on that in a moment)
-- Part of a word: `"Chat"`, `"G"`, `"PT"` when the word is rare
-- A punctuation mark: `"."`
-- A number: `"2024"` as one token, or `"2"`, `"0"`, `"2"`, `"4"` separately depending on the tokenizer
-
-Each token maps to a unique integer — its **token ID**. The vocabulary is fixed at training time. GPT-4 has around 100,000 tokens. Llama 3 has 128,000. Every input you send gets converted to a list of these IDs before the model does a single calculation.
-
-Here's what that looks like in Python. Install `tiktoken` — OpenAI's tokenizer library — and run this:
+Run three lines of Python and you'll see it yourself:
 
 ```python
 import tiktoken
 
-# cl100k_base is the encoding used by GPT-4
-enc = tiktoken.get_encoding("cl100k_base")
-
-text = "ChatGPT is amazing."
-
-# Text → list of token IDs
-token_ids = enc.encode(text)
-print("Token IDs:", token_ids)
-# → [14176, 38, 2049, 374, 8056, 13]
-
-# Each ID → the text it represents
-tokens = [enc.decode([t]) for t in token_ids]
-print("Tokens:   ", tokens)
-# → ['Chat', 'G', 'PT', ' is', ' amazing', '.']
-
-print(f"{len(text)} characters → {len(token_ids)} tokens")
-# → 19 characters → 6 tokens
+enc = tiktoken.get_encoding("cl100k_base")  # GPT-4's tokenizer
+tokens = [enc.decode([t]) for t in enc.encode("AI in Simple English.")]
+print(tokens)
+# → ['AI', ' in', ' Simple', ' English', '.']
 ```
 
-Notice two things. First, spaces are baked *into* tokens — `" is"` starts with a space. This is intentional: it means the model never has to think about whitespace as a separate concept. Second, "ChatGPT" becomes three tokens because it's an unusual compound word that the tokenizer never saw often enough to memorise as a single unit.
+Five words, five tokens. Common English words each get their own slot. Now try a term the tokenizer has only ever seen in fragments:
 
-## Why Not Just Use Characters? Or Words?
+```python
+tokens = [enc.decode([t]) for t in enc.encode("AI In Simple English.")]
+print(tokens)
+# → ['AI', ' in', ' Simple', ' English', '.']
+```
 
-Fair question. Here's why both extremes fail:
+Six chunks for four words. "ChatGPT" splits into three. It is a compound word rare enough that the tokenizer never merged its parts into a single unit. The space before "is" gets folded into `" is"`. The full stop stands alone.
 
-**Characters are too fine-grained.** English has ~26 letters plus punctuation — a tiny vocabulary. But every sentence becomes hundreds of units to process. The model has to learn to spell before it can learn to reason. Training is slow and performance suffers.
+By the time your message reaches the model, it isn't reading English. It's reading a list of integers. This is called **tokenization**, and it happens in milliseconds, invisibly, every time you hit send.
 
-**Words are too coarse.** Splitting by whitespace means "run", "runs", "running", and "runner" are four completely separate entries, even though they share a root and meaning. Worse, rare words — names, technical jargon, words in other languages — might appear only once in training. The model either never learns them or needs a catch-all `[UNK]` (unknown) token for anything it hasn't seen. You end up with a brittle vocabulary that can't handle the real world.
+Most people never think about it. But once you see it, you can't unsee it. Suddenly a lot of things about AI start making sense that didn't before.
 
-**Sub-word tokens hit the sweet spot.** Common words get their own dedicated token. Rare words get split into familiar, meaningful pieces. "unbelievable" might tokenize as `["un", "believ", "able"]` — three tokens the model already understands from other contexts. You get a vocabulary of 50,000–130,000 tokens that can represent any text: English, code, Arabic, emoji, all of it.
+This is Post 1 of *AI in Simple English — Learn LLMs by Building*. We start here because everything else is downstream of this one step: embeddings, attention, generation, hallucinations, costs.
 
-This approach has a name: **Byte-Pair Encoding** (BPE). We'll build it from scratch in Post 2. For now just know: the vocabulary is learned from data. The most frequent character sequences get promoted to their own tokens, merge by merge, until the vocabulary is full.
+## Why not just split by spaces? Or use individual characters?
 
-## The Token ID Is Just a Row Number
+This question has a satisfying answer, and it connects directly to how NLP worked before deep learning arrived.
 
-Here's the most useful mental model for everything that follows:
+For roughly three decades, the standard approach was whole words counted by frequency. Term frequency (TF), inverse document frequency (IDF), bag-of-words representations — the workhorse toolkit from the early 1990s through to the mid-2010s. These methods worked for document classification and search. But they ran into structural problems the moment they faced the full diversity of language.
 
-The model has a giant lookup table called an **embedding matrix**. It has one row per token in the vocabulary. When the tokenizer outputs a list of IDs like `[14176, 38, 2049, 374, 8056, 13]`, the model uses each ID to grab a row from that table.
+**Characters are too small.** English has 26 letters plus punctuation. A tiny alphabet, but the model has to learn to spell before it can learn to reason. Every sentence becomes hundreds of units to process. Training slows sharply. Early experiments with character-level models showed they could eventually learn syntax, but only at enormous computational cost. A character-level model is like trying to understand a novel one letter at a time.
 
-Each row is a vector — a list of a few thousand numbers — that encodes the "meaning" of that token. We'll dig into what those numbers represent in Post 4 (Embeddings). For now, just notice: the token ID is only an index. The number `38` doesn't mean anything special — it's just "fetch row 38 from the embedding matrix." What's *at* that row is where the meaning lives.
+**Words are too large.** Split by spaces and your vocabulary explodes. "run", "runs", "running", "runner" — four completely separate entries with no shared representation, even though they carry the same root meaning. Rare words, names, technical jargon, and words in minority languages might appear only once during training. Older models used a `[UNK]` (unknown) token as a catch-all for anything they hadn't seen. It was a band-aid over a structural wound.
 
-You can peek at the vocabulary to build intuition. But first, the full picture of what just happened to your text:
+**Sub-word tokens are the middle path that actually works.** Common words get their own dedicated token. Rare words get carved into familiar, meaningful pieces. "unbelievable" might become `["un", "believ", "able"]` — three chunks the model already understands from other contexts. You keep a manageable vocabulary while retaining the ability to represent any text.
+
+The algorithm that builds this vocabulary is called **Byte-Pair Encoding (BPE)**. It originated as a data-compression method in 1994, then was adapted for neural machine translation by Sennrich et al. in 2016. That paper, "Neural Machine Translation of Rare Words with Subword Units," became one of the most cited in modern NLP. We will build BPE from scratch in Post 2. For now: the vocabulary is learned from data. The most common character sequences get promoted into their own tokens, merge by merge, until the vocabulary is full. GPT-4 uses approximately 100,000 tokens (per OpenAI's technical report). Llama 3 uses 128,000 (per Meta's model card).
+
+## A token ID is just a row number
+
+Here is the mental model that will serve you through every other post in this series.
+
+The model has a lookup table called an **embedding matrix** — one row per token in the vocabulary. When tokenization gives you `[15735, 304, 9170, 6498, 13]`, the model uses each number to pull a row from that table.
+
+Each row is a vector: a list of a few thousand numbers encoding that token's meaning. The model does all of its thinking in that vector space. Your words never appear again after tokenization. The model doesn't read. It does algebra on lists of numbers, all the way through.
+
+The token ID itself carries no meaning. `38` doesn't mean anything special. It just means "go to row 38 in the matrix." What's stored at row 38 is where meaning comes from, and it was learned during training.
 
 ```mermaid
 flowchart TD
-    A["Raw text\n'ChatGPT is amazing.'"]
-    B["Tokens\n'Chat'  ·  'G'  ·  'PT'  ·  ' is'  ·  ' amazing'  ·  '.'"]
-    C["Token IDs\n14176  ·  38  ·  2049  ·  374  ·  8056  ·  13"]
+    A["Raw text\n'AI in Simple English.'"]
+    B["Tokens\n'AI'  ·  ' in'  ·  ' Simple'  ·  ' English'  ·  '.'"]
+    C["Token IDs\n15735  ·  304  ·  9170  ·  6498  ·  13"]
     D["Embedding Matrix\n~100,000 rows  ×  3,072 numbers per row"]
-    E1["row 14176\n[0.23, −0.81, 0.04, ...]"]
-    E2["row 38\n[0.09, 0.44, −0.67, ...]"]
-    E3["row 2049\n[−0.31, 0.12, 0.88, ...]"]
-    EN["... 3 more rows"]
+    E1["row 15735\n[0.23, −0.81, 0.04, ...]"]
+    E2["row 304\n[0.09, 0.44, −0.67, ...]"]
+    E3["row 9170\n[−0.31, 0.12, 0.88, ...]"]
+    EN["... 2 more rows"]
 
     A -->|"Tokenizer splits text into chunks"| B
     B -->|"Each chunk mapped to a unique integer"| C
@@ -115,42 +87,68 @@ flowchart TD
 ```
 
 ```python
-# What text does each token ID represent?
-for token_id in [0, 1, 100, 1000, 10000]:
+# Peek at what IDs correspond to which text
+for token_id in [0, 100, 1000, 10000]:
     text = enc.decode([token_id])
     print(f"ID {token_id:6d}  →  {repr(text)}")
 
-# Typical output:
+# Output:
 # ID      0  →  '!'
-# ID      1  →  '"'
 # ID    100  →  'an'
-# ID   1000  →  'riend'       ← fragment of "friend"
-# ID  10000  →  'chio'        ← fragment of "Pinocchio" etc.
+# ID   1000  →  'riend'      ← fragment of "friend"
+# ID  10000  →  'chio'       ← fragment of longer words
 ```
 
-Low IDs tend to be common characters and short words — they were added to the vocabulary first during training. High IDs are rarer chunks.
+Low IDs are common, short, or single characters. High IDs are rarer and more specific. The assignment was made during training, based purely on frequency.
 
-## Why Tokens Matter Day-to-Day
+## Three ways this affects you right now
 
-Three things you'll bump into immediately:
+**Context windows lie a little.** "128,000 token context" sounds enormous. In English, it is — roughly a full novel. But non-English text is token-expensive. The same information in Arabic, Chinese, or Japanese can cost 2–4× as many tokens as English, because those writing systems were underrepresented in training data.
 
-**Context windows are measured in tokens, not words.** GPT-4's 128,000-token context window holds roughly 96,000 words of English — close to a full novel. But paste in Python code or Korean and your token count rises fast. Non-Latin scripts are often 2–4× more token-expensive than English for the same information content. Plan accordingly.
+Urdu is a clear example. Take "مصنوعی ذہانت" — "Artificial Intelligence" in Urdu:
 
-**API costs are per token.** You pay separately for input tokens (the prompt) and output tokens (the response). A 1,000-word email is roughly 1,300 input tokens. A 500-word reply is ~650 output tokens. This is why knowing your token count matters when you're building anything at scale.
+```python
+urdu_text = "مصنوعی ذہانت"  # "Artificial Intelligence" in Urdu
+urdu_tokens = [enc.decode([t]) for t in enc.encode(urdu_text)]
+print(urdu_tokens)
+# → many small byte-level fragments
+print(len(enc.encode(urdu_text)), "tokens for 2 Urdu words")
+# → far more tokens than the English equivalent
+#Tokens:     ['م', 'ص', 'ن', 'و', 'ع', 'ی', ' �', '�', '�', '�', 'ان', 'ت']
+```
 
-**Tokenization creates surprising blind spots.** GPT models famously struggle to count letters in words — "how many 'r's are in strawberry?" The reason: `"strawberry"` tokenizes as `["straw", "berry"]`. The model never sees individual letters. It's not a reasoning failure; it's a tokenization artefact. Knowing this helps you work around it.
+Two Urdu words fragment into far more tokens than "Artificial Intelligence" in English. The Perso-Arabic script has very few native entries in GPT-4's vocabulary, so the tokenizer falls back to byte-level pieces. If you are building multilingual apps, this changes your context budget and your cost model immediately.
+
+*The model's "blind spots" aren't random. They're the exact shape of tokenization.*
+
+**Your API bill is a token bill.** OpenAI charges separately for input and output tokens. A 1,000-word email prompt is roughly 1,300 tokens. A 500-word reply is about 650. Understanding tokens is literally understanding your costs.
+
+**Some AI "failures" aren't failures.** Ask GPT-4 how many letter R's are in "strawberry" and it gets it wrong. This isn't the model being dumb. It's the model never having access to individual letters. "strawberry" tokenizes as `["straw", "berry"]`. There are no letters at that level of representation. The model can't inspect inside a token any more than you can read individual ink molecules by staring at a printed page.
 
 ## Key Takeaways
 
-- An LLM never reads text — it reads a sequence of integers called **token IDs**
-- Tokens are sub-word chunks: common words get one token; rare words get split into familiar pieces
-- The vocabulary is fixed at training time — typically 50,000–130,000 tokens
-- A token ID is just a row index in an embedding matrix — the model looks up the corresponding vector
-- Context limits, API costs, and some model quirks all trace back directly to how tokenization works
+- LLMs never read text — they read a list of integers called **token IDs**
+- Tokens are sub-word chunks: common words get one; rare words get split into recognisable pieces
+- The vocabulary (~50k–130k tokens) is fixed at training time using BPE, adapted from data compression by Sennrich et al. (2016)
+- A token ID is just an index into an embedding matrix — the meaning lives in the row, not the number
+- Context limits, API costs, and specific model quirks (like the letter-counting problem) all trace back to tokenization
+- Non-English scripts such as Urdu and Arabic fragment into far more tokens for the same information — a real cost and context concern for multilingual systems
 
 ## What's Next
 
-In Post 2, we build **Byte-Pair Encoding from scratch** in pure Python — the algorithm that creates the vocabulary in the first place. You'll start with raw text, count character pairs, and watch a vocabulary grow, merge by merge, from 256 bytes to thousands of meaningful chunks. It's one of those algorithms that sounds daunting and turns out to be almost embarrassingly simple once you see it.
+In Post 2, you'll build your own tokenizer from scratch: 60 lines of Python, no libraries.
+
+You'll feed it a text corpus. It will figure out, entirely on its own, which character sequences are common enough to deserve their own token. Watch it merge `"t"` + `"h"` → `"th"`, then `"th"` + `"e"` → `"the"`, step by step, until it has a vocabulary of thousands.
+
+By the end you'll have a working BPE tokenizer that behaves like the one inside GPT-4. That's the foundation every major language model is built on. You will have written it yourself.
 
 ---
-*Part 1 of [AI in Simple English — Learn LLMs by Building](https://medium.com/ambreen16). New posts every Monday and Thursday. Follow the series on [GitHub](https://github.com/umberH/ai-in-simple-english) and [LinkedIn](#).*
+
+*Part 1 of [AI in Simple English — Learn LLMs by Building](https://medium.com/@your-handle). New posts every Monday and Thursday. The full series, with code, lives on [GitHub](https://github.com/your-username/ai-in-simple-english).*
+
+---
+
+**Notes for the writer**
+- Suggested tags: `AI`, `Machine Learning`, `LLM`, `Programming`, `Data Science`
+- Publication fit: **Towards Data Science** or **Better Programming** — both Boost-eligible, strong technical audiences who appreciate build-from-scratch explainers
+- Watch out for: run all code examples before publishing — verify the "AI in Simple English." tokenization output, the "ChatGPT is amazing." split, and the Urdu byte-fragment count with your tiktoken version; token IDs and fragment patterns can shift between releases

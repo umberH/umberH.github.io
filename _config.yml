@@ -43,6 +43,12 @@ social:
     - https://github.com/umberH
     - https://linkedin.com/in/ambreen16
 
+# Default image for social sharing (create an og-image.png 1200x630px)
+og_image: /assets/images/og-image.png
+
+# Google Analytics (add your GA4 measurement ID when ready)
+# google_analytics: G-XXXXXXXXXX
+
 
 #github: [metadata] 
 #encoding: UTF-8 
@@ -81,6 +87,24 @@ collections:
   projects:
     output: true
     permalink: /projects/:title/
+  articles:
+    output: true
+    permalink: /articles/:title/
+
+# Collection defaults
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+      author: "Ambreen Hanif"
+  - scope:
+      path: ""
+      type: "articles"
+    values:
+      layout: "post"
+      author: "Ambreen Hanif"
 
 reading_time:
   second_plural: "sec"    # default: seconds
