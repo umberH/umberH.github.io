@@ -1,0 +1,85 @@
+{% if page.url == "/" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ site.name }}",
+  "url": "{{ site.url }}",
+  "email": "{{ site.email }}",
+  "jobTitle": "Data Scientist & ML Engineer",
+  "description": "{{ site.description }}",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Sydney",
+    "addressCountry": "Australia"
+  },
+  "alumniOf": {
+    "@type": "Organization",
+    "name": "PhD in Computer Science"
+  },
+  "sameAs": [
+    "https://github.com/{{ site.github_username }}",
+    "https://linkedin.com/in/{{ site.linkedin_username }}"
+  ],
+  "knowsAbout": [
+    "Machine Learning",
+    "Data Science",
+    "Artificial Intelligence",
+    "Generative AI",
+    "AutoML",
+    "Explainable AI",
+    "Python",
+    "Deep Learning"
+  ]
+}
+</script>
+{% endif %}
+
+{% if page.layout == 'post' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ page.title }}",
+  "description": "{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.name }}"
+  },
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "url": "{{ site.url }}{{ page.url }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ site.url }}{{ page.url }}"
+  }
+}
+</script>
+{% endif %}
+
+{% if page.layout == 'project' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "{{ page.title }}",
+  "description": "{{ page.description | strip_html | strip_newlines }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.name }}"
+  },
+  "url": "{{ site.url }}{{ page.url }}",
+  {% if page.image %}
+  "image": "{{ site.url }}{{ page.image }}",
+  {% endif %}
+  {% if page.date %}
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  {% endif %}
+  {% if page.tags %}
+  "keywords": "{{ page.tags | join: ', ' }}"
+  {% endif %}
+}
+</script>
+
+<!-- Breadcrumb Schema for Projects -->
+{% include breadcrumb-schema.html %}
+{% endif %}
