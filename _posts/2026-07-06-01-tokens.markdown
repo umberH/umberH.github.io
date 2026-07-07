@@ -3,7 +3,7 @@ layout: post
 sublayout: post.html
 title: "Every Word You Type Gets Destroyed Before the AI Reads It"
 date: 2026-07-06 10:00:00 +0000
-categories: AI MachineLearning LLM
+categories: AI Machine Learning LLM
 ---
 
 # Every Word You Type Gets Destroyed Before the AI Reads It
@@ -144,11 +144,5 @@ By the end you'll have a working BPE tokenizer that behaves like the one inside 
 
 ---
 
-*Part 1 of [AI in Simple English — Learn LLMs by Building](https://medium.com/@your-handle). New posts every Monday and Thursday. The full series, with code, lives on [GitHub](https://github.com/your-username/ai-in-simple-english).*
+*Part 1 of [AI in Simple English — Learn LLMs by Building](https://medium.com/ambreen16). New posts every Monday and Thursday. The full series, with code, lives on [GitHub]((https://github.com/umberH/AI_in_simple_english)).*
 
----
-
-**Notes for the writer**
-- Suggested tags: `AI`, `Machine Learning`, `LLM`, `Programming`, `Data Science`
-- Publication fit: **Towards Data Science** or **Better Programming** — both Boost-eligible, strong technical audiences who appreciate build-from-scratch explainers
-- Watch out for: run all code examples before publishing — verify the "AI in Simple English." tokenization output, the "ChatGPT is amazing." split, and the Urdu byte-fragment count with your tiktoken version; token IDs and fragment patterns can shift between releases
