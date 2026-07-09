@@ -1,22 +1,14 @@
 ---
 layout: post
 sublayout: post.html
-title: "BPE tokenisation from scratch"
+title: "The 50-Line Algorithm That Decides How GPT-4 Reads Your Words"
 date: 2026-07-09 10:00:00 +0000
 categories: AI MachineLearning LLM
 ---
 
----
-title: The 50-Line Algorithm That Decides How GPT-4 Reads Your Words
-subtitle: BPE tokenisation explained and built from scratch: why it matters for cost, quality, and multilingual AI.
-series: AI in Simple English — Learn LLMs by Building
-post_number: 2
-publish_date: 2026-07-09
-phase: Phase 1 — Foundations
-status: draft
----
-
 # The 50-Line Algorithm That Decides How GPT-4 Reads Your Words
+
+BPE tokenisation explained and built from scratch: why it matters for cost, quality, and multilingual AI.
 
 GPT-4 doesn't read English. It reads numbers. Specifically, it reads a list of integers — each one pointing to a sub-word piece in a vocabulary of about 100,000 entries.
 
@@ -210,26 +202,3 @@ In Post 3: the vocabulary structure, special tokens (`<|endoftext|>`, `<|im_star
 ---
 
 *Part 2 of [AI in Simple English — Learn LLMs by Building](https://medium.com/@ambreenh16). New posts every Monday and Thursday. The full series, with code, lives on [GitHub](https://github.com/umberH/AI_in_simple_english/tree/main/posts/02-bpe-from-scratch).*
-
----
-
-**Notes for the writer**
-- Suggested tags: `tokenization`, `NLP`, `LLM`, `machine learning`, `Python`
-- Publication fit: Towards Data Science or The Sequence — both boost practical ML tutorials with code; this fits both criteria (code-driven, concept-anchored)
-- Watch out for: Replace `@your-handle` and the GitHub URL path with your actual Medium handle and the correct repo branch/tag once Post 2 is tagged — verify the link resolves before publishing
-
----
-
-## 🌍 Environmental Footprint of This Post
-
-*This post was drafted and revised with the help of a large language model (Claude). Here is an estimate of the environmental cost of generating it — because if we're going to talk about AI, we should be honest about what it costs.*
-
-| | Estimate | Equivalent to |
-|---|---|---|
-| 💧 Water (cooling) | ~12.0 L | ≈ 48 cups of water |
-| 🌫️ Carbon | ~60.0 g CO₂e | ≈ driving 0.50 km in an average car |
-| ⚡ Energy | ~60.0 Wh | ≈ an LED bulb for 6 hours |
-
-**How these are calculated:** ~12,000 tokens total across 2 revision round(s). Water estimate based on Microsoft's 2023 disclosure of ~500 ml per 50 API calls for data centre cooling ([Li et al., 2023](https://arxiv.org/abs/2304.03271)). Carbon based on ~0.005 kg CO₂e per 1k tokens on the US grid average ([Patterson et al., 2021](https://arxiv.org/abs/2104.10350)). All figures are order-of-magnitude estimates — exact values depend on data centre location, energy mix, and model size.
-
-*Figures generated on 2026-07-10 by [env_stats.py](https://github.com/umberH/ai-in-simple-english/blob/main/scripts/env_stats.py)*
