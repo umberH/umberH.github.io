@@ -1,14 +1,12 @@
 ---
 layout: post
 sublayout: post.html
-title: "The 50-Line Algorithm That Decides How GPT-4 Reads Your Words"
+title: "BPE tokenisation from scratch"
 date: 2026-07-09 10:00:00 +0000
 categories: AI MachineLearning LLM
 ---
 
 # The 50-Line Algorithm That Decides How GPT-4 Reads Your Words
-
-BPE tokenisation explained and built from scratch: why it matters for cost, quality, and multilingual AI.
 
 GPT-4 doesn't read English. It reads numbers. Specifically, it reads a list of integers — each one pointing to a sub-word piece in a vocabulary of about 100,000 entries.
 
@@ -202,3 +200,5 @@ In Post 3: the vocabulary structure, special tokens (`<|endoftext|>`, `<|im_star
 ---
 
 *Part 2 of [AI in Simple English — Learn LLMs by Building](https://medium.com/@ambreenh16). New posts every Monday and Thursday. The full series, with code, lives on [GitHub](https://github.com/umberH/AI_in_simple_english/tree/main/posts/02-bpe-from-scratch).*
+
+---
